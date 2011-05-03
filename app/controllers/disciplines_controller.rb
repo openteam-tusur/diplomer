@@ -1,0 +1,3 @@
+class DisciplinesController < CrudController
+end
+

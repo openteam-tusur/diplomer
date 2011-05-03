@@ -3,19 +3,16 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
+  before_filter :authenticate_user!
+  layout :layout_by_resource
 
-  #before_filter :find_current_contest
-
-  layout 'application'
-
-  def new
-    1111
+  def index
   end
 
   protected
 
     def layout_by_resource
-      if devise_controller? && action_name == 'edit'
+      if user_signed_in?
         "manage"
       else
         "application"

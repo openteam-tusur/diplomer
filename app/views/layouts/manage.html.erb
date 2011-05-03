@@ -1,7 +1,7 @@
 <% content_for :dashboard do %>
   <div class="dashboard">
     <div class="user">
-      <p><%= current_user.email%></p>
+            <p class="<%= current_user.role %>" title="<%= current_user.human_role %>"><%= current_user.name %></p>
       <p><%= link_to 'Выход', destroy_user_session_path, :class => "button" %></p>
     </div>
   </div>

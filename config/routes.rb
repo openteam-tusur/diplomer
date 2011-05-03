@@ -1,14 +1,16 @@
 YoungScientist::Application.routes.draw do
 
-  devise_for :users, :path => 'manage'
+  devise_for :users#, :path => 'manage'
 
-  namespace :manage do
-    resources :users
-    resources :dictionaries
-    root :to => "application#index"
-  end
+ # namespace :manage do
+ #   resources :users
+ #   resources :disciplines
+ #   root :to => "application#index"
+ # end
 
-  root :to => "application#new"
+  resources :users
+  resources :disciplines
 
+  root :to => "application#index"
 end
 
