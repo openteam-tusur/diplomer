@@ -1,0 +1,15 @@
+<% title resource_class.model_name.human %>
+
+<div class="actions">
+  <%= link_to t(:new), new_resource_url, :class => "button floatr" %>
+</div>
+
+<% if collection.any? %>
+  <div id="<%= resource_class.name.downcase.pluralize %>_list">
+    <% collection.each do |obj| %>
+      <%= render :partial => "item", :locals => { :item => obj } %>
+    <% end %>
+  </div>
+  <%= will_paginate collection %>
+<% end %>
+

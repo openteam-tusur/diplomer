@@ -1,0 +1,337 @@
+=input_field
+  width: 200px
+  font-size: 12px
+  +arial_font_stack
+  border: 1px solid #777
+  +border-radius(3px)
+  background-color: #f9f9f9
+  padding: 3px 2px
+  &:focus
+    background-color: #fff9e1
+
+=float_list
+  ol
+    +clearfix
+    li
+      float: left
+
+#content
+  .formtastic
+    .bordered
+      border: 1px solid #ccc
+      padding: 20px 20px 5px 20px
+      margin-bottom: 15px
+      legend
+        font-size: 16px
+    .inputs
+      ol li
+        margin-bottom: 15px
+        &.nomargin
+          margin-bottom: 0
+      abbr
+        color: #990000
+        cursor: help
+        margin-left: 3px
+      .string,
+      .password,
+      .numeric,
+      .date,
+      .email,
+      .phone,
+      .file,
+      .text
+        label
+          display: block
+          margin-bottom: 5px
+        input
+          +input_field
+      .enum
+        label
+          display: block
+          margin-bottom: 5px
+        select
+          +input_field
+          width: 206px
+          padding: 2px 2px
+        fieldset
+          +inline-block
+          border: 1px solid #ccc
+          padding: 10px
+          li
+            margin-bottom: 5px
+      .date
+        input
+          width: 100px
+        img
+          +inline-block
+          margin: 0 0 3px 3px
+          cursor: pointer
+      .text
+        textarea
+          +input_field
+      .boolean
+        input
+          margin-right: 7px
+      .inline-hints
+        color: #555
+        font-size: 11px
+        margin-bottom: 0
+      .error
+        input,
+        textarea
+          border-color: #990000
+      .inline-errors
+        background: transparent url("../images/inline_error_arrow.png") no-repeat left 1px
+        color: #990000
+        font-size: 11px
+        margin: 3px 0 0 2px
+        padding-left: 15px
+
+    .buttons
+      +clearfix
+      margin-bottom: 10px
+      li
+        float: left
+        margin: 0 15px 0 0
+
+        &.floatr
+          float: right
+          margin: 0 0 0 15px
+
+    // customize this
+    .personal_common
+      +float_list
+      #personal_lname_input,
+      #personal_fname_input
+        margin-right: 15px
+      #personal_lname
+        width: 200px
+      #personal_fname
+        width: 195px
+      #personal_mname
+        width: 195px
+      #personal_birthdate_input
+        margin-right: 15px
+      #personal_phone_input
+        margin-right: 15px
+      #personal_address
+        width: 411px
+
+    // customize this
+    .personal_phone
+      +float_list
+      #personal_phone_code_input
+        margin-right: 15px
+      #personal_phone_code
+        width: 120px
+
+    .personal_address
+      +float_list
+      #personal_address_attributes_postcode_input
+        margin-right: 15px
+      #personal_address_attributes_postcode
+        width: 120px
+      #personal_address_attributes_district
+        width: 497px
+      #personal_address_attributes_settlement_input
+        margin-right: 15px
+      #personal_address_attributes_settlement,
+      #personal_address_attributes_street
+        width: 305px
+      #personal_address_attributes_house
+        width: 120px
+      #personal_address_attributes_house_input,
+      #personal_address_attributes_building_input
+        margin-right: 15px
+      #personal_address_attributes_building,
+      #personal_address_attributes_flat
+        width: 120px
+
+    .personal_inn
+      +float_list
+      #personal_inn_input
+        margin-right: 15px
+      #personal_inn
+        width: 305px
+      #personal_pss
+        width: 306px
+
+    .personal_document
+      +float_list
+      #personal_doc_series_input,
+      #personal_doc_number_input,
+      #personal_doc_give_by_input
+        margin-right: 15px
+      #personal_doc_series
+        width: 50px
+      #personal_doc_number
+        width: 100px
+      #personal_doc_give_by
+        width: 300px
+
+    .personal_photo
+      ul
+        li
+          font-size: 11px
+          list-style: disc
+          margin: 0 0 0 15px
+
+    .school_info,
+    .address
+      +float_list
+      #school_name_input
+        margin-right: 15px
+      #school_name
+        width: 491px
+      #school_year
+        width: 120px
+
+    .address
+      #address_attributes_postcode_input
+        margin-right: 15px
+      #address_attributes_postcode
+        width: 120px
+      #address_attributes_district
+        width: 497px
+      #address_attributes_settlement_input
+        margin-right: 15px
+      #address_attributes_settlement,
+      #address_attributes_street
+        width: 305px
+      #address_attributes_house_input
+        margin-right: 15px
+      #address_attributes_house,
+      #address_attributes_building
+        width: 120px
+
+    .school_chief_info
+      +float_list
+      #school_chief_lname_input,
+      #school_chief_mname_input
+        margin-right: 15px
+      #school_chief_lname
+        width: 200px
+      #school_chief_fname
+        width: 195px
+      #school_chief_mname
+        width: 195px
+      #school_chief_post_input
+        margin-right: 15px
+      #school_chief_post
+        width: 305px
+      #school_chief_phone
+        width: 306px
+    .school_chief_phone
+      +float_list
+      #school_chief_phone_code_input
+        margin-right: 15px
+      #school_chief_phone_code
+        width: 120px
+
+    .student
+      +float_list
+      #work_place_student_name
+        width: 632px
+      #work_place_student_address
+        width: 632px
+      #work_place_faculty_input
+        margin-right: 15px
+      #work_place_faculty
+        width: 305px
+      #work_place_course
+        width: 306px
+
+    .young_scientist
+      +float_list
+      #work_place_young_scientist_name
+        width: 632px
+      #work_place_young_scientist_address
+        width: 632px
+      #work_place_post_input
+        margin-right: 15px
+      #work_place_post
+        width: 305px
+      #work_place_phone
+        width: 306px
+      #work_place_academic_degree_science_input,
+      #work_place_academic_status_input
+        margin-right: 15px
+      #work_place_academic_degree_science,
+      #work_place_academic_status
+        width: 492px
+
+    .chief_info
+      +float_list
+      #work_place_chief_lname_input,
+      #work_place_chief_mname_input
+        margin-right: 15px
+      #work_place_chief_lname
+        width: 200px
+      #work_place_chief_fname
+        width: 195px
+      #work_place_chief_mname
+        width: 195px
+      #work_place_chief_post_input
+        margin-right: 15px
+      #work_place_chief_post
+        width: 305px
+      #work_place_chief_phone
+        width: 306px
+
+    .chief_phone
+      +float_list
+      #work_place_chief_phone_code_input
+        margin-right: 15px
+      #work_place_chief_phone_code
+        width: 120px
+
+    #document_name
+      width: 674px
+
+    .scientific_adviser
+      +float_list
+      #scientific_adviser_lname_input,
+      #scientific_adviser_fname_input
+        margin-right: 15px
+      #scientific_adviser_lname
+        width: 200px
+      #scientific_adviser_fname
+        width: 195px
+      #scientific_adviser_mname
+        width: 195px
+      #scientific_adviser_job_input,
+      #scientific_adviser_post_input
+        margin-right: 15px
+      #scientific_adviser_job
+        width: 200px
+      #scientific_adviser_post
+        width: 195px
+
+    .scientific_adviser_phone
+      +float_list
+      #scientific_adviser_phone_code_input
+        margin-right: 15px
+      #scientific_adviser_phone_code
+        width: 120px
+
+    .parent
+      +float_list
+      #parent_lname_input,
+      #parent_fname_input
+        margin-right: 15px
+      #parent_lname
+        width: 200px
+      #parent_fname
+        width: 195px
+      #parent_mname
+        width: 195px
+
+    &.dictionary
+      fieldset.address
+        +inline-block
+    #dictionary_full_name
+      width: 954px
+
+    #contest_year
+      width: 100px
+

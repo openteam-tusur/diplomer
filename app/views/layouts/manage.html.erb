@@ -1,0 +1,19 @@
+<% content_for :dashboard do %>
+  <div class="dashboard">
+    <div class="user">
+      <p><%= current_user.email%></p>
+      <p><%= link_to 'Выход', destroy_user_session_path, :class => "button" %></p>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :navigation do %>
+  <%= render_navigation :context => "manage" %>
+<% end %>
+
+<% content_for :content do %>
+    <%= content_tag(:h1, show_title? ? yield(:title) : title_locale) %>
+    <%= yield %>
+<% end %>
+<%= render :file => 'layouts/application' %>
+

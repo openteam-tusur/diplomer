@@ -1,0 +1,39 @@
+#header
+  +clearfix
+
+  .site_name
+    float: left
+    width: 650px
+    h1
+      +garamond_font_stack
+      margin-bottom: 10px
+      a
+        display: block
+        width: 320px
+        height: 50px
+        overflow: hidden
+        text-indent: -9999em
+        background: transparent url("../images/duma_logo.png") no-repeat
+    p
+      font-size: 16px
+      +garamond_font_stack
+
+  .dashboard
+    float: right
+    width: 310px
+    text-align: right
+    .admin
+      +inline-block
+      background: transparent url("../images/is_admin.png") no-repeat left
+      padding-left: 21px
+      margin-bottom: 10px
+    .manager
+      +inline-block
+      background: transparent url("../images/is_manager.png") no-repeat left
+      padding-left: 21px
+      margin-bottom: 10px
+    .code
+      font-size: 18px
+      +monospace_font_stack
+      margin-bottom: 10px
+

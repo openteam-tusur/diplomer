@@ -1,0 +1,23 @@
+.institute
+  h2 .edit
+    +iconize_link("../images/icon_edit.png")
+    +inline-block
+
+.contest
+  h2 .edit
+    +iconize_link("../images/icon_edit.png")
+    +inline-block
+  &.closed
+    color: #777
+
+.user
+  h2
+    padding-left: 21px
+    .edit
+      +iconize_link("../images/icon_edit.png")
+      +inline-block
+  &.admin h2
+    background: transparent url("../images/is_admin.png") no-repeat left
+  &.manager h2
+    background: transparent url("../images/is_manager.png") no-repeat left
+

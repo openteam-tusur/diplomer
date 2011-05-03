@@ -1,0 +1,13 @@
+<% title resource.name %>
+<div class="formtastic">
+  <fieldset>
+    <legend><%= resource.name %></legend>
+    <%= render :partial => "view" %>
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li><%= link_to t(:edit), edit_resource_url, :class => "button" %></li>
+    </ol>
+  </fieldset>
+</div>
+

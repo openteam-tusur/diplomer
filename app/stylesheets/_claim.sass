@@ -1,0 +1,48 @@
+#content
+  #choose_nomination
+    margin-bottom: 15px
+    +clearfix
+    form
+      float: left
+      border: 1px solid #ccc
+      +border-radius
+      padding: 15px 15px 5px 15px
+      .buttons li
+        margin: 0
+        .submit
+          width: 180px
+          border: none
+          cursor: pointer
+          padding-top: 74px
+          margin: 0 8px
+          text-align: center
+          text-transform: uppercase
+          border-bottom: 1px solid #fff
+          background-color: transparent
+          background-repeat: no-repeat
+          background-position: center 2px
+          &.schoolchild
+            background-image: url("../images/nomination_schoolchild.png")
+          &.natural_sciences
+            background-image: url("../images/nomination_natural_sciences.png")
+          &.technics
+            background-image: url("../images/nomination_technics.png")
+          &.humanities
+            background-image: url("../images/nomination_humanities.png")
+          &:hover
+            background-position: center 0
+            border-bottom: 1px solid #000
+
+    #new_claim_schoolchild,
+    #new_claim_natural_sciences,
+    #new_claim_technics
+      margin-right: 16px
+
+  #choose_by_key
+    border: 1px solid #ccc
+    +border-radius
+    margin-bottom: 10px
+    padding: 15px 15px 10px 15px
+    p
+      margin-bottom: 15px
+

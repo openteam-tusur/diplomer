@@ -1,0 +1,16 @@
+.bundle
+db/*.sqlite3
+log/*
+tmp/
+solr/data/
+bin/
+photos/
+Gemfile.lock
+
+config/database.yml
+config/initializers/setup_mail.rb
+public/stylesheets/*.css
+attachments/
+.rake_tasks~
+.~lock.*.ods#
+*.swp

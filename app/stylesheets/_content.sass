@@ -1,0 +1,83 @@
+#content
+  border-bottom: 1px solid #ccc
+  margin-bottom: 20px
+  padding-bottom: 10px
+
+  @for $i from 1 through 5
+    h#{$i}
+      margin-bottom: 15px
+
+  p,
+  .actions
+    margin-bottom: 15px
+
+=error_style($image)
+  background: transparent url($image) no-repeat left top
+  padding-left: 75px
+  margin: 100px 0
+  p
+    margin-bottom: 15px
+
+#content
+  +clearfix
+  .error_404
+    +error_style("../images/error_404.png")
+  .error_500
+    +error_style("../images/error_500.png")
+  .left_side
+    float: left
+    width: 239px
+    border-right: 1px solid #ccc
+    padding-right: 20px
+    margin-right: 20px
+  .right_side
+    float: left
+    width: 680px
+
+    .documents
+      p
+        margin-bottom: 15px
+      ol
+        margin-bottom: 15px
+        li
+          list-style: decimal
+          margin-left: 20px
+          margin-bottom: 5px
+          .edit
+            +iconize_link("../images/icon_edit.png")
+            +inline-block
+            margin-left: 10px
+          .delete
+            +iconize_link("../images/icon_delete.png")
+            +inline-block
+            margin-left: 10px
+
+    .scientific_advisers,
+    .parents
+      margin-bottom: 15px
+      li
+        border: 1px solid #ccc
+        padding: 20px 20px 15px 20px
+        margin-bottom: 15px
+        p
+          margin-bottom: 5px
+        .edit
+          +iconize_link("../images/icon_edit.png")
+          +inline-block
+          margin-left: 10px
+        .delete
+          +iconize_link("../images/icon_delete.png")
+          +inline-block
+          margin-left: 10px
+
+    .complete
+      p,
+      .button_to
+        margin-bottom: 15px
+
+#accept_terms_text
+  font-size: 12px
+  +verdana_font_stack
+  p
+    margin: 10px 0
+

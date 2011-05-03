@@ -1,0 +1,72 @@
+=arial_font_stack
+  font-family: Arial, Verdana, Tahoma, sans-serif
+
+=verdana_font_stack
+  font-family: Verdana, Tahoma, sans-serif
+
+=helvetica_font_stack
+  font-family: Helvetica, Arial, sans-serif
+
+=garamond_font_stack
+  font-family: Garamond, Georgia, serif
+
+=monospace_font_stack
+  font-family: Consolas, "Lucida Console", monospace
+
+=iconize_link($image, $width = 16px, $height = 16px)
+  display: block
+  width: $width
+  height: $height
+  overflow: hidden
+  text-indent: -9999em
+  background: transparent url($image) no-repeat
+
+body
+  font-size: 12px
+  line-height: 1.4
+  +verdana_font_stack
+  background-color: #ccdcec
+
+a
+  color: #184475
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+@for $i from 1 through 5
+  h#{$i}
+    +helvetica_font_stack
+    font-size: 24px - $i * 2
+
+.hidden
+  display: none
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+.nobr
+  white-space: nowrap
+
+.translation_missing
+  +inline-block
+  color: #fff
+  background-color: #aa0000
+  padding: 2px 5px
+
+noscript
+  +inline-block
+  color: #fff
+  font-weight: bold
+  background-color: #aa0000
+  +border-radius
+  padding: 20px 20px 10px 20px
+  margin-bottom: 15px
+  p
+    margin-bottom: 10px
+
+.monospace
+  +monospace_font_stack
+

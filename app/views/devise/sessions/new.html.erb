@@ -1,0 +1,13 @@
+<%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :email, :input_html => { :class => "focus_first" } %>
+    <%= f.input :password%>
+      <% if devise_mapping.rememberable? -%>
+        <%= f.input :remember_me, :as => :boolean %>
+      <% end -%>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button "Войти", :button_html => { :class => "button" } %>
+  <% end %>
+<% end %>
+

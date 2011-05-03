@@ -1,0 +1,9 @@
+<% form.inputs do %>
+  <%= form.input :full_name, :as => :string, :input_html => { :class => "focus_first" } %>
+  <%= form.input :short_name %>
+  <li class="nomargin">
+    <%= render :partial => "/shared/address_fields", :locals => { :form => form, :name => 'Адрес'} %>
+  </li>
+  <%= form.input :nomination_kind %>
+<% end %>
+

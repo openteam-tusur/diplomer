@@ -1,0 +1,20 @@
+<% title resource_class.model_name.human %>
+
+<%= semantic_search_form_for :dictionary do |form| %>
+  <%= form.inputs %>
+  <%= form.buttons %>
+<% end %>
+
+<div class="actions">
+  <%= link_to t(:new), new_resource_url, :class => "button floatr" %>
+</div>
+
+<% if collection.any? %>
+  <div id="<%= resource_class.name.downcase.pluralize %>_list">
+    <% collection.each do |obj| %>
+      <%= render :partial => "item", :locals => { :item => obj } %>
+    <% end %>
+  </div>
+  <%= will_paginate collection %>
+<% end %>
+
