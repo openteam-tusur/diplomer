@@ -8,9 +8,16 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 User.destroy_all
-User.create!(:name => 'Администратор Рут Сеперьзверович',
-             :email => 'demo@demo.de',
+Person.destroy_all
+Person.create!(:lname => 'Администратор',
+                        :fname => 'Рут',
+                        :mname => 'Сеперьзверович',
+                        :eng_lname => 'Admin',
+                        :eng_fname => 'Root',
+                        :eng_mname => 'Superanimal',
+                        :user_attributes =>{
+                                            :email => 'demo@demo.de',
              :password => '123456',
-             :password_confirmation => '123456',
-             :role => 'admin')
+             :password_confirmation => '123456',} 
+                       )
 

@@ -1,8 +1,0 @@
-<div class="user <%= item.role %>">
-  <h2 class= "name" title="<%= item.human_role %>">
-    <%= item.name %>
-    <%= link_to t(:edit), edit_resource_path(item), :class => "edit" %>
-  </h2>
-  <p><%= mail_to item.email %></p>
-</div>
-

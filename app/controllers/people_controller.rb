@@ -1,0 +1,3 @@
+class PeopleController < CrudController
+
+end

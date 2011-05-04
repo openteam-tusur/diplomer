@@ -1,0 +1,12 @@
+<%= form.inputs do %>
+  <%= form.input :lname %>
+  <%= form.input :fname %>
+  <%= form.input :mname %>
+  <%= form.input :eng_lname %>
+  <%= form.input :eng_fname %>
+  <%= form.input :eng_mname %>
+  <%= form.inputs :for => :user do | user_form | %>
+    <%= user_form.input :email, :wrapper_html => {:class => 'three_col'} %>
+    <%= user_form.input :password%>
+  <% end %>
+<% end %>

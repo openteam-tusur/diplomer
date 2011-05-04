@@ -10,11 +10,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110503073852) do
+ActiveRecord::Schema.define(:version => 20110504101636) do
 
   create_table "disciplines", :force => true do |t|
     t.string   "name"
     t.string   "eng_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "lname"
+    t.string   "fname"
+    t.string   "mname"
+    t.string   "eng_lname"
+    t.string   "eng_fname"
+    t.string   "eng_mname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "type"
+    t.integer  "person_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,8 +49,7 @@ ActiveRecord::Schema.define(:version => 20110503073852) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
-    t.string   "name"
+    t.integer  "person_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

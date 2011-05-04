@@ -9,56 +9,7 @@ ru:
   "Adding information": Добавление информации
   "Are you sure?": Вы уверены?
 
-  application: Анкета номинанта
-
-  new_schoolchild: Юное дарование
-  new_natural_sciences: Естественные науки
-  new_technics: Технические науки
-  new_humanities: Гуманитарные науки
-
-  claim:
-    state:
-      draft: в состоянии заполнения
-      sended: отправлена на рассмотрение организационного комитета
-
   title:
-    claims:
-      new: Выбор номинации
-      set_code: Выбор анкеты по ключу
-      complete: Завершение
-      show: Просмотр статуса анкеты
-    personals:
-      edit: Личные сведения и контактная информация
-    schools:
-      edit: Место учёбы
-    work_places:
-      edit: Место учёбы, работы
-    documents:
-      index: Перечень основных и прилагаемых документов
-      new: Добавление документа
-      edit: Изменение документа
-    scientific_advisers:
-      index: Сведения о научных руководителях
-      new: Добавление сведений о научном руководителе
-      edit: Изменение сведений о научном руководителе
-    parents:
-      index: Сведения о родителях
-      new: Добавление сведений о родителе
-      edit: Изменение сведений о родителе
-    manage/claims:
-      index: Список анкет участников
-    manage/users:
-      index: Список пользователейт
-      new: Создание нового пользователя
-      edit: Редактирование профиля
-    manage/contests:
-      index: Список конкурсов
-      new: Создание конкурса
-      edit: Редактирование конкурса
-    manage/dictionaries:
-      index: Список учреждений
-      new: Создание учреждения
-      edit: Редактирование учреждения
     devise/sessions:
       new: Вход в систему
     devise/registrations:
@@ -72,82 +23,22 @@ ru:
       create: Создать
       update: Сохранить
 
-    hints:
-      address:
-        settlement: название города, поселка и т.п.
-        street: "&nbsp;"
-      work_place:
-        post: в соответствии с записью в трудовой книжке
-        chief_post: в соответствии с записью в трудовой книжке
-      scientific_adviser:
-        post: в соответствии с записью в трудовой книжке
-      school:
-        chief_post: в соответствии с записью в трудовой книжке
-
-  step:
-    personal: Личные сведения и контактная информация
-    school: Место учебы
-    work_place: Место учебы, работы
-    documents: Перечень основных и прилагаемых документов
-    scientific_advisers: Научный руководитель
-    parents: Родители
-    complete: Завершение
-    exit: Выйти
-    send: Отправить на орг.комитет
-    pdf: Печать заявки
-
   attributes:
-    chief_lname: Фамилия
-    chief_mname: Отчество
-    chief_fname: Имя
-    chief_post: Должность
-    chief_phone_code: Код
-    chief_phone_number: Телефон
     fname: Имя
     mname: Отчество
     lname: Фамилия
-    post: Должность
-    phone_code: Код
-    phone_number: Номер
-    street: Улица
-    house: Номер дома
-    building: Корпус/строение
-    flat: Квартира
-    postcode: Почтовый индекс
+    eng_fname: First name
+    eng_lname: Last name
+    eng_mname: Patronymic
 
   activerecord:
 
     models:
-      contest: Конкурс
-      dictionary: Справочник учреждений
+      discipline: Справочник дисциплин
       user: Пользователь
+      person: Пользователь
 
     attributes:
-
-      address: &address
-        district: Район
-        district_enum:
-          tomsk: г. Томск
-          aleksandrovskiy: Александровский район
-          asinovskiy: Асиновский район
-          bakcharskiy: Бакчарский район
-          verhneketskiy: Верхнекетский район
-          zyryanskiy: Зырянский район
-          kargasokskiy: Каргасокский район
-          kedroviy: г. Кедровый
-          kojevnekovskiy: Кожевниковский район
-          kolpashevskiy: Колпашевский район
-          krivosheinskiy: Кривошеинский район
-          molchanovskiy: Молчановский район
-          parabelskiy: Парабельский район
-          pervomayskiy: Первомайский район
-          seversk: г. Северск
-          strejevoy: г. Стрежевой
-          teguldetskiy: Тегульдетский район
-          tomskiy: Томский район
-          chainskiy: Чаинский район
-          shegarskiy: Шегарский район
-        settlement: Населенный пункт
 
       user:
         email: E-mail
@@ -155,94 +46,9 @@ ru:
         remember_me: Запомнить
         password_confirmation: Подтвердить пароль
         current_password: Текущий пароль
-        role: Роль
-        role_enum:
-          admin: Администратор
-          manager: Менеджер
-        name: Имя
-
-      claim: &claim
-        code: Ключ анкеты
-        nomination: Номинация
-        nomination_enum: &nomination_enum
-          schoolchild: Юное дарование
-          natural_sciences: Естественные науки
-          technics: Технические науки
-          humanities: Гуманитарные науки
-        no_documents: Нет документов
-
-      contest:
-        year: Год
-        start_date: Дата начала
-        finish_date: Дата окончания
-
-      document:
+      
+      discipline:
         name: Название
-        file: Файл
-
-      personal:
-        birthdate: Дата рождения
-        inn: ИНН
-        pss: Пенсионное страховое свидетльство
-        email: E-mail
-        address: Домашний адрес
-        phone: Домашний телефон
-        doc_type: Вид документа
-        doc_series: Серия
-        doc_number: Номер
-        doc_give_by: Кем выдан
-        doc_give_on: Дата выдачи
-        photo: Фотография
-        accept_terms: Я принимаю <a id="accept_terms_toggle" href="#">условия соглашения</a>
-
-      scientific_adviser:
-        job: Место работы
-
-      dictionary: &dictionary
-        nomination_kind: Тип номинации
-        nomination_kind_enum:
-          young_scientist: Молодой ученый
-          student: Студент
-          schoolchild: Школьник
-        full_name: Название учреждения
-        short_name: Сокращенное название
-
-      school:
-        name: Название учреждения
-        address: Адрес
-        year: Класс
-
-      work_place: &work_place
-        kind: Ваш статус
-        kind_enum:
-          student: Студент
-          young_scientist: Молодой ученый
-        name: Полное название учреждения
-        address: Адрес
-        faculty: Факультет
-        course: Курс
-        phone: Рабочий телефон
-        academic_degree: Ученая степень
-        academic_degree_enum:
-          none: без степени
-          candidate: кандидат наук
-          doctor: доктор наук
-        academic_degree_science: Область научных знаний
-        academic_degree_on: Дата присуждения
-        academic_status: Ученое звание
-        academic_status_on: Дата присуждения
-
-      claim_search:
-        <<: *address
-        <<: *claim
-        <<: *work_place
-        name: ФИО
-        kind: Статус
-        work_place_name: Место учебы, работы
-
-      dictionary_search:
-        nomination_kind: Тип номинации
-        nomination_kind_enum:
-          young_scientist: Молодой ученый
-          student: Студент
-          schoolchild: Школьник
+        eng_name: Английское название  
+      person:
+      

@@ -5,8 +5,8 @@ SimpleNavigation::Configuration.run do |navigation|
                     :highlights_on => /claims|^\/manage$/
     primary.item :disciplines, "Список дисциплин", disciplines_path,
                     :highlights_on => /disciplines/
-    primary.item :edit, "Профиль",  edit_user_registration_path
-
+    primary.item :person , "Профиль",  edit_person_path(6)
+     
     primary.dom_id = "navigation"
   end
 end
