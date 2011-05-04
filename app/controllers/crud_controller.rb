@@ -3,11 +3,9 @@
 class CrudController < ApplicationController
 
   render_inheritable
-
   inherit_resources
-   
-  has_searcher 
-  
+  has_searcher
+
   helper_method :render_new_button?
 
 protected

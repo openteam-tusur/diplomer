@@ -1,4 +1,4 @@
-source 'http://gems.openteam.ru'
+source :rubygems
 
 gem 'racc'
 gem 'rails'
@@ -66,3 +66,4 @@ gem 'tempdir', :require => 'temp_dir'
 # search
 gem 'has_searcher'
 gem 'sunspot_rails'
+

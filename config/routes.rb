@@ -1,15 +1,8 @@
 YoungScientist::Application.routes.draw do
 
-  devise_for :users#, :path => 'manage'
-
- # namespace :manage do
- #   resources :users
- #   resources :disciplines
- #   root :to => "application#index"
- # end
-
+  devise_for :users
   resources :users
-  resources :disciplines
+  resources :disciplines, :except => :show
 
   root :to => "application#index"
 end
