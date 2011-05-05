@@ -37,6 +37,8 @@ ru:
       discipline: Справочник дисциплин
       user: Пользователь
       person: Пользователь
+      role: Роль
+      dean: Декан
 
     attributes:
 
@@ -50,5 +52,4 @@ ru:
       discipline:
         name: Название
         eng_name: Английское название  
-      person:
       

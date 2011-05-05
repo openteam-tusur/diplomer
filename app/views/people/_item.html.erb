@@ -1,14 +1,3 @@
-<div class="<%= item.class.name.downcase %>">
-  <p class="name">
-    <%= item.lname %>
-    <%= item.fname %>
-    <%= item.mname %>
-    <%= item.eng_lname %>
-    <%= item.eng_fname %>
-    <%= item.eng_mname %>
-    <%= link_to t(:edit), edit_resource_url(item),
-                :title => t(:edit), :class => "edit", :rel => "tipsy" %>
-  </p>
-</div>
+<p class='name'><%= link_to item.name, resource_path(item) %></p>
 
 

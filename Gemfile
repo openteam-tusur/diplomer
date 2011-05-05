@@ -37,6 +37,7 @@ gem 'russian', :git => 'git://github.com/tacid/russian'
 # GUI
 gem 'compass'
 gem 'formtastic'
+gem 'show_for'
 gem 'fancy-buttons'
 gem 'render_inheritable'
 gem 'will_paginate', '>= 3.0.pre2'

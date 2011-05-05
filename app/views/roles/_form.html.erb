@@ -1,0 +1,6 @@
+<%= form.inputs do %>
+  <%= form.input :type, :as => :hidden, :input_html => { :name => "type", :value => @role.class.name.underscore } %>
+  <%= render :partial => "#{@role.class.name.underscore}_form", :locals => {:form => form} %>
+<% end %>
+
+

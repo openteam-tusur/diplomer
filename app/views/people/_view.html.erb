@@ -1,0 +1,12 @@
+<%= show_for @person do |p| %>
+  <%= p.attribute :lname %>
+  <%= p.attribute :fname %>
+  <%= p.attribute :mname %>
+  <%= p.attribute :eng_lname %>
+  <%= p.attribute :eng_fname %>
+  <%= p.attribute :eng_mname %>
+  <%= p.association :user, :label => 'Email' , :using => :email %>
+  <%= p.association :roles, :label => 'Роль' , :using => :type %>
+  
+<% end %>
+
