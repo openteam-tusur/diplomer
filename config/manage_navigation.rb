@@ -1,12 +1,14 @@
 # encoding: utf-8
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
-    primary.item :claims, "Анкеты участников", '#',
-                    :highlights_on => /claims|^\/manage$/
+    primary.item :faculties, "Факультеты", faculties_path,
+                    :highlights_on => /faculties/
     primary.item :disciplines, "Список дисциплин", disciplines_path,
                     :highlights_on => /disciplines/
-    primary.item :person , "Профиль",  edit_person_path(6)
-     
+    primary.item :person , "Профиль",  edit_person_path(6),
+                    :highlights_on => /person/
+    primary.item :people , "Пользователи",  people_path,
+                    :highlights_on => /people/
     primary.dom_id = "navigation"
   end
 end
