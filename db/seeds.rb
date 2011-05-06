@@ -20,4 +20,14 @@ Person.create!(:lname => 'Администратор',
              :password => '123456',
              :password_confirmation => '123456',} 
                        )
-
+Person.create!(:lname => 'Никешкин',
+                        :fname => 'Лев',
+                        :mname => 'Евгеньевич',
+                        :eng_lname => 'User',
+                        :eng_fname => 'Puser',
+                        :eng_mname => 'Superpuser',
+                        :user_attributes =>{
+                                            :email => 'arnikev@mail.ru',
+             :password => 'qwerty',
+             :password_confirmation => 'qwerty',} 
+                       )

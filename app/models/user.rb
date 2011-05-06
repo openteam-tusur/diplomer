@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :person
   
+  delegate  :lname,
+            :fname,
+            :mname,
+            :eng_lname,
+            :eng_fname,
+            :eng_mname, 
+            :to => :person
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

@@ -55,7 +55,7 @@ gem 'paperclip'
 gem 'simple-navigation'
 
 # inherited_resources
-gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
+gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
 
 # authorization
 gem 'devise'

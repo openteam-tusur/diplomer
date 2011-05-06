@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
  
   has_many  :roles
   
+  delegate :email, :to => :user, :allow_nil => true
+  
   accepts_nested_attributes_for :user
   
   def name
