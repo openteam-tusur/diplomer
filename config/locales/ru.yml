@@ -30,6 +30,12 @@ ru:
     eng_fname: First name
     eng_lname: Last name
     eng_mname: Patronymic
+    abbr: Сокращенное название
+    eng_abbr: Английское сокращенное название
+    title: Название
+    eng_title: Английское название
+    chair: Кафедра
+    faculty: Факультет
 
   activerecord:
 
@@ -39,6 +45,11 @@ ru:
       person: Пользователь
       role: Роль
       dean: Декан
+      chair_chief: Заведующий кафедрой
+      faculty: Факультет
+      chair: Кафедра
+      role: Роль
+
 
     attributes:
 
@@ -48,8 +59,11 @@ ru:
         remember_me: Запомнить
         password_confirmation: Подтвердить пароль
         current_password: Текущий пароль
-      
+
       discipline:
         name: Название
-        eng_name: Английское название  
-      
+        eng_name: Английское название
+
+      chair:
+        faculty: факультет
+

@@ -1,0 +1,9 @@
+<div class="<%= item.class.name.downcase %>">
+  <p class="name">
+    <%= item.title %>
+    <%= item.eng_title %>
+    <%= link_to t(:edit), edit_resource_url(item),
+                :title => t(:edit), :class => "edit", :rel => "tipsy" %>
+  </p>
+</div>
+

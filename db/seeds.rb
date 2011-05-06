@@ -10,24 +10,43 @@
 User.destroy_all
 Person.destroy_all
 Person.create!(:lname => 'Администратор',
-                        :fname => 'Рут',
-                        :mname => 'Сеперьзверович',
-                        :eng_lname => 'Admin',
-                        :eng_fname => 'Root',
-                        :eng_mname => 'Superanimal',
-                        :user_attributes =>{
-                                            :email => 'demo@demo.de',
-             :password => '123456',
-             :password_confirmation => '123456',} 
-                       )
+               :fname => 'Рут',
+               :mname => 'Сеперьзверович',
+               :eng_lname => 'Admin',
+               :eng_fname => 'Root',
+               :eng_mname => 'Superanimal',
+               :user_attributes =>{ :email => 'demo@demo.de',
+                                    :password => '123456',
+                                    :password_confirmation => '123456'}
+              )
 Person.create!(:lname => 'Никешкин',
-                        :fname => 'Лев',
-                        :mname => 'Евгеньевич',
-                        :eng_lname => 'User',
-                        :eng_fname => 'Puser',
-                        :eng_mname => 'Superpuser',
-                        :user_attributes =>{
-                                            :email => 'arnikev@mail.ru',
-             :password => 'qwerty',
-             :password_confirmation => 'qwerty',} 
-                       )
+               :fname => 'Лев',
+               :mname => 'Евгеньевич',
+               :eng_lname => 'User',
+               :eng_fname => 'Puser',
+               :eng_mname => 'Superpuser',
+               :user_attributes =>{ :email => 'arnikev@mail.ru',
+                                    :password => 'qwerty',
+                                    :password_confirmation => 'qwerty'}
+              )
+
+Faculty.create!(:title => 'Факультет систем управления',
+                :abbr => 'ФСУ',
+                :eng_title => 'Faculty of system control',
+                :eng_abbr => 'FSC')
+
+Faculty.create!(:title => 'Факультет Электрониники',
+                :abbr => 'ФЭ',
+                :eng_title => 'Faculty of electronics',
+                :eng_abbr => 'FE')
+
+Chair.create!(  :title => 'Автоматизированной обработки информации',
+                :abbr => 'АОИ',
+                :eng_title => 'Automated data processing',
+                :eng_abbr => 'ADP')
+
+Chair.create!(  :title => 'Автоматизированных систем управления',
+                :abbr => 'АСУ',
+                :eng_title => 'Automated control system',
+                :eng_abbr => 'ACS')
+

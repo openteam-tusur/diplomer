@@ -7,7 +7,8 @@ YoungScientist::Application.routes.draw do
   resources :people do
     resources :roles, :except => [:index,:show]
   end
-  
+  resources :chairs
+
   root :to => "application#index"
 end
 
