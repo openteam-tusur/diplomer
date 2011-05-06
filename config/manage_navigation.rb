@@ -9,6 +9,8 @@ SimpleNavigation::Configuration.run do |navigation|
                     :highlights_on => /people/
     primary.item :chairs , "Кафедры",  chairs_path,
                     :highlights_on => /chairs/
+    primary.item :specialties , "Специальности",  specialties_path,
+                    :highlights_on => /specialties/
     primary.dom_id = "navigation"
   end
 end

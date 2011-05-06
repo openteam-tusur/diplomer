@@ -49,6 +49,7 @@ ru:
       faculty: Факультет
       chair: Кафедра
       role: Роль
+      specialty: Специальность
 
 
     attributes:
@@ -65,5 +66,12 @@ ru:
         eng_name: Английское название
 
       chair:
-        faculty: факультет
+        faculty: Факультет
+        specialty: Специальность
+
+      specialty:
+        eng_code: Код
+        code: Код
+        end_recruitment_year: Год окончания набора
+        start_recruitment_year: Год начала набора
 
