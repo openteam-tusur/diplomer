@@ -6,23 +6,25 @@ group :development, :test do
 end
 
 group :production, :development do
-  gem 'pg'
   gem 'exception_notification_rails3', :require => 'exception_notifier'
+  gem 'pg'
 end
 
 group :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'capybara'
-  gem 'rr'
+  gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
-  gem 'factory_girl_rails'
+  gem 'rr'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 group :development do
+  gem 'annotate'
+  gem 'hirb'
+  gem 'rails-erd'
   gem 'rails3-generators'
   gem 'spork', :require => false
-  gem 'annotate'
 end
 
 gem 'aasm', '2.2.0'
