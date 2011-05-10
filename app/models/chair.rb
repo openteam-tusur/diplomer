@@ -1,8 +1,8 @@
 class Chair < ActiveRecord::Base
   belongs_to  :faculty
   has_one     :role
-  has_many    :chair_specialties
-  has_many    :specialites, :through => :chair_specialties
+  has_many    :chair_specialities
+  has_many    :specialities, :through => :chair_specialities
 end
 
 
