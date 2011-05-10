@@ -4,14 +4,15 @@ class ChairSpeciality < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
-# Table name: chair_specialties
+# Table name: chair_specialities
 #
-#  id           :integer         not null, primary key
-#  chair_id     :integer
-#  specialty_id :integer
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id            :integer         not null, primary key
+#  chair_id      :integer
+#  speciality_id :integer
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 

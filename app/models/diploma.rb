@@ -8,12 +8,13 @@ class Diploma < ActiveRecord::Base
   has_one  :student
 end
 
+
 # == Schema Information
 #
 # Table name: diplomas
 #
 #  id              :integer         not null, primary key
-#  specialty_id    :integer
+#  speciality_id   :integer
 #  number          :string(255)
 #  admission_date  :date
 #  graduation_date :date

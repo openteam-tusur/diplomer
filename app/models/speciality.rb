@@ -8,9 +8,10 @@ end
 
 
 
+
 # == Schema Information
 #
-# Table name: specialties
+# Table name: specialities
 #
 #  id                     :integer         not null, primary key
 #  code                   :string(255)
