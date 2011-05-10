@@ -1,3 +1,4 @@
+# encoding: utf-8
 class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # Include default devise modules. Others available are:

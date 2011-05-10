@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
 end

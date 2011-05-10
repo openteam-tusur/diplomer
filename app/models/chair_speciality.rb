@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ChairSpeciality < ActiveRecord::Base
   belongs_to :chair
   belongs_to :speciality
