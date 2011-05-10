@@ -1,4 +1,4 @@
-YoungScientist::Application.routes.draw do
+TusurDiplomer::Application.routes.draw do
 
   devise_for :users
   resources :users

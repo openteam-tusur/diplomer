@@ -14,3 +14,4 @@ attachments/
 .rake_tasks~
 .~lock.*.ods#
 *.swp
+ERD.pdf

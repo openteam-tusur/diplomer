@@ -1,4 +1,4 @@
-YoungScientist::Application.configure do
+TusurDiplomer::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -48,8 +48,8 @@ YoungScientist::Application.configure do
   config.active_support.deprecation = :notify
 
   config.middleware.use ExceptionNotifier,
-    :email_prefix => "[Young scientist error] ",
-    :sender_address => %{"notifier" <notifier@young-scientist.duma.tomsk.ru>},
+    :email_prefix => "[Tusur diplomer error] ",
+    :sender_address => %{"notifier" <notifier@openteam.ru>},
     :exception_recipients => %w{developers@openteam.ru}
 
 end
