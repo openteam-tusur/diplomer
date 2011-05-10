@@ -16,3 +16,19 @@ class Person < ActiveRecord::Base
     "#{eng_lname} #{eng_fname} #{eng_mname}"
   end
 end  
+
+# == Schema Information
+#
+# Table name: people
+#
+#  id         :integer         not null, primary key
+#  lname      :string(255)
+#  fname      :string(255)
+#  mname      :string(255)
+#  eng_lname  :string(255)
+#  eng_fname  :string(255)
+#  eng_mname  :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

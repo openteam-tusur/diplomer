@@ -1,5 +1,7 @@
 TusurDiplomer::Application.routes.draw do
 
+  resources :students
+
   devise_for :users
   resources :users
   resources :disciplines, :except => :show
