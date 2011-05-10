@@ -12,7 +12,7 @@ TusurDiplomer::Application.routes.draw do
     resources :roles, :except => [:index,:show]
   end
   resources :chairs
-  resources :specialties, :except => :show
+  resources :specialities, :except => :show
 
   root :to => "application#index"
 end
