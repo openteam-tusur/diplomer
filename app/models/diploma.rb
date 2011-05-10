@@ -1,4 +1,5 @@
 class Diploma < ActiveRecord::Base
+  belongs_to :specialty
   has_many :course
   has_many :paper
   has_many :practice

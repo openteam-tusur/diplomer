@@ -1,6 +1,9 @@
+# encoding: utf-8
+
 class Specialty < ActiveRecord::Base
-  has_many :chair_specialty
-  has_many :chair, :through => :chair_specialty
+  has_many :chair_specialties
+  has_many :chairs, :through => :chair_specialty
+  has_many :diplomas
 end
 
 
