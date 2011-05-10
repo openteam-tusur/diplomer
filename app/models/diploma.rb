@@ -1,5 +1,10 @@
 class Diploma < ActiveRecord::Base
-  has_one :student
+  has_many :course
+  has_many :paper
+  has_many :practice
+  has_one  :final_qualification_project
+  has_one  :final_state_examination
+  has_one  :student
 end
 
 # == Schema Information
