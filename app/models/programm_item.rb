@@ -1,4 +1,5 @@
-class Discipline < ActiveRecord::Base
+class ProgrammItem < ActiveRecord::Base
+  belongs_to :diploma
 end
 
 # == Schema Information
