@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class CrudController < ApplicationController
-
   render_inheritable
   inherit_resources
   has_searcher

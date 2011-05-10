@@ -1,3 +1,4 @@
-class UsersController < CrudController
+# encoding: utf-8
 
+class UsersController < CrudController
 end
