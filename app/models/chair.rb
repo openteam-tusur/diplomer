@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 class Chair < ActiveRecord::Base
   belongs_to  :faculty
   has_one     :role

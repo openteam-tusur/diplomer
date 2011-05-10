@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 class Person < ActiveRecord::Base
   has_one   :user,
             :dependent => :destroy

@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 class Student < ActiveRecord::Base
   belongs_to :diploma
 end

@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 class Diploma < ActiveRecord::Base
   belongs_to :speciality
   has_many :course
