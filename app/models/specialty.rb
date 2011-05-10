@@ -4,6 +4,7 @@ class Specialty < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: specialties
@@ -17,5 +18,6 @@ end
 #  end_recruitment_year   :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  qualification          :string(255)
 #
 

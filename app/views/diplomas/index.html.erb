@@ -1,0 +1,37 @@
+<h1>Listing diplomas</h1>
+
+<table>
+  <tr>
+    <th>Specialty</th>
+    <th>Number</th>
+    <th>Admission date</th>
+    <th>Graduation date</th>
+    <th>Study form</th>
+    <th>Study duration</th>
+    <th>Total hours</th>
+    <th>Contact hours</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @diplomas.each do |diploma| %>
+  <tr>
+    <td><%= diploma.specialty %></td>
+    <td><%= diploma.number %></td>
+    <td><%= diploma.admission_date %></td>
+    <td><%= diploma.graduation_date %></td>
+    <td><%= diploma.study_form %></td>
+    <td><%= diploma.study_duration %></td>
+    <td><%= diploma.total_hours %></td>
+    <td><%= diploma.contact_hours %></td>
+    <td><%= link_to 'Show', diploma %></td>
+    <td><%= link_to 'Edit', edit_diploma_path(diploma) %></td>
+    <td><%= link_to 'Destroy', diploma, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diploma', new_diploma_path %>
