@@ -1,7 +1,4 @@
-source :rubygems
-
-gem 'racc'
-gem 'rails'
+source 'http://gems.openteam.ru'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -10,7 +7,7 @@ end
 
 group :production, :development do
   gem 'pg'
-  gem "exception_notification_rails3", :require => "exception_notifier"
+  gem 'exception_notification_rails3', :require => 'exception_notifier'
 end
 
 group :test do
@@ -28,43 +25,24 @@ group :development do
   gem 'annotate'
 end
 
-# jQuery library
-gem 'jquery-rails', :require => false
-
-# localize
-gem 'russian', :git => 'git://github.com/tacid/russian'
-
-# GUI
-gem 'compass'
-gem 'formtastic'
-gem 'show_for'
-gem 'fancy-buttons'
-gem 'render_inheritable'
-gem 'will_paginate', '>= 3.0.pre2'
-gem 'dynamic_form'
-# states
 gem 'aasm', '2.2.0'
-
-# enumerations in models
-gem 'has_enum'
-
-# attachment
-gem 'paperclip'
-
-#navigation
-gem 'simple-navigation'
-
-# inherited_resources
-gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
-
-# authorization
+gem 'compass'
 gem 'devise'
-
-# reports
-gem 'mime-types', :require => 'mime/types'
-gem 'tempdir', :require => 'temp_dir'
-
-# search
+gem 'dynamic_form'
+gem 'fancy-buttons'
+gem 'formtastic'
+gem 'has_enum'
 gem 'has_searcher'
+gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
+gem 'jquery-rails', :require => false
+gem 'mime-types', :require => 'mime/types'
+gem 'paperclip'
+gem 'racc'
+gem 'rails'
+gem 'render_inheritable'
+gem 'russian', :git => 'git://github.com/tacid/russian'
+gem 'show_for'
+gem 'simple-navigation'
 gem 'sunspot_rails'
-
+gem 'tempdir', :require => 'temp_dir'
+gem 'will_paginate', '>= 3.0.pre2'
