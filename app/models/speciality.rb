@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-
-
 class Speciality < ActiveRecord::Base
   has_many :chair_specialities
   has_many :chairs, :through => :chair_specialities

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class DisciplinesController < CrudController
+class DictionaryDisciplinesController < CrudController
   actions :all, :except =>:show
 end
 

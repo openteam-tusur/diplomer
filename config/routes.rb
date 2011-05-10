@@ -1,12 +1,11 @@
 TusurDiplomer::Application.routes.draw do
 
-  resources :diplomas
-
-  resources :students
-
   devise_for :users
+
+  resources :diplomas
+  resources :students
   resources :users
-  resources :disciplines, :except => :show
+  resources :dictionary_disciplines, :except => :show
   resources :faculties, :except => :show
   resources :people do
     resources :roles, :except => [:index,:show]
