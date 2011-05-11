@@ -1,0 +1,5 @@
+<% if @papers.any? %>
+  $('.empty').remove();
+  $('.papers_list').append("<%= escape_javascript(raw render(@papers.last))%>");
+  $('.inputs input').val('');
+<% end %>

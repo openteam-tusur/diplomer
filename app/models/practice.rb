@@ -1,6 +1,11 @@
 # encoding: utf-8
 
 class Practice < ProgrammItem
+  delegate :title, :eng_title, :to => :discipline
+
+  def to_s
+    "#{title} #{credits} #{weeks} #{grade}"
+  end
 end
 
 

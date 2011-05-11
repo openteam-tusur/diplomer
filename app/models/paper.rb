@@ -1,6 +1,11 @@
 # encoding: utf-8
 
 class Paper < ProgrammItem
+  delegate :title, :eng_title, :to => :discipline
+
+  def to_s
+    "#{title} #{grade}"
+  end
 end
 
 

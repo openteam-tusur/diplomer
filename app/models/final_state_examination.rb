@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 class FinalStateExamination < ProgrammItem
-
+  def to_s
+    "#{title} #{grade}"
+  end
 end
 
 

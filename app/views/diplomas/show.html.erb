@@ -55,6 +55,11 @@
     <li id='state_examination'>
       <h4>Гос. экзамен</h4>
       <ul class='state_examination_list list'>
+        <% if @diploma.final_state_examination %>
+          <%= render @diploma.final_state_examination %>
+        <% else %>
+          <li class='empty'>Нет гос.экзамена </li>
+        <% end %>
       </ul>
 
       <%= render :partial => "final_state_examinations/form", :locals => {:diploma => resource} %>
@@ -63,6 +68,11 @@
     <li id='qualification_project'>
       <h4>Квалификационная работа</h4>
       <ul class='qualification_project_list list'>
+        <% if @diploma.final_qualification_project %>
+          <%= render @diploma.final_qualification_project %>
+        <% else %>
+          <li class='empty'>Нет квалификационной работы</li>
+        <% end %>
       </ul>
 
       <%= render :partial => "final_qualification_projects/form", :locals => {:diploma => resource} %>

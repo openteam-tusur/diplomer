@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 class FinalQualificationProject < ProgrammItem
-
+  def to_s
+    "#{title} #{credits} #{weeks} #{grade}"
+  end
 end
 
 

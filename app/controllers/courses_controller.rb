@@ -2,6 +2,7 @@
 
 class CoursesController < CrudController
   belongs_to :diploma
+
   actions :all, :except => :show
 
   def index

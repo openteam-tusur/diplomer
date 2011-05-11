@@ -3,8 +3,6 @@
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
-
-  delegate :title, :eng_title, :to => :discipline
 end
 
 

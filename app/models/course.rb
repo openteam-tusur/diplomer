@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
+  delegate :title, :eng_title, :to => :discipline
+
   def to_s
     "#{title} #{credits} #{hours} #{grade}"
   end

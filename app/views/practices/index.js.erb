@@ -1,0 +1,5 @@
+<% if @practices.any? %>
+  $('.empty').remove();
+  $('.practices_list').append("<%= escape_javascript(raw render(@practices.last))%>");
+  $('.inputs input').val('');
+<% end %>
