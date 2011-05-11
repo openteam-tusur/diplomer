@@ -4,8 +4,9 @@ class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
 
-  delegate :title, :eng_title, :to => :_discipline
+  delegate :title, :eng_title, :to => :discipline
 end
+
 
 
 
@@ -26,5 +27,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :string(255)
+#  eng_title     :string(255)
 #
 

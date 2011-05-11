@@ -50,3 +50,23 @@ Chair.create!(  :title => 'Автоматизированных систем у�
                 :eng_title => 'Automated control system',
                 :eng_abbr => 'ACS')
 
+Discipline.create!(:eng_title => 'math',
+                   :kind => 'course',
+                   :title => 'Математика')
+
+Discipline.create!(:eng_title => 'music',
+                   :kind => 'course',
+                   :title => 'Музыка')
+
+Discipline.create!(:eng_title => 'learning',
+                   :kind => 'practice',
+                   :title => 'Практика')
+
+Discipline.create!(:eng_title => 'programing',
+                   :kind => 'papers',
+                   :title => 'Программирование')
+
+Speciality.create!(:code => '123123',
+                   :eng_title => 'Programmirovanie',
+                   :qualification => 'Инженер',
+                   :title => 'Программирование')

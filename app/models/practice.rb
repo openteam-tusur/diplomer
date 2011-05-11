@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 class Practice < ProgrammItem
-  belongs_to :dictionary_practice
 end
+
 
 
 
@@ -22,5 +22,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :string(255)
+#  eng_title     :string(255)
 #
 

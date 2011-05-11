@@ -1,12 +1,11 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
-  belongs_to :dictionary_discipline, :foreign_key => :dictionary_id
-
   def to_s
     "#{title} #{credits} #{hours} #{grade}"
   end
 end
+
 
 
 
@@ -26,5 +25,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :string(255)
+#  eng_title     :string(255)
 #
 

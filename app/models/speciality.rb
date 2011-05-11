@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Speciality < ActiveRecord::Base
+  validates_presence_of :code, :eng_title, :qualification
+
   has_many :chair_specialities
   has_many :chairs, :through => :chair_specialities
   has_many :diplomas
