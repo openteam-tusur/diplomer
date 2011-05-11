@@ -7,6 +7,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: programm_items
@@ -19,7 +20,7 @@ end
 #  hours         :integer
 #  weeks         :integer
 #  type          :string(255)
-#  dictionary_id :integer
+#  discipline_id :integer
 #  diploma_id    :integer
 #
 

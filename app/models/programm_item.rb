@@ -2,8 +2,11 @@
 
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
-  delegate :title, :eng_title, :to => :dictionary_discipline
+  belongs_to :discipline
+
+  delegate :title, :eng_title, :to => :_discipline
 end
+
 
 
 
@@ -21,7 +24,7 @@ end
 #  hours         :integer
 #  weeks         :integer
 #  type          :string(255)
-#  dictionary_id :integer
+#  discipline_id :integer
 #  diploma_id    :integer
 #
 
