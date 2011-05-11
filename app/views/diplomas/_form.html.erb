@@ -1,49 +1,5 @@
-<%= form_for(@diploma) do |f| %>
-  <% if @diploma.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@diploma.errors.count, "error") %> prohibited this diploma from being saved:</h2>
-
-      <ul>
-      <% @diploma.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :speciality %><br />
-    <%= f.text_field :speciality %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :admission_date %><br />
-    <%= f.date_select :admission_date %>
-  </div>
-  <div class="field">
-    <%= f.label :graduation_date %><br />
-    <%= f.date_select :graduation_date %>
-  </div>
-  <div class="field">
-    <%= f.label :study_form %><br />
-    <%= f.text_field :study_form %>
-  </div>
-  <div class="field">
-    <%= f.label :study_duration %><br />
-    <%= f.text_field :study_duration %>
-  </div>
-  <div class="field">
-    <%= f.label :total_hours %><br />
-    <%= f.text_field :total_hours %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_hours %><br />
-    <%= f.text_field :contact_hours %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form.fields_for :student do |student| %>
+  <%= student.inputs :surname, :eng_surname, :firstname, :eng_firstname, :patrynomic, :eng_patrynomic, :birthday, :code %>
 <% end %>
+<%= form.inputs %>
+

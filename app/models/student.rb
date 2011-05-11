@@ -2,6 +2,10 @@
 
 class Student < ActiveRecord::Base
   belongs_to :diploma
+
+  def to_s
+    "#{surname} #{firstname}"
+  end
 end
 
 

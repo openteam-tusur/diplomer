@@ -2,12 +2,18 @@
 
 class Diploma < ActiveRecord::Base
   belongs_to :speciality
-  has_many :course
-  has_many :paper
-  has_many :practice
+  has_many :courses
+  has_many :papers
+  has_many :practices
   has_one  :final_qualification_project
   has_one  :final_state_examination
   has_one  :student
+
+  accepts_nested_attributes_for :student, :update_only => true
+
+  def to_s
+    "Диплом №#{number}"
+  end
 end
 
 

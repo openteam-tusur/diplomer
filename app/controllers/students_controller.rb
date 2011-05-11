@@ -1,4 +1,5 @@
 # encoding: utf-8
 
-class StudentsController < InheritedResources::Base
+class StudentsController < CrudController
+  belongs_to :diploma, :singleton => true
 end

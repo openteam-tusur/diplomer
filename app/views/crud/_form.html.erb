@@ -1,7 +1,4 @@
 <ol>
-  <% resource.attributes.keys.each do |field| %>
-    <% next if ['id', 'created_at', 'updated_at', 'old_id'].include?(field) %>
-    <%= form.input field.sub(/_id$/, "").to_sym %>
-  <% end %>
+  <%= form.inputs %>
 </ol>
 

@@ -2,6 +2,7 @@
 
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
+  delegate :title, :eng_title, :to => :dictionary_discipline
 end
 
 
