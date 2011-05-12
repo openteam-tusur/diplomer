@@ -2,12 +2,14 @@
 
 class Diploma < ActiveRecord::Base
   belongs_to :speciality
+
   has_many :courses
   has_many :papers
   has_many :practices
-  has_one  :final_qualification_project
-  has_one  :final_state_examination
-  has_one  :student
+
+  has_one :final_qualification_project
+  has_one :final_state_examination
+  has_one :student
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
                         :study_form, :study_duration, :total_hours, :contact_hours

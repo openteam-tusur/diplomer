@@ -1,27 +1,16 @@
 # encoding: utf-8
 
 class User < ActiveRecord::Base
-  # Setup accessible (or protected) attributes for your model
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  belongs_to :person
-  
-  delegate  :lname,
-            :fname,
-            :mname,
-            :eng_lname,
-            :eng_fname,
-            :eng_mname, 
-            :to => :person
-  
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  validates                    :email,
-                               :presence => true,
-                               :uniqueness => true
+  belongs_to :person
+
+  validates :email, :presence => true, :uniqueness => true
+
+  delegate :surname, :firstname, :patrynomic, :to => :person
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end
 
 

@@ -1,14 +1,15 @@
 # encoding: utf-8
 
 class Person < ActiveRecord::Base
-  has_one   :user, :dependent => :destroy
-  has_many  :roles
+  has_many :roles
 
-  delegate :email, :to => :user, :allow_nil => true
+  has_one :user, :dependent => :destroy
+
+  validates_presence_of :firstname, :surname, :patrynomic
 
   accepts_nested_attributes_for :user
 
-  validates_presence_of :firstname, :surname, :patrynomic
+  delegate :email, :to => :user, :allow_nil => true
 
   def name
     "#{surname} #{firstname} #{patrynomic}"

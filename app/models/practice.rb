@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Practice < ProgrammItem
+  validates_presence_of :credits, :weeks
+
   delegate :title, :eng_title, :to => :discipline
 
   def to_s

@@ -1,9 +1,11 @@
 # encoding: utf-8
 
 class Faculty < ActiveRecord::Base
-  validates_presence_of :title, :eng_title, :abbr, :eng_abbr
-  has_one :role
   has_many :chairs
+
+  has_one :role
+
+  validates_presence_of :title, :eng_title, :abbr, :eng_abbr
 end
 
 

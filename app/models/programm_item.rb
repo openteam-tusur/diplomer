@@ -3,6 +3,8 @@
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
+
+  validates_presence_of :eng_title, :title, :grade
 end
 
 

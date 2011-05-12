@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
+  validates_presence_of :credits, :hours
+
   delegate :title, :eng_title, :to => :discipline
 
   def to_s
