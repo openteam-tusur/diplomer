@@ -19,6 +19,8 @@ class Diploma < ActiveRecord::Base
   after_create :create_final_qualification_project
   after_create :create_final_state_examination
 
+  has_enum :study_form, %w[fulltime parttime postal]
+
   def to_s
     "Диплом №#{number}"
   end

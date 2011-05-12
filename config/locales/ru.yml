@@ -73,6 +73,10 @@ ru:
         graduation_date: Дата выпуска
         number: Номер диплома
         study_form: Форма обучения
+        study_form_enum:
+          fulltime: очная
+          parttime: очно-заочная
+          postal: заочная
         study_duration: Продолжительность обучения
         total_hours: Всего часов
         contact_hours: Аудиторных часов
@@ -88,4 +92,12 @@ ru:
         end_recruitment_year: Год окончания набора
         start_recruitment_year: Год начала набора
         qualification: Квалификация
+
+      programm_item:
+        grade: Оценка
+        grade_enum:
+          satisfactorily: 3 (Satisfactorily) / Удовлетворительно
+          good: 4 (Good) / Хорошо
+          excellent: 5 (Excellent) / Отлично
+          passed: Passed / зачтено
 
