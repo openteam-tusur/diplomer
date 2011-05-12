@@ -9,6 +9,9 @@ class Diploma < ActiveRecord::Base
   has_one  :final_state_examination
   has_one  :student
 
+  validates_presence_of :speciality, :admission_date, :graduation_date,
+                        :study_form, :study_duration, :total_hours, :contact_hours
+
   accepts_nested_attributes_for :student, :update_only => true
 
   after_create :create_final_qualification_project

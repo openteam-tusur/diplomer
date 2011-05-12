@@ -26,21 +26,23 @@ ru:
       update: Сохранить
 
   attributes:
-    firstname: Имя
-    surname: Отчество
-    patrynomic: Фамилия
-    eng_firstname: First name
-    eng_surname: Last name
-    eng_Patrynomic: Patronymic
     abbr: Сокращенное название
-    eng_abbr: Английское сокращенное название
-    title: Название
-    eng_title: Английское название
-    code: Код
-    eng_code: Английский код
-    kind: Тип
+    birthday: День рождения
     chair: Кафедра
+    code: Код
+    eng_abbr: Английское сокращенное название
+    eng_code: Английский код
+    eng_firstname: First name
+    eng_patrynomic: Patronymic
+    eng_surname: Last name
+    eng_title: Английское название
     faculty: Факультет
+    firstname: Имя
+    kind: Тип
+    patrynomic: Фамилия
+    speciality: Специальность
+    surname: Отчество
+    title: Название
 
   activerecord:
 
@@ -66,13 +68,21 @@ ru:
         password_confirmation: Подтвердить пароль
         current_password: Текущий пароль
 
+      diploma:
+        admission_date: Дата поступления
+        graduation_date: Дата выпуска
+        number: Номер диплома
+        study_form: Форма обучения
+        study_duration: Продолжительность обучения
+        total_hours: Всего часов
+        contact_hours: Аудиторных часов
+
       discipline:
         name: Название
         eng_name: Английское название
 
       chair:
         faculty: Факультет
-        speciality: Специальность
 
       speciality:
         end_recruitment_year: Год окончания набора

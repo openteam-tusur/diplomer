@@ -3,6 +3,10 @@
 class Student < ActiveRecord::Base
   belongs_to :diploma
 
+  validates_presence_of :surname, :firstname, :patrynomic,
+                        :eng_surname, :eng_firstname, :eng_patrynomic,
+                        :birthday, :diploma, :code
+
   def to_s
     "#{surname} #{firstname}"
   end
