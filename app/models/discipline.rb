@@ -4,6 +4,10 @@ class Discipline < ActiveRecord::Base
   validates_presence_of :eng_title, :kind, :title
 
   has_enum :kind, %w[course papers practice]
+
+  def to_s
+    title
+  end
 end
 
 

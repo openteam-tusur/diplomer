@@ -22,6 +22,7 @@ end
 group :development do
   gem 'annotate'
   gem 'hirb'
+  gem 'itslog'
   gem 'rails-erd'
   gem 'rails3-generators'
   gem 'spork', :require => false

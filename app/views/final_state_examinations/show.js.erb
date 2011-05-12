@@ -1,5 +1,4 @@
 <% if @final_state_examination %>
   $('.empty').remove();
   $('.state_examination_list').html("<%= escape_javascript(raw render(@final_state_examination))%>");
-  $('.inputs input').val('');
 <% end %>

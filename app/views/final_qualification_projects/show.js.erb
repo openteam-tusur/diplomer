@@ -1,5 +1,4 @@
 <% if @final_qualification_project %>
   $('.empty').remove();
   $('.qualification_project_list').html("<%= escape_javascript(raw render(@final_qualification_project))%>");
-  $('.inputs input').val('');
 <% end %>

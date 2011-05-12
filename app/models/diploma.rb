@@ -11,6 +11,9 @@ class Diploma < ActiveRecord::Base
 
   accepts_nested_attributes_for :student, :update_only => true
 
+  after_create :create_final_qualification_project
+  after_create :create_final_state_examination
+
   def to_s
     "Диплом №#{number}"
   end

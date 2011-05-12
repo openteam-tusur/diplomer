@@ -1,5 +1,5 @@
 # encoding: utf-8
 
-class FacultiesController < CrudController
+class DisciplinesController < CrudController
   actions :all, :except => :show
 end
