@@ -26,16 +26,19 @@ ru:
       update: Сохранить
 
   attributes:
-    fname: Имя
-    mname: Отчество
-    lname: Фамилия
-    eng_fname: First name
-    eng_lname: Last name
-    eng_mname: Patronymic
+    firstname: Имя
+    surname: Отчество
+    patrynomic: Фамилия
+    eng_firstname: First name
+    eng_surname: Last name
+    eng_Patrynomic: Patronymic
     abbr: Сокращенное название
     eng_abbr: Английское сокращенное название
     title: Название
     eng_title: Английское название
+    code: Код
+    eng_code: Английский код
+    kind: Тип
     chair: Кафедра
     faculty: Факультет
 
@@ -72,8 +75,7 @@ ru:
         speciality: Специальность
 
       speciality:
-        eng_code: Код
-        code: Код
         end_recruitment_year: Год окончания набора
         start_recruitment_year: Год начала набора
+        qualification: Квалификация
 
