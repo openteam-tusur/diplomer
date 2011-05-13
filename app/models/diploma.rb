@@ -31,6 +31,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: diplomas
@@ -47,5 +48,6 @@ end
 #  created_at      :datetime
 #  updated_at      :datetime
 #  chair_id        :integer
+#  eng_number      :string(255)
 #
 
