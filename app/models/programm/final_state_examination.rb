@@ -1,12 +1,13 @@
 # encoding: utf-8
 
-class FinalQualificationProject < ProgrammItem
-  validates_presence_of :eng_title, :title, :grade, :credits, :weeks, :on => :update
+class FinalStateExamination < ProgrammItem
+  validates_presence_of :eng_title, :title, :grade, :eng_title, :grade, :title, :on => :update
 
   def to_s
-    "#{title} #{credits} #{weeks} #{grade}"
+    "#{title} #{grade}"
   end
 end
+
 
 
 
@@ -28,5 +29,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :text
+#  eng_title     :text
 #
 

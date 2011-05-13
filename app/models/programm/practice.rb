@@ -1,14 +1,15 @@
 # encoding: utf-8
 
-class Paper < ProgrammItem
-  validates_presence_of :eng_title, :title, :grade
+class Practice < ProgrammItem
+  validates_presence_of :eng_title, :title, :grade, :credits, :weeks
 
   delegate :title, :eng_title, :to => :discipline
 
   def to_s
-    "#{title} #{grade}"
+    "#{title} #{credits} #{weeks} #{grade}"
   end
 end
+
 
 
 
@@ -30,5 +31,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :text
+#  eng_title     :text
 #
 

@@ -14,6 +14,8 @@ module TusurDiplomer
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += ["#{config.root}/app/models/search",
+                              "#{config.root}/app/models/roles",
+                              "#{config.root}/app/models/programm",
                               "#{config.root}/lib"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).

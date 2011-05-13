@@ -1,12 +1,15 @@
 # encoding: utf-8
 
-class FinalStateExamination < ProgrammItem
-  validates_presence_of :eng_title, :title, :grade, :eng_title, :grade, :title, :on => :update
+class Paper < ProgrammItem
+  validates_presence_of :eng_title, :title, :grade
+
+  delegate :title, :eng_title, :to => :discipline
 
   def to_s
     "#{title} #{grade}"
   end
 end
+
 
 
 
@@ -28,5 +31,7 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
+#  title         :text
+#  eng_title     :text
 #
 
