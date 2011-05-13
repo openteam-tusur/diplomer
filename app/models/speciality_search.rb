@@ -3,3 +3,11 @@
 class SpecialitySearch < Search
   column :term, :text
 end
+
+# == Schema Information
+#
+# Table name: searches
+#
+#  term :text
+#
+

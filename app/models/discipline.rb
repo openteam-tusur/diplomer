@@ -10,15 +10,15 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: disciplines
 #
 #  id         :integer         not null, primary key
-#  title      :string(255)
-#  eng_title  :string(255)
+#  title      :text
+#  eng_title  :text
 #  created_at :datetime
 #  updated_at :datetime
-#  kind       :string(255)
 #
 

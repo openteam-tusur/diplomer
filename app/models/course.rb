@@ -15,6 +15,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: programm_items
@@ -29,7 +30,5 @@ end
 #  type          :string(255)
 #  discipline_id :integer
 #  diploma_id    :integer
-#  title         :string(255)
-#  eng_title     :string(255)
 #
 
