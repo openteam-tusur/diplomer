@@ -2,6 +2,7 @@
 
 class Diploma < ActiveRecord::Base
   belongs_to :speciality
+  belongs_to :chair
 
   has_many :courses, :dependent => :destroy
   has_many :papers, :dependent => :destroy
@@ -29,6 +30,7 @@ class Diploma < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: diplomas
@@ -44,5 +46,6 @@ end
 #  contact_hours   :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  chair_id        :integer
 #
 

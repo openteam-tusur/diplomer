@@ -3,9 +3,6 @@
 class Chair < ActiveRecord::Base
   belongs_to :faculty
 
-  has_many :chair_specialities
-  has_many :specialities, :through => :chair_specialities
-
   has_one :role
 
   validates_presence_of :title, :abbr, :eng_title, :eng_abbr, :faculty
