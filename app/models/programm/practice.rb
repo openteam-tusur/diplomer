@@ -1,9 +1,13 @@
 # encoding: utf-8
 
 class Practice < ProgrammItem
-  validates_presence_of :eng_title, :title, :grade, :credits, :weeks
+  validates_presence_of :grade, :credits, :weeks
 
   delegate :title, :eng_title, :to => :discipline
+
+  before_validation :create_discipline_if_necessury
+
+  has_autosuggest_for :discipline
 
   def to_s
     "#{title} #{credits} #{weeks} #{grade}"

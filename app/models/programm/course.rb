@@ -1,9 +1,13 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
-  validates_presence_of :credits, :hours, :eng_title, :title, :grade
+  validates_presence_of :credits, :hours, :grade, :discipline
 
   delegate :title, :eng_title, :to => :discipline
+
+  before_validation :create_discipline_if_necessury
+
+  has_autosuggest_for :discipline
 
   def to_s
     "#{title} #{credits} #{hours} #{grade}"

@@ -1,11 +1,13 @@
 # encoding: utf-8
 
 class Discipline < ActiveRecord::Base
-  validates_presence_of :eng_title, :title
+  validates_presence_of :title
 
   def to_s
     title
   end
+
+  alias :term :to_s
 end
 
 

@@ -1,9 +1,14 @@
 # encoding: utf-8
 
 class Paper < ProgrammItem
-  validates_presence_of :eng_title, :title, :grade
+  validates_presence_of :grade
 
   delegate :title, :eng_title, :to => :discipline
+
+  before_validation :create_discipline_if_necessury
+
+  has_autosuggest_for :discipline
+
 
   def to_s
     "#{title} #{grade}"
