@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Paper < ProgrammItem
+  validates_presence_of :eng_title, :title, :grade
+
   delegate :title, :eng_title, :to => :discipline
 
   def to_s

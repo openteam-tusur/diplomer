@@ -3,13 +3,13 @@
 class Diploma < ActiveRecord::Base
   belongs_to :speciality
 
-  has_many :courses
-  has_many :papers
-  has_many :practices
+  has_many :courses, :dependent => :destroy
+  has_many :papers, :dependent => :destroy
+  has_many :practices, :dependent => :destroy
 
-  has_one :final_qualification_project
-  has_one :final_state_examination
-  has_one :student
+  has_one :final_qualification_project, :dependent => :destroy
+  has_one :final_state_examination, :dependent => :destroy
+  has_one :student, :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
                         :study_form, :study_duration, :total_hours, :contact_hours
@@ -20,6 +20,8 @@ class Diploma < ActiveRecord::Base
   after_create :create_final_state_examination
 
   has_enum :study_form, %w[fulltime parttime postal]
+
+  has_autosuggest_for :speciality
 
   def to_s
     "Диплом №#{number}"

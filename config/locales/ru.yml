@@ -71,6 +71,7 @@ ru:
       diploma:
         admission_date: Дата поступления
         graduation_date: Дата выпуска
+        speciality_term: Специальность
         number: Номер диплома
         study_form: Форма обучения
         study_form_enum:

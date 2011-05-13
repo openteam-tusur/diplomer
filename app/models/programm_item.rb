@@ -4,9 +4,7 @@ class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
 
-  validates_presence_of :eng_title, :title, :grade
-
-  has_enum :grade, %[satisfactorily good excellent passed]
+  has_enum :grade, %w[satisfactorily good excellent passed]
 end
 
 

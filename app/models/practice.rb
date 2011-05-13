@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Practice < ProgrammItem
-  validates_presence_of :credits, :weeks
+  validates_presence_of :eng_title, :title, :grade, :credits, :weeks
 
   delegate :title, :eng_title, :to => :discipline
 

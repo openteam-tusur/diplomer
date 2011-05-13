@@ -28,6 +28,14 @@ $(function() {
     changeYear: true
   });
 
+  $('#diploma_speciality_term').autocomplete({
+    source: '/suggestions/?utf8=✓&model=speciality',
+    minLength: 2,
+    select: function(event, ui){
+      $('#diploma_speciality_id').val(ui.item.id);
+    }
+  });
+
   $(".formtastic abbr, a[rel=tipsy], a.show_tipsy").tipsy({
     gravity: $.fn.tipsy.autoNS,
     html: true,

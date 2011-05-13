@@ -8,47 +8,37 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 User.destroy_all
+
 Person.destroy_all
-Person.create!(:lname => 'Администратор',
-               :fname => 'Рут',
-               :mname => 'Сеперьзверович',
-               :eng_lname => 'Admin',
-               :eng_fname => 'Root',
-               :eng_mname => 'Superanimal',
+
+Person.create!(:surname => 'Администратор',
+               :firstname => 'Рут',
+               :patrynomic => 'Сеперьзверович',
                :user_attributes =>{ :email => 'demo@demo.de',
                                     :password => '123456',
-                                    :password_confirmation => '123456'}
-              )
-Person.create!(:lname => 'Никешкин',
-               :fname => 'Лев',
-               :mname => 'Евгеньевич',
-               :eng_lname => 'User',
-               :eng_fname => 'Puser',
-               :eng_mname => 'Superpuser',
-               :user_attributes =>{ :email => 'arnikev@mail.ru',
-                                    :password => 'qwerty',
-                                    :password_confirmation => 'qwerty'}
-              )
+                                    :password_confirmation => '123456'})
 
-Faculty.create!(:title => 'Факультет систем управления',
+f1 = Faculty.create!(:title => 'Факультет систем управления',
                 :abbr => 'ФСУ',
                 :eng_title => 'Faculty of system control',
                 :eng_abbr => 'FSC')
 
-Faculty.create!(:title => 'Факультет Электрониники',
+f2 = Faculty.create!(:title => 'Факультет Электрониники',
                 :abbr => 'ФЭ',
                 :eng_title => 'Faculty of electronics',
                 :eng_abbr => 'FE')
 
-Chair.create!(  :title => 'Автоматизированной обработки информации',
-                :abbr => 'АОИ',
-                :eng_title => 'Automated data processing',
-                :eng_abbr => 'ADP')
+Chair.create!(:title => 'Автоматизированной обработки информации',
+              :abbr => 'АОИ',
+              :eng_title => 'Automated data processing',
+              :eng_abbr => 'ADP',
+              :faculty_id => f1.id)
 
-Chair.create!(  :title => 'Автоматизированных систем управления',
-                :abbr => 'АСУ',
-                :eng_title => 'Automated control system',
-                :eng_abbr => 'ACS')
+Chair.create!(:title => 'Автоматизированных систем управления',
+              :abbr => 'АСУ',
+              :eng_title => 'Automated control system',
+              :eng_abbr => 'ACS',
+              :faculty_id => f2.id)
 
 Discipline.create!(:eng_title => 'math',
                    :kind => 'course',
@@ -66,7 +56,10 @@ Discipline.create!(:eng_title => 'programing',
                    :kind => 'papers',
                    :title => 'Программирование')
 
-Speciality.create!(:code => '123123',
+Speciality.create!(:code => '111111',
+                   :eng_code => '222222',
                    :eng_title => 'Programmirovanie',
                    :qualification => 'Инженер',
+                   :start_recruitment_year => '2000',
+                   :end_recruitment_year => '2010',
                    :title => 'Программирование')

@@ -1,5 +1,4 @@
 TusurDiplomer::Application.routes.draw do
-
   devise_for :users
 
   resources :diplomas do
@@ -11,15 +10,17 @@ TusurDiplomer::Application.routes.draw do
     resource  :final_qualification_project
   end
 
+  resources :chairs
+  resources :disciplines,  :except => :show
+  resources :faculties,    :except => :show
+  resources :specialities, :except => :show
+  resources :suggestions,  :only => :index
   resources :users
-  resources :disciplines, :except => :show
-  resources :faculties, :except => :show
 
   resources :people do
     resources :roles, :except => [:index,:show]
   end
-  resources :chairs
-  resources :specialities, :except => :show
+
 
   root :to => "application#index"
 end
