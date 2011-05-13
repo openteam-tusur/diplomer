@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110512035020) do
+ActiveRecord::Schema.define(:version => 20110513030015) do
 
   create_table "chair_specialities", :force => true do |t|
     t.integer  "chair_id"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20110512035020) do
     t.string   "eng_title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "kind"
   end
 
   create_table "faculties", :force => true do |t|
