@@ -36,6 +36,15 @@ $(function() {
     }
   });
 
+  $('input[id*=discipline_term]').autocomplete({
+    source: '/suggestions/?utf8=✓&model=discipline',
+    minLength: 2,
+    select: function(event, ui){
+      var id = '#'+$(this).attr('id').split('_discipline_term')[0]+'_discipline_id';
+      $(id).val(ui.item.id);
+    }
+  });
+
   $(".formtastic abbr, a[rel=tipsy], a.show_tipsy").tipsy({
     gravity: $.fn.tipsy.autoNS,
     html: true,

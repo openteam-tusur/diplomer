@@ -1,5 +1,5 @@
 <% if @courses.any? %>
   $('.empty').remove();
   $('.courses_list').append("<%= escape_javascript(raw render(@courses.last))%>");
-  $('.inputs input').val('');
+  $('.inputs input, input[id*=discipline_id], select').val('');
 <% end %>

@@ -7,6 +7,10 @@ class Discipline < ActiveRecord::Base
     title
   end
 
+  searchable do
+    text :term
+  end
+
   alias :term :to_s
 end
 
