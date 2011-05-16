@@ -10,11 +10,6 @@ describe ProgrammItem do
 
     course.discipline.should eql Discipline.first
   end
-
-  protected
-    def create_discipline_if_necessury
-      self.discipline = Discipline.create!(:title => self.discipline_term) unless self.discipline
-    end
 end
 
 # == Schema Information
