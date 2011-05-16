@@ -10,6 +10,7 @@ function diploma_disciplines(){
     $('.details_wrapper .details').children('li').hide();
     $(this).parent('li').addClass('current');
     $(element).show();
+    return false;
   });
 };
 
