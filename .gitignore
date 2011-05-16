@@ -8,6 +8,7 @@ photos/
 Gemfile.lock
 
 config/database.yml
+config/sunspot.yml
 config/initializers/setup_mail.rb
 public/stylesheets/*.css
 attachments/
