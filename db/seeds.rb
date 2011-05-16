@@ -41,23 +41,18 @@ Chair.create!(:title => 'Автоматизированных систем уп�
               :faculty_id => f2.id)
 
 Discipline.create!(:eng_title => 'math',
-                   :kind => 'course',
                    :title => 'Математика')
 
 Discipline.create!(:eng_title => 'music',
-                   :kind => 'course',
                    :title => 'Музыка')
 
 Discipline.create!(:eng_title => 'learning',
-                   :kind => 'practice',
                    :title => 'Практика')
 
 Discipline.create!(:eng_title => 'programing',
-                   :kind => 'papers',
                    :title => 'Программирование')
 
 Speciality.create!(:code => '111111',
-                   :eng_code => '222222',
                    :eng_title => 'Programmirovanie',
                    :qualification => 'Инженер',
                    :start_recruitment_year => '2000',
