@@ -1,12 +1,10 @@
-<div class="<%= item.class.name.downcase %>">
-  <p class="name">
-    <% if controller.respond_to?(:show) %>
-      <%= link_to item, resource_path(item) %>
-    <% else %>
-      <%= item.title %>
-    <% end %>
+<div class="<%= item.class.name.downcase %> item">
+  <% if controller.respond_to?(:show) %>
+    <%= link_to item, resource_path(item) %>
+  <% else %>
+    <%= item.title %>
+  <% end %>
 
-    <%= link_to t(:edit), edit_resource_url(item),
-                :title => t(:edit), :class => "edit", :rel => "tipsy" %>
-  </p>
+  <%= link_to t(:edit), edit_resource_url(item),
+    :title => t(:edit), :class => "edit", :rel => "tipsy" %>
 </div>
