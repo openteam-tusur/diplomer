@@ -26,9 +26,14 @@ class Diploma < ActiveRecord::Base
   has_autosuggest_for :speciality
 
   def generate_number
-    number = self.class.where(:graduation_date => ("#{self.graduation_date.year}-01-01".to_date)..("#{self.graduation_date.year}-12-31".to_date)).count + 1
-    self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{sprintf("%05i",number)}"
-    self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{sprintf("%05i",number)}"
+    diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
+                                :chair_id => self.chair.id)
+
+    number = diplomas.last ? diplomas.last.serial_number + 1 : 1
+    formatted_number = sprintf("%05i",number)
+
+    self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+    self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
   end
 
   def to_s
