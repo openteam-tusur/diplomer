@@ -19,26 +19,28 @@ class Diploma < ActiveRecord::Base
 
   after_create :create_final_qualification_project
   after_create :create_final_state_examination
-  before_create :generate_number
 
-  has_enum :study_form, %w[fulltime parttime postal]
+  before_create :generate_number
 
   has_autosuggest_for :speciality
 
-  def generate_number
-    diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
-                                :chair_id => self.chair.id)
-
-    number = diplomas.last ? diplomas.last.serial_number + 1 : 1
-    formatted_number = sprintf("%05i",number)
-
-    self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
-    self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
-  end
+  has_enum :study_form, %w[fulltime parttime postal]
 
   def to_s
     "Диплом №#{eng_number}"
   end
+
+  private
+    def generate_number
+      diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
+                                  :chair_id => self.chair.id)
+
+      number = diplomas.last ? diplomas.last.serial_number + 1 : 1
+      formatted_number = sprintf("%05i",number)
+
+      self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+      self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+    end
 end
 
 

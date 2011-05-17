@@ -14,6 +14,8 @@ class Person < ActiveRecord::Base
   def name
     "#{surname} #{firstname} #{patrynomic}"
   end
+
+  alias :to_s :name
 end
 
 
