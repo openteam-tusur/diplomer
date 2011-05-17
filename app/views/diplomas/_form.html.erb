@@ -5,6 +5,7 @@
 <%= form.inputs do %>
   <%= form.input :speciality_id, :as => :hidden %>
   <%= form.input :speciality_term, :required => true %>
+  <%= form.input :chair %>
 
   <%= form.inputs :admission_date, :graduation_date, :study_form, :study_duration, :total_hours, :contact_hours %>
 <% end %>

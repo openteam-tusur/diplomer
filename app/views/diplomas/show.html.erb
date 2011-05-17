@@ -1,6 +1,6 @@
 <%= link_to t(:edit), edit_diploma_path, :class => 'button' %>
 <%= show_for resource do |item| %>
-  <%= item.attribute :number %>
+  <%= item.attribute :to_s %>
   <%= item.association :student %>
 <% end %>
 

@@ -19,13 +19,20 @@ class Diploma < ActiveRecord::Base
 
   after_create :create_final_qualification_project
   after_create :create_final_state_examination
+  before_create :generate_number
 
   has_enum :study_form, %w[fulltime parttime postal]
 
   has_autosuggest_for :speciality
 
+  def generate_number
+    number = self.class.where(:graduation_date => ("#{self.graduation_date.year}-01-01".to_date)..("#{self.graduation_date.year}-12-31".to_date)).count + 1
+    self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{sprintf("%05i",number)}"
+    self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{sprintf("%05i",number)}"
+  end
+
   def to_s
-    "Диплом №#{number}"
+    "Диплом №#{eng_number}"
   end
 end
 
