@@ -10,6 +10,7 @@
 @import layout
 @import header
 @import navigation
+
 @import content
 @import manage
 @import claim
@@ -20,3 +21,67 @@
 
 @import formtastic
 
+.floatr
+  float: right
+
+.actions
+  +clearfix
+
+.collection
+  .item
+    +border-radius
+    +clearfix
+    border: 1px solid #ff8100
+    background: #fff5d5
+    padding: 5px 10px
+    margin: 0 0 15px 0
+
+    h4
+      margin: 0 !important
+
+    .edit
+      color: #76a9e3
+      float: right
+      text-transform: lowercase
+
+      &:hover
+        color: #184475
+
+.formtastic
+  .inputs
+    li
+      +clearfix
+      float: left
+      margin: 0 15px 0 0
+
+      label
+        display: block
+
+    .tight
+      input
+        width: 70px !important
+
+    .wide
+      input, select
+        width: 420px !important
+
+    .text
+      float: none
+      margin: 0
+
+      textarea
+        width: 99% !important
+
+    .right
+      float: none
+
+.show_for
+  &.diploma
+    +clearfix
+
+    .diploma_student, .diploma_speciality, .diploma_eng_number
+      float: none
+
+    p
+      float: left
+      margin: 0 15px 0 0

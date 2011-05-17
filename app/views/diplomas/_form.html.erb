@@ -1,12 +1,20 @@
 <%= form.fields_for :student do |student| %>
-  <%= student.inputs :surname, :eng_surname, :firstname, :eng_firstname, :patrynomic, :eng_patrynomic, :birthday, :code %>
+  <%= student.inputs do %>
+    <%= student.input :surname %>
+    <%= student.input :eng_surname, :wrapper_html => {:class => 'right'} %>
+    <%= student.input :firstname %>
+    <%= student.input :eng_firstname, :wrapper_html => {:class => 'right'} %>
+    <%= student.input :patrynomic %>
+    <%= student.input :eng_patrynomic, :wrapper_html => {:class => 'right'} %>
+    <%= student.input :code %>
+    <%= student.input :birthday %>
+  <% end %>
 <% end %>
 
 <%= form.inputs do %>
+  <%= form.input :chair, :wrapper_html => {:class => 'right wide'} %>
   <%= form.input :speciality_id, :as => :hidden %>
-  <%= form.input :speciality_term, :required => true %>
-  <%= form.input :chair %>
-
-  <%= form.inputs :admission_date, :graduation_date, :study_form, :study_duration, :total_hours, :contact_hours %>
+  <%= form.input :speciality_term, :required => true, :wrapper_html => {:class => 'right wide'} %>
+  <%= form.inputs :admission_date, :graduation_date, :study_form, :total_hours, :contact_hours %>
 <% end %>
 

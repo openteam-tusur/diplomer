@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517041646) do
+ActiveRecord::Schema.define(:version => 20110517094732) do
 
   create_table "chairs", :force => true do |t|
     t.text     "title"

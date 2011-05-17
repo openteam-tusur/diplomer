@@ -1,7 +1,10 @@
-<%= link_to t(:edit), edit_diploma_path, :class => 'button' %>
+<% title resource %>
+
+<%= link_to t(:edit), edit_diploma_path, :class => 'button floatr' %>
+
 <%= show_for resource do |item| %>
-  <%= item.attribute :to_s %>
-  <%= item.association :student %>
+  <%= item.association :student, :using => :full_info %>
+  <%= item.attributes :number, :eng_number, :chair, :speciality, :admission_date, :graduation_date, :study_form, :total_hours, :contact_hours %>
 <% end %>
 
 <ul class='tabs_menu'>

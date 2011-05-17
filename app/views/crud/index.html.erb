@@ -5,11 +5,11 @@
 </div>
 
 <% if collection.any? %>
-  <div id="<%= resource_class.name.downcase.pluralize %>_list collection ">
+  <ul class="<%= resource_class.name.downcase.pluralize %>_list collection ">
     <% collection.each do |obj| %>
       <%= render :partial => "item", :locals => { :item => obj } %>
     <% end %>
-  </div>
+  </ul>
   <%= will_paginate collection %>
 <% end %>
 

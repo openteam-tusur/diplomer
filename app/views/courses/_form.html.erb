@@ -1,8 +1,13 @@
 <%= semantic_form_for Course.new, :url => diploma_courses_path(diploma), :remote => true do |form| %>
   <%= form.error_messages %>
-  <%= form.input :diploma_id, :as => :hidden %>
-  <%= form.input :discipline_id, :as => :hidden %>
-  <%= form.inputs :discipline_term, :credits, :hours, :grade %>
+  <%= form.inputs do %>
+    <%= form.input :diploma_id, :as => :hidden %>
+    <%= form.input :discipline_id, :as => :hidden %>
+    <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
+    <%= form.input :credits, :wrapper_html => {:class => 'tight'} %>
+    <%= form.input :hours, :wrapper_html => {:class => 'tight'} %>
+    <%= form.input :grade %>
+  <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>

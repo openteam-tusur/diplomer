@@ -13,7 +13,7 @@ class Diploma < ActiveRecord::Base
   has_one :student, :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
-                        :study_form, :study_duration, :total_hours, :contact_hours
+                        :study_form, :total_hours, :contact_hours
 
   accepts_nested_attributes_for :student, :update_only => true
 
@@ -27,7 +27,7 @@ class Diploma < ActiveRecord::Base
   has_enum :study_form, %w[fulltime parttime postal]
 
   def to_s
-    "Диплом №#{eng_number}"
+    "Диплом №#{number}"
   end
 
   private

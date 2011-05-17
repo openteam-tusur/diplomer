@@ -2,7 +2,12 @@
   <%= form.error_messages %>
   <%= form.input :diploma_id, :as => :hidden, :value => diploma.id %>
   <%= form.input :discipline_id, :as => :hidden %>
-  <%= form.inputs :discipline_term, :credits, :weeks, :grade %>
+  <%= form.inputs do %>
+    <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
+    <%= form.input :credits, :wrapper_html => {:class => 'tight'} %>
+    <%= form.input :weeks, :wrapper_html => {:class => 'tight'} %>
+    <%= form.input :grade %>
+  <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>

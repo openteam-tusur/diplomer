@@ -10,6 +10,10 @@ class Student < ActiveRecord::Base
   def to_s
     "#{surname} #{firstname}"
   end
+
+  def full_info
+    "#{surname} #{firstname} #{patrynomic}, дата рождения: #{I18n.l birthday}"
+  end
 end
 
 

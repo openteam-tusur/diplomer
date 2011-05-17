@@ -39,24 +39,25 @@ ru:
     faculty: Факультет
     firstname: Имя
     kind: Тип
-    patrynomic: Фамилия
+    patrynomic: Отчество
     speciality: Специальность
-    surname: Отчество
+    surname: Фамилия
     title: Название
 
   activerecord:
 
     models:
-      discipline: Справочник дисциплин
-      user: Пользователь
-      person: Пользователь
-      role: Роль
-      dean: Декан
+      chair: Кафедры
       chair_chief: Заведующий кафедрой
-      faculty: Факультет
-      chair: Кафедра
-      role: Роль
-      speciality: Специальность
+      dean: Декан
+      diploma: Дипломы
+      discipline: Дисциплины
+      faculty: Факультеты
+      person: Пользователи
+      role: Роли
+      speciality: Специальности
+      student: Студенты
+      user: Пользователи
 
 
     attributes:
@@ -72,6 +73,7 @@ ru:
         admission_date: Дата поступления
         graduation_date: Дата выпуска
         speciality_term: Специальность
+        eng_number: Номер диплома на английском языке
         number: Номер диплома
         study_form: Форма обучения
         study_form_enum:
@@ -79,6 +81,7 @@ ru:
           parttime: очно-заочная
           postal: заочная
         study_duration: Продолжительность обучения
+        student: Студент
         total_hours: Всего часов
         contact_hours: Аудиторных часов
 
@@ -95,7 +98,11 @@ ru:
         qualification: Квалификация
 
       programm_item:
+        discipline_term: Название
+        credits: Баллы
         grade: Оценка
+        hours: Часов
+        weeks: Недели
         grade_enum:
           satisfactorily: 3 (Satisfactorily) / Удовлетворительно
           good: 4 (Good) / Хорошо
