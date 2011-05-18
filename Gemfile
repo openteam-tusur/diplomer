@@ -1,4 +1,5 @@
-source 'http://gems.openteam.ru'
+#source 'http://gems.openteam.ru'
+source :rubygems
 
 group :development, :test do
   gem 'rspec-rails'
