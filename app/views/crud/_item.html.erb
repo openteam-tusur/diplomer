@@ -9,8 +9,8 @@
     <% end %>
   </h4>
 
-  <% if item.respond_to? :is_translated? %>
-    <% unless item.is_translated? %>
+  <% if item.respond_to? :translated? %>
+    <% unless item.translated? %>
       <p><%= t('translate_missing') %></p>
     <% end %>
   <% end %>
