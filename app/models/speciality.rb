@@ -3,7 +3,7 @@
 class Speciality < ActiveRecord::Base
   has_many :diplomas
 
-  validates_presence_of :code, :title, :eng_title, :start_recruitment_year,
+  validates_presence_of :code, :title, :start_recruitment_year,
                         :end_recruitment_year, :qualification
 
   searchable do
@@ -11,7 +11,7 @@ class Speciality < ActiveRecord::Base
   end
 
   def to_s
-    "#{code} - #{title} / #{eng_title}"
+    title
   end
 
   alias :term :to_s

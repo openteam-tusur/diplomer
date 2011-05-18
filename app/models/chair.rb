@@ -5,7 +5,7 @@ class Chair < ActiveRecord::Base
 
   has_one :role
 
-  validates_presence_of :title, :abbr, :eng_title, :eng_abbr, :faculty
+  validates_presence_of :title, :abbr, :faculty
 
   def to_s
     "#{title}"
