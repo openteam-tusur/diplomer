@@ -11,7 +11,7 @@ class Speciality < ActiveRecord::Base
   end
 
   def to_s
-    "#{code} - #{title} / #{eng_title}"
+    title
   end
 
   alias :term :to_s
