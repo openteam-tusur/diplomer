@@ -2,8 +2,14 @@
                       :url => diploma_final_qualification_project_path(diploma),
                       :remote => true do |form|%>
   <%= form.error_messages %>
-  <%= form.input :diploma_id, :as => :hidden, :value => diploma.id %>
-  <%= form.inputs :title, :eng_title, :credits, :weeks, :grade %>
+  <%= form.inputs do %>
+    <%= form.input :diploma_id, :as => :hidden, :value => diploma.id %>
+    <%= form.input :title %>
+    <%= form.input :eng_title %>
+    <%= form.input :credits %>
+    <%= form.input :weeks %>
+    <%= form.input :grade %>
+  <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
