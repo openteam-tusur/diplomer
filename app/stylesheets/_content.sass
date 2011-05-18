@@ -83,33 +83,42 @@
 
 
 .tabs_menu
-  background: #fb7
-  border: 1px solid #eee
+  +border-top-left-radius
+  +border-bottom-left-radius
+  background: #fff5d5
+  border: 1px solid #ff8100
   border-right: none
   float: left
   font-size: 14px
   width: 240px
 
   li
-    border-bottom: 1px solid #555
+    border-bottom: 1px solid #ff8100
     padding: 5px 10px
 
   .current
-    background: #ccdcec
+    background: #d5dbff
+    padding-right: 11px
+    position: relative
+    width: 220px
+    z-index: 2
 
   .last
     border: none
 
 .details_wrapper
+  +border-top-right-radius
+  +border-bottom-right-radius
   +clearfix
-  border: 1px solid #eee
-  border-left: none
-  background: #ccdcec
+  border: 1px solid #ff8100
+  background: #d5dbff
   padding: 5px 15px
+  position: relative
+  z-index: 1
 
   .details
     .list
       margin-bottom: 15px
 
-
+      li
 
