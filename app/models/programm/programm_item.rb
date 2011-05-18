@@ -6,6 +6,10 @@ class ProgrammItem < ActiveRecord::Base
 
   has_enum :grade, %w[satisfactorily good excellent passed]
 
+  def to_s
+    title
+  end
+
   protected
     def create_discipline_if_necessury
       self.discipline = Discipline.create!(:title => self.discipline_term) unless self.discipline
