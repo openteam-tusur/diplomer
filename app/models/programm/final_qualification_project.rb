@@ -3,6 +3,8 @@
 class FinalQualificationProject < ProgrammItem
   validates_presence_of :title, :grade, :credits, :weeks
 
+  has_translate
+
   def to_s
     "#{title} #{credits} #{weeks} #{grade}"
   end

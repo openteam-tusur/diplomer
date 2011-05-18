@@ -6,6 +6,8 @@ class Faculty < ActiveRecord::Base
   has_one :role
 
   validates_presence_of :title, :abbr
+
+  has_translate
 end
 
 

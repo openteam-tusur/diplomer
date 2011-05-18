@@ -7,6 +7,8 @@ class Chair < ActiveRecord::Base
 
   validates_presence_of :title, :abbr, :faculty
 
+  has_translate
+
   def to_s
     "#{title}"
   end

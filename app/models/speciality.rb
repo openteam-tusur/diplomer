@@ -6,6 +6,8 @@ class Speciality < ActiveRecord::Base
   validates_presence_of :code, :title, :start_recruitment_year,
                         :end_recruitment_year, :qualification
 
+  has_translate
+
   searchable do
     text :term
   end

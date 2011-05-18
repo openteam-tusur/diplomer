@@ -5,6 +5,7 @@ ru:
   destroy: Удалить
   cancel: Отменить
   save: Сохранить
+  translate_missing: отсутствует перевод
 
   "Changing information": Изменение информации
   "Adding information": Добавление информации

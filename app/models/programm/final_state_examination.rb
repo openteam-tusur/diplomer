@@ -3,6 +3,8 @@
 class FinalStateExamination < ProgrammItem
   validates_presence_of :title, :grade
 
+  has_translate
+
   def to_s
     "#{title} #{grade}"
   end
