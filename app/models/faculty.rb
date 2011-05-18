@@ -8,6 +8,16 @@ class Faculty < ActiveRecord::Base
   validates_presence_of :title, :abbr
 
   has_translate
+
+  searchable do
+    boolean :translated
+  end
+
+  def self.search
+    solr_search do
+      facet :translated
+    end
+  end
 end
 
 
