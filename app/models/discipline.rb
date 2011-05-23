@@ -7,6 +7,8 @@ class Discipline < ActiveRecord::Base
     title
   end
 
+  has_translate
+
   searchable do
     text :term
   end

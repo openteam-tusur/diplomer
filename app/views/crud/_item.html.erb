@@ -9,4 +9,9 @@
     <% end %>
   </h4>
 
+  <% if item.respond_to? :translated? %>
+    <% unless item.translated? %>
+      <p><%= t('translate_missing') %></p>
+    <% end %>
+  <% end %>
 </li>
