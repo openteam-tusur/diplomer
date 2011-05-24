@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class FinalStateExamination < ProgrammItem
-  validates_presence_of :title, :grade
+  validates_presence_of :title, :grade, :on => :update
 
   has_translate
 

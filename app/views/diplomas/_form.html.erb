@@ -1,20 +1,24 @@
 <%= form.fields_for :student do |student| %>
   <%= student.inputs do %>
-    <%= student.input :surname %>
-    <%= student.input :eng_surname, :wrapper_html => {:class => 'right'} %>
-    <%= student.input :firstname %>
-    <%= student.input :eng_firstname, :wrapper_html => {:class => 'right'} %>
-    <%= student.input :patrynomic %>
-    <%= student.input :eng_patrynomic, :wrapper_html => {:class => 'right'} %>
-    <%= student.input :code %>
-    <%= student.input :birthday %>
+    <%= student.input :surname, :input_html => {:tabindex => '1'} %>
+    <%= student.input :eng_surname, :wrapper_html => {:class => 'right'}, :input_html => {:tabindex => '4'} %>
+    <%= student.input :firstname, :input_html => {:tabindex => '2'} %>
+    <%= student.input :eng_firstname, :wrapper_html => {:class => 'right'}, :input_html => {:tabindex => '5'} %>
+    <%= student.input :patrynomic, :input_html => {:tabindex => '3'} %>
+    <%= student.input :eng_patrynomic, :wrapper_html => {:class => 'right'}, :input_html => {:tabindex => '6'} %>
+    <%= student.input :code, :input_html => {:tabindex => '7'} %>
+    <%= student.input :birthday, :input_html => {:tabindex => '8'} %>
   <% end %>
 <% end %>
 
 <%= form.inputs do %>
-  <%= form.input :chair, :wrapper_html => {:class => 'right wide'} %>
-  <%= form.input :speciality_id, :as => :hidden %>
-  <%= form.input :speciality_term, :required => true, :wrapper_html => {:class => 'right wide'} %>
-  <%= form.inputs :admission_date, :graduation_date, :study_form, :total_hours, :contact_hours %>
+  <%= form.input :chair, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '9'} %>
+  <%= form.input :speciality_id, :as => :hidden, :input_html => {:tabindex => '10'} %>
+  <%= form.input :speciality_term, :required => true, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '11'} %>
+  <%= form.input :admission_date, :input_html => {:tabindex => '12'} %>
+  <%= form.input :graduation_date, :input_html => {:tabindex => '13'} %>
+  <%= form.input :study_form, :input_html => {:tabindex => '14'} %>
+  <%= form.input :total_hours, :input_html => {:tabindex => '15'} %>
+  <%= form.input :contact_hours, :input_html => {:tabindex => '16'} %>
 <% end %>
 
