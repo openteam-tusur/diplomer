@@ -1,32 +1,27 @@
 # encoding: utf-8
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
 
 User.destroy_all
-
 Person.destroy_all
+Chair.destroy_all
+Discipline.destroy_all
+Speciality.destroy_all
 
-Person.create!(:surname => 'Администратор',
-               :firstname => 'Рут',
-               :patrynomic => 'Сеперьзверович',
+Person.create!(:surname => 'Иванов',
+               :firstname => 'Иван',
+               :patrynomic => 'Иванович',
                :user_attributes =>{ :email => 'demo@demo.de',
-                                    :password => '123456',
-                                    :password_confirmation => '123456'})
+                                    :password => '123123',
+                                    :password_confirmation => '123123'})
 
 f1 = Faculty.create!(:title => 'Факультет систем управления',
-                :abbr => 'ФСУ',
-                :eng_title => 'Faculty of system control',
-                :eng_abbr => 'FSC')
+                     :abbr => 'ФСУ',
+                     :eng_title => 'Faculty of system control',
+                     :eng_abbr => 'FSC')
 
-f2 = Faculty.create!(:title => 'Факультет Электрониники',
-                :abbr => 'ФЭ',
-                :eng_title => 'Faculty of electronics',
-                :eng_abbr => 'FE')
+f2 = Faculty.create!(:title => 'Факультет электрониники',
+                     :abbr => 'ФЭ',
+                     :eng_title => 'Faculty of electronics',
+                     :eng_abbr => 'FE')
 
 Chair.create!(:title => 'Автоматизированной обработки информации',
               :abbr => 'АОИ',
@@ -43,18 +38,14 @@ Chair.create!(:title => 'Автоматизированных систем уп�
 Discipline.create!(:eng_title => 'math',
                    :title => 'Математика')
 
-Discipline.create!(:eng_title => 'music',
-                   :title => 'Музыка')
-
-Discipline.create!(:eng_title => 'learning',
-                   :title => 'Практика')
+Discipline.create!(:eng_title => 'physics',
+                   :title => 'Физика')
 
 Discipline.create!(:eng_title => 'programing',
                    :title => 'Программирование')
 
-Speciality.create!(:code => '111111',
-                   :eng_title => 'Programmirovanie',
+Speciality.create!(:code => '230105',
                    :qualification => 'Инженер',
-                   :start_recruitment_year => '2000',
-                   :end_recruitment_year => '2010',
-                   :title => 'Программирование')
+                   :start_recruitment_year => '2003',
+                   :end_recruitment_year => '2012',
+                   :title => 'Программное обсепечение вычислительной техники и автоматизированных систем')
