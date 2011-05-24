@@ -6,7 +6,7 @@ class FinalStateExamination < ProgrammItem
   has_translate
 
   def to_s
-    "#{title} #{grade}"
+    "#{title} #{human_grade}"
   end
 end
 

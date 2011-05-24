@@ -6,7 +6,7 @@ class FinalQualificationProject < ProgrammItem
   has_translate
 
   def to_s
-    "#{title} #{credits} #{weeks} #{grade}"
+    "#{title} #{credits} #{weeks} #{human_grade}"
   end
 end
 
