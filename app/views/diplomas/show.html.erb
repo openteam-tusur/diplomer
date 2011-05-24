@@ -19,39 +19,79 @@
   <ul class='details'>
     <li id='courses'>
       <h4>Дисциплины</h4>
-      <ul class='courses_list list'>
-        <% if @diploma.courses.any? %>
-          <%= render @diploma.courses %>
-        <% else %>
-          <li class='empty'>Нет дисциплин</li>
-        <% end %>
-      </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Английское название</th>
+            <th>Баллы</th>
+            <th>Часы</th>
+            <th>Оценка</th>
+          </tr>
+        </thead>
+        <tbody class='courses_list list'>
+          <% if @diploma.courses.any? %>
+            <%= render @diploma.courses %>
+          <% else %>
+            <tr>
+              <td colspan='5' class='empty'>нет дисциплин</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
       <%= render :partial => "courses/form", :locals => {:diploma => resource} %>
     </li>
 
     <li id='papers'>
       <h4>Курсовые работы</h4>
-      <ul class='papers_list list'>
-        <% if @diploma.papers.any? %>
-          <%= render @diploma.papers %>
-        <% else %>
-          <li class='empty'>Нет курсовых работы</li>
-        <% end %>
-      </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Английское название</th>
+            <th>Оценка</th>
+          </tr>
+        </thead>
+        <tbody class='papers_list list'>
+          <% if @diploma.papers.any? %>
+            <%= render @diploma.papers %>
+          <% else %>
+            <tr>
+              <td colspan='3' class='empty'>нет курсовых работ</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
       <%= render :partial => "papers/form", :locals => {:diploma => resource} %>
     </li>
 
     <li id='practices'>
       <h4>Практики</h4>
-      <ul class='practices_list list'>
-        <% if @diploma.practices.any? %>
-          <%= render @diploma.practices %>
-        <% else %>
-          <li class='empty'>Нет практик</li>
-        <% end %>
-      </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Английское название</th>
+            <th>Баллы</th>
+            <th>Недели</th>
+            <th>Оценка</th>
+          </tr>
+        </thead>
+        <tbody class='practices_list list'>
+          <% if @diploma.practices.any? %>
+            <%= render @diploma.practices %>
+          <% else %>
+            <tr>
+              <td colspan='5' class='empty'>нет практик</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
       <%= render :partial => "practices/form", :locals => {:diploma => resource} %>
     </li>

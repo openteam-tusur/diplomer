@@ -14,7 +14,16 @@ function diploma_disciplines(){
   });
 };
 
+function delete_discipline(){
+  $(".details table tr td:first-child").bind('ajax:complete', function(){
+    $(this).parent('tr').fadeOut(300, function() { $(this).remove(); });
+  });
+};
+
 $(function() {
+  if ($('.details table').length>0) {
+    delete_discipline();
+  };
   diploma_disciplines();
   $(".focus_first:first").focus();
 

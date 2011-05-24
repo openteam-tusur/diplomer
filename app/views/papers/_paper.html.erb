@@ -1,4 +1,5 @@
-<li>
-  <%= paper %>
-</li>
-
+<tr>
+  <td><%= paper.title %><%= link_to t(:delete), diploma_paper_path(@diploma, paper), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
+  <td><%= paper.eng_title %></td>
+  <td><%= paper.human_grade %></td>
+</tr>

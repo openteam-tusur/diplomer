@@ -107,7 +107,7 @@ ru:
         hours: Часов
         weeks: Недели
         grade_enum:
-          passed: Passed / зачтено
+          passed: Passed / Зачтено
           excellent: 5 (Excellent) / Отлично
           good: 4 (Good) / Хорошо
           satisfactorily: 3 (Satisfactorily) / Удовлетворительно
