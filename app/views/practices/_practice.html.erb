@@ -1,5 +1,5 @@
 <tr>
-  <td><%= practice.title %><%= link_to t(:delete), diploma_practice_path(@diploma, practice), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
+  <td><%= practice.title %><%= link_to t(:delete), diploma_practice_path(practice.diploma, practice), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
   <td><%= practice.eng_title %></td>
   <td><%= practice.credits %></td>
   <td><%= practice.weeks %></td>
