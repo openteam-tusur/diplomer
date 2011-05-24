@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/koppen/hassle
+  revision: bb49cd8b37f5369d08398897caf1b687eaa80458
+  specs:
+    hassle (0.0.1)
+      haml
+      rack
+
+GIT
   remote: git://github.com/openteam/inherited_resources
   revision: ee9dbcc6f4673da11b03733fa50a275003833d10
   specs:
@@ -90,11 +98,15 @@ GEM
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
     fssm (0.2.7)
+    haml (3.1.1)
     has_enum (0.9.2)
       rails (~> 3.0.0)
     has_scope (0.5.0)
     has_searcher (0.0.7.1)
     hirb (0.4.5)
+    hoptoad_notifier (2.4.10)
+      activesupport
+      builder
     i18n (0.5.0)
     itslog (0.2.0)
     jquery-rails (1.0.5)
@@ -211,7 +223,9 @@ DEPENDENCIES
   formtastic
   has_enum
   has_searcher
+  hassle!
   hirb
+  hoptoad_notifier
   inherited_resources!
   itslog
   jquery-rails

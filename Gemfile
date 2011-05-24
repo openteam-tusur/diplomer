@@ -1,6 +1,11 @@
 #source 'http://gems.openteam.ru'
 source :rubygems
 
+group :production do
+  gem 'hoptoad_notifier'
+  gem 'hassle',           :git => 'git://github.com/koppen/hassle'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'steak'
