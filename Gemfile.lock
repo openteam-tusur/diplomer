@@ -195,6 +195,7 @@ DEPENDENCIES
   pg
   rails
   rails-erd
+  rake (= 0.8.7)
   render_inheritable
   rspec-rails
   russian!

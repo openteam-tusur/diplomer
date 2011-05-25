@@ -32,6 +32,7 @@ gem 'has_searcher'
 gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
 gem 'jquery-rails', :require => false
 gem 'rails'
+gem 'rake', '0.8.7'
 gem 'render_inheritable'
 gem 'russian', :git => 'git://github.com/tacid/russian'
 gem 'show_for'
