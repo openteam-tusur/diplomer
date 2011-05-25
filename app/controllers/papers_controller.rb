@@ -8,4 +8,10 @@ class PapersController < CrudController
   def index
     @papers = Paper.where(:diploma_id => params[:diploma_id])
   end
+
+  def destroy
+    destroy!{
+      render :nothing => true and return
+    }
+  end
 end

@@ -15,7 +15,7 @@ function diploma_disciplines(){
 };
 
 function delete_discipline(){
-  $(".details table tr td:first-child").bind('ajax:complete', function(){
+  $(".details table tr td:first-child").bind('ajax:success', function(){
     $(this).parent('tr').fadeOut(300, function() { $(this).remove(); });
   });
 };
