@@ -66,6 +66,9 @@ ru:
 
     attributes:
 
+      person:
+        name: Имя
+
       user:
         current_password: Текущий пароль
         email: E-mail

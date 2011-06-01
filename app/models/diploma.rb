@@ -13,7 +13,7 @@ class Diploma < ActiveRecord::Base
   has_one :student, :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
-                        :study_form, :total_hours, :contact_hours
+                        :study_form, :total_hours, :contact_hours, :chair
 
   accepts_nested_attributes_for :student, :update_only => true
 
