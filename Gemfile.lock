@@ -168,7 +168,9 @@ GEM
     tzinfo (0.3.27)
     warden (1.0.4)
       rack (>= 1.0)
+    wicked_pdf (0.7.0)
     will_paginate (3.0.pre2)
+    wkhtmltopdf-binary (0.9.5.3)
     yamler (0.1.0)
 
 PLATFORMS
@@ -203,4 +205,6 @@ DEPENDENCIES
   simple-navigation
   sqlite3
   sunspot_rails
+  wicked_pdf
   will_paginate (>= 3.0.pre2)
+  wkhtmltopdf-binary

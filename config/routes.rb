@@ -1,11 +1,13 @@
 TusurDiplomer::Application.routes.draw do
   devise_for :users
 
+  match 'diplomas/:id/pdf' => 'diplomas#pdf', :defaults => {:format => :pdf}
+
   resources :diplomas do
     resources :student
-    resources :courses
-    resources :papers
-    resources :practices
+    resources :courses, :except => [:index, :show]
+    resources :papers, :except => [:index, :show]
+    resources :practices, :except => [:index, :show]
     resource  :final_state_examination
     resource  :final_qualification_project
   end
