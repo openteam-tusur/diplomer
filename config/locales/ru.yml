@@ -111,7 +111,7 @@ ru:
         credits: Баллы
         discipline_term: Название
         grade: Оценка
-        hours: Часов
+        hours: Часы
         weeks: Недели
         grade_enum:
           passed: Passed / Зачтено

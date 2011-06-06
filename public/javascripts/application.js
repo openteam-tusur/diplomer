@@ -20,7 +20,18 @@ function delete_discipline(){
   });
 };
 
+function numeration(){
+  $('tbody.list').each(function(i){
+    $(this).find('td:first-child').each(function(l){
+      $(this).find('span').html(l+1+". ");
+    });
+  });
+};
+
 $(function() {
+  if ($('.list').length>0){
+    numeration();
+  };
   if ($('.details table').length>0) {
     delete_discipline();
   };

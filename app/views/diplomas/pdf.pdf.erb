@@ -1,1 +1,56 @@
-JOPA
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+    <title><%= @diploma %></title>
+    <%= wicked_pdf_stylesheet_link_tag 'print'  %>
+  </head>
+  <body>
+    <div class='first_side'>
+      <div class='left_side'>
+        <div class='faculty_name'>
+          <p class='eng'><%= @diploma.chair.faculty.eng_title %></p>
+          <p class='rus'><%= @diploma.chair.faculty.title %></p>
+        </div>
+        <div class='diploma_number'>
+          <%= @diploma.eng_number %>
+        </div>
+      </div>
+
+      <div class='right_side'>
+        <div class='holder_info'>
+          <div class='surname'>
+            <p class='eng'><%= @student.eng_surname %></p>
+            <p class='rus'><%= @student.surname %></p>
+          </div>
+          <div class='given_name'>
+            <p class='eng'><%= "#{@student.eng_firstname} #{@student.eng_patrynomic}" %></p>
+            <p class='rus'><%= "#{@student.firstname} #{@student.patrynomic}" %></p>
+          </div>
+          <div class='birthdate'>
+          <p><%= "#{@student.birthday.strftime('%B %d, %Y')}/#{l(@student.birthday, :format => '%d %B, %Y')}" %></p>
+          </div>
+          <div class='student_code'>
+            <p><%= @student.code %></p>
+          </div>
+        </div>
+
+        <div class='qualification_info'>
+          <div class='qualification'>
+            <p><%=  %></p>
+          </div>
+          <div class='speciality'>
+          </div>
+          <div class='award_institute'>
+          </div>
+          <div class='admin_institute'>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='second_side'>
+    </div>
+  </body>
+</html>
