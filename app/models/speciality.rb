@@ -3,8 +3,7 @@
 class Speciality < ActiveRecord::Base
   has_many :diplomas
 
-  validates_presence_of :code, :title, :start_recruitment_year,
-                        :end_recruitment_year, :qualification
+  validates_presence_of :code, :title, :qualification
 
   has_translate
 

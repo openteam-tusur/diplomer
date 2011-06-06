@@ -27,19 +27,23 @@ ru:
       create: Создать
       update: Сохранить
 
+    hints:
+      student:
+        code: Student ident. Number, or code
+
   attributes:
     abbr: Сокращенное название
     birthday: День рождения
     chair: Кафедра
     code: Код
-    eng_abbr: Английское сокращенное название
-    eng_code: Английский код
-    eng_firstname: Имя на английском
-    eng_name: Английское название
-    eng_patrynomic: Отчество на английском
-    eng_surname: Фамилия на английском
-    eng_title: Английское название
-    eng_qualification: Квалификация на английском
+    eng_abbr: Сокращенное название на английском языке
+    eng_code: Код на английском языке
+    eng_firstname: Имя на английском языке
+    eng_name: Название на английском языке
+    eng_patrynomic: Отчество на английском языке
+    eng_surname: Фамилия на английском языке
+    eng_title: Название на английском языке
+    eng_qualification: Квалификация на английском языке
     faculty: Факультет
     firstname: Имя
     kind: Тип
