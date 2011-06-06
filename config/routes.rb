@@ -5,9 +5,9 @@ TusurDiplomer::Application.routes.draw do
 
   resources :diplomas do
     resources :student
-    resources :courses, :except => [:index, :show]
-    resources :papers, :except => [:index, :show]
-    resources :practices, :except => [:index, :show]
+    resources :courses, :except => [:show]
+    resources :papers, :except => [:show]
+    resources :practices, :except => [:show]
     resource  :final_state_examination
     resource  :final_qualification_project
   end
@@ -22,7 +22,6 @@ TusurDiplomer::Application.routes.draw do
   resources :people do
     resources :roles, :except => [:index,:show]
   end
-
 
   root :to => "application#index"
 end
