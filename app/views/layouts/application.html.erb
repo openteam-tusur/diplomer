@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<!DOCTYPE html>
+<html lang='ru'>
 <head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="UTF-8">
   <%= csrf_meta_tag %>
   <title><%= show_title? ? yield(:title) : title_locale %> | <%= t(:application) %></title>
   <%= favicon_link_tag %>
@@ -45,7 +46,7 @@
   </div>
   <div id="footer">
     <div class="left">
-      &copy; Томский Государственный Университет Систем Управления и Радиоэлектроники,
+      &#169; Томский Государственный Университет Систем Управления и Радиоэлектроники,
       <%= Date.today.year == 2011 ? "2011" : raw("2011&mdash;#{Date.today.year}") %>
     </div>
     <div class="right">

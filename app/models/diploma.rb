@@ -13,7 +13,7 @@ class Diploma < ActiveRecord::Base
   has_one :student, :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
-                        :study_form, :total_hours, :contact_hours
+                        :study_form, :total_hours, :contact_hours, :chair
 
   accepts_nested_attributes_for :student, :update_only => true
 
@@ -39,7 +39,12 @@ class Diploma < ActiveRecord::Base
       diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
                                   :chair_id => self.chair.id)
 
-      number = diplomas.last ? diplomas.last.serial_number + 1 : 1
+     if diplomas.last
+       number = diplomas.last.serial_number + 1
+     else
+      self.serial_number = 1
+      number = 1
+     end
       formatted_number = sprintf("%05i",number)
 
       self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"

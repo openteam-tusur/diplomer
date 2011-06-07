@@ -11,7 +11,7 @@ class Paper < ProgrammItem
 
 
   def to_s
-    "#{title} #{grade}"
+    "#{title} #{human_grade}"
   end
 end
 

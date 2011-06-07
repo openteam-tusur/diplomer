@@ -1,9 +1,9 @@
 ru:
   application: АИС "Приложение к диплому"
-  new: Добавить
-  edit: Изменить
-  destroy: Удалить
   cancel: Отменить
+  destroy: Удалить
+  edit: Изменить
+  new: Добавить
   save: Сохранить
   translate_missing: отсутствует перевод
 
@@ -34,10 +34,12 @@ ru:
     code: Код
     eng_abbr: Английское сокращенное название
     eng_code: Английский код
-    eng_firstname: First name
-    eng_patrynomic: Patronymic
-    eng_surname: Last name
+    eng_firstname: Имя на английском
+    eng_name: Английское название
+    eng_patrynomic: Отчество на английском
+    eng_surname: Фамилия на английском
     eng_title: Английское название
+    eng_qualification: Квалификация на английском
     faculty: Факультет
     firstname: Имя
     kind: Тип
@@ -64,19 +66,23 @@ ru:
 
     attributes:
 
+      person:
+        name: Имя
+
       user:
+        current_password: Текущий пароль
         email: E-mail
         password: Пароль
-        remember_me: Запомнить
         password_confirmation: Подтвердить пароль
-        current_password: Текущий пароль
+        remember_me: Запомнить
 
       diploma:
         admission_date: Дата поступления
-        graduation_date: Дата выпуска
-        speciality_term: Специальность
+        contact_hours: Аудиторных часов
         eng_number: Номер диплома на английском языке
+        graduation_date: Дата выпуска
         number: Номер диплома
+        speciality_term: Специальность
         study_form: Форма обучения
         study_form_enum:
           fulltime: очная
@@ -85,29 +91,26 @@ ru:
         study_duration: Продолжительность обучения
         student: Студент
         total_hours: Всего часов
-        contact_hours: Аудиторных часов
 
       discipline:
         name: Название
-        eng_name: Английское название
 
       chair:
         faculty: Факультет
 
       speciality:
         end_recruitment_year: Год окончания набора
-        start_recruitment_year: Год начала набора
         qualification: Квалификация
+        start_recruitment_year: Год начала набора
 
       programm_item:
-        discipline_term: Название
         credits: Баллы
+        discipline_term: Название
         grade: Оценка
         hours: Часов
         weeks: Недели
         grade_enum:
-          satisfactorily: 3 (Satisfactorily) / Удовлетворительно
-          good: 4 (Good) / Хорошо
+          passed: Passed / Зачтено
           excellent: 5 (Excellent) / Отлично
-          passed: Passed / зачтено
-
+          good: 4 (Good) / Хорошо
+          satisfactorily: 3 (Satisfactorily) / Удовлетворительно

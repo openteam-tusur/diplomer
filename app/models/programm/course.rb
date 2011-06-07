@@ -10,7 +10,7 @@ class Course < ProgrammItem
   has_autosuggest_for :discipline
 
   def to_s
-    "#{title} #{credits} #{hours} #{grade}"
+    "#{title} #{credits} #{hours} #{human_grade}"
   end
 end
 

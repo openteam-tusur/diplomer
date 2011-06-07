@@ -1,12 +1,12 @@
 # encoding: utf-8
 
 class FinalQualificationProject < ProgrammItem
-  validates_presence_of :title, :grade, :credits, :weeks
+  validates_presence_of :title, :grade, :credits, :weeks, :on => :update
 
   has_translate
 
   def to_s
-    "#{title} #{credits} #{weeks} #{grade}"
+    "#{title} #{credits} #{weeks} #{human_grade}"
   end
 end
 

@@ -8,4 +8,10 @@ class PracticesController < CrudController
   def index
     @practices = Practice.where(:diploma_id => params[:diploma_id])
   end
+
+  def destroy
+    destroy!{
+      render :nothing => true and return
+    }
+  end
 end

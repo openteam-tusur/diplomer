@@ -47,10 +47,5 @@ TusurDiplomer::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "[Tusur diplomer error] ",
-    :sender_address => %{"notifier" <notifier@openteam.ru>},
-    :exception_recipients => %w{developers@openteam.ru}
-
 end
 

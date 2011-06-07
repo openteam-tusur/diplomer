@@ -10,7 +10,7 @@ class Practice < ProgrammItem
   has_autosuggest_for :discipline
 
   def to_s
-    "#{title} #{credits} #{weeks} #{grade}"
+    "#{title} #{credits} #{weeks} #{human_grade}"
   end
 end
 

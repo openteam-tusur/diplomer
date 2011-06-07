@@ -6,7 +6,7 @@
     <%= f.input :password_confirmation %>
   <% end %>
   <% f.inputs :for => :people do |people_form| %>
-  <% people_form.input :lname %>
+  <% people_form.input :surname %>
   <% end %>
   <%= f.buttons do %>
     <%= f.commit_button "Сохранить", :button_html => { :class => "button" } %>
