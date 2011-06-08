@@ -2,5 +2,141 @@
 @import compass/utilities
 @import compass/css3
 
+body, div, table
+  font-family: "Verdana, Arial, sans-serif"
+  font-size: 7.5pt
+  font-style: normal
+  font-weight: 100
+  margin: 0
+  padding: 0
+
+  p
+    margin: 0 0 0.1cm 0
+
 .first_side
-  padding: 0 0 0 23cm
+  height: 25.7cm
+  margin: 2cm 1.7cm
+  padding: 0 0 0 21cm
+  page-break-after: always
+  width: 16.5cm
+
+  .left_side
+    float: left
+    margin: 0 1cm 0 0
+    width: 4cm
+
+    .faculty_name
+      font-size: 10pt
+      margin: 10cm 0 0 0
+
+      .eng
+      .rus
+
+    .diploma_number
+      font-size: 10pt
+      position: absolute
+      top: 17.5cm
+
+  .right_side
+    +clearfix
+    padding: 0 0 0 1cm
+
+    .holder_info
+      .surname
+        font-size: 11pt
+        float: left
+        margin: 1cm 0.5cm 0 0
+        width: 5.5cm
+
+        .eng
+        .rus
+
+      .given_name
+        +clearfix
+        font-size: 11pt
+        padding: 1cm 0 0 0
+        .eng
+        .rus
+
+      .birthdate
+        float: left
+        margin: 0.9cm 0.5cm 0 0
+        width: 5.5cm
+
+        p
+
+      .student_code
+        +clearfix
+        margin: 0.9cm 0 0 0
+
+        p
+
+    .qualification_info
+      .qualification
+        margin: 2.4cm 0 0 0
+
+        .eng
+        .rus
+
+      .speciality
+        margin: 1.2cm 0 0 0
+
+        .eng
+        .rus
+
+      .award_institute
+        .eng
+        .rus
+
+      .admin_institute
+        .eng
+        .rus
+
+      .language
+        .eng
+        .rus
+
+    .qualification_details
+      .level
+        .eng
+        .rus
+      .durations
+        .eng
+        .rus
+      .access_requirements
+        .eng
+        .rus
+
+.second_side
+  +clearfix
+  padding: 2cm 1.7cm
+  page-break-before: always
+
+  .contents_info
+    .study_mode
+      .eng
+      .rus
+    .programm_requirments
+      p
+  .programm_details
+    table
+      thead
+        tr
+          th
+      tbody
+        .title
+        tr
+          td
+            font-family: "Verdana, Arial, sans-serif"
+            font-size: 7.5pt
+            font-style: normal
+            font-weight: 100
+
+    .average
+      p
+        .left
+        .right
+  .certification
+    p
+      .left
+      .right

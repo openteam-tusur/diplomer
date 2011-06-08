@@ -22,19 +22,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: specialities
 #
-#  id                     :integer         not null, primary key
-#  code                   :string(255)
-#  title                  :text
-#  eng_title              :text
-#  start_recruitment_year :string(255)
-#  end_recruitment_year   :string(255)
-#  created_at             :datetime
-#  updated_at             :datetime
-#  qualification          :string(255)
-#  eng_qualification      :string(255)
+#  id                :integer         not null, primary key
+#  code              :string(255)
+#  title             :text
+#  eng_title         :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  qualification     :string(255)
+#  eng_qualification :string(255)
 #
 

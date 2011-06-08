@@ -11,6 +11,43 @@ ru:
   "Adding information": Добавление информации
   "Are you sure?": Вы уверены?
 
+  duration:
+    eng_contact_hour:
+      one:   "%{count} contact hour"
+      few:   "%{count} contact hours"
+      many:  "%{count} contact hours"
+      other: "%{count} contact hours"
+
+    contact_hour:
+      one:   "%{count} аудиторный час"
+      few:   "%{count} аудиторных часа"
+      many:  "%{count} аудиторных часов"
+      other: "%{count} аудиторных часа"
+
+    eng_hour:
+      one:   "%{count} hour"
+      few:   "%{count} hours"
+      many:  "%{count} hours"
+      other: "%{count} hours"
+
+    hour:
+      one:   "%{count} час"
+      few:   "%{count} часа"
+      many:  "%{count} часов"
+      other: "%{count} часа"
+
+    eng_year:
+      one:   "%{count} year"
+      few:   "%{count} years"
+      many:  "%{count} years"
+      other: "%{count} years"
+
+    year:
+      one:   "%{count} год"
+      few:   "%{count} года"
+      many:  "%{count} лет"
+      other: "%{count} года"
+
   title:
     devise/sessions:
       new: Вход в систему
@@ -88,10 +125,14 @@ ru:
         number: Номер диплома
         speciality_term: Специальность
         study_form: Форма обучения
+        eng_study_form_enum:
+          fulltime: full time
+          parttime: part time
+          postal: postal
         study_form_enum:
-          fulltime: очная
-          parttime: очно-заочная
-          postal: заочная
+          fulltime: очная форма
+          parttime: очно-заочная форма
+          postal: заочная форма
         study_duration: Продолжительность обучения
         student: Студент
         total_hours: Всего часов
@@ -114,7 +155,7 @@ ru:
         hours: Часы
         weeks: Недели
         grade_enum:
-          passed: Passed / Зачтено
-          excellent: 5 (Excellent) / Отлично
-          good: 4 (Good) / Хорошо
-          satisfactorily: 3 (Satisfactorily) / Удовлетворительно
+          passed: passed / зачтено
+          excellent: 5 (excellent / отлично)
+          good: 4 (good / хорошо)
+          satisfactorily: 3 (satisfactorily / удовлетворительно)

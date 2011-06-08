@@ -4,7 +4,7 @@ class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
 
-  has_enum :grade, %w[satisfactorily good excellent passed]
+  has_enum :grade, %w[satisfactorily good excellent passed], :scopes => true
 
   def to_s
     title
