@@ -2,18 +2,24 @@
 @import compass/utilities
 @import compass/css3
 
-body, div, table
+body, div
   font-family: "Verdana, Arial, sans-serif"
-  font-size: 7.5pt
+  font-size: 7pt
   font-style: normal
   font-weight: 100
+  letter-spacing: 0px
   margin: 0
   padding: 0
 
   p
-    margin: 0 0 0.1cm 0
+
+  .eng
+
+  .rus
+    margin: 0.1cm 0 0 0
 
 .first_side
+  background: url("/images/test-0.png") no-repeat
   height: 25.7cm
   margin: 2cm 1.7cm
   padding: 0 0 0 21cm
@@ -45,7 +51,9 @@ body, div, table
       .surname
         font-size: 11pt
         float: left
-        margin: 1cm 0.5cm 0 0
+        margin: 0 0.5cm 0 0
+        position: absolute
+        top: 3cm
         width: 5.5cm
 
         .eng
@@ -54,56 +62,85 @@ body, div, table
       .given_name
         +clearfix
         font-size: 11pt
-        padding: 1cm 0 0 0
+        position: absolute
+        left: 35cm
+        top: 3cm
+
         .eng
         .rus
 
       .birthdate
         float: left
-        margin: 0.9cm 0.5cm 0 0
+        margin: 0 0.5cm 0 0
+        position: absolute
+        top: 4.7cm
         width: 5.5cm
 
         p
 
       .student_code
         +clearfix
-        margin: 0.9cm 0 0 0
+        position: absolute
+        top: 4.7cm
+        left: 35cm
 
         p
 
     .qualification_info
       .qualification
-        margin: 2.4cm 0 0 0
+        position: absolute
+        top: 7.5cm
 
         .eng
         .rus
 
       .speciality
-        margin: 1.2cm 0 0 0
+        position: absolute
+        top: 9.3cm
 
         .eng
         .rus
 
       .award_institute
+        position: absolute
+        top: 11.2cm
+
         .eng
         .rus
 
       .admin_institute
+        position: absolute
+        top: 12.9cm
+
         .eng
         .rus
 
       .language
+        position: absolute
+        top: 14.8cm
+
         .eng
         .rus
 
     .qualification_details
       .level
+        position: absolute
+        top: 18.1cm
+
         .eng
         .rus
+
       .durations
+        position: absolute
+        top: 20cm
+
         .eng
         .rus
+
       .access_requirements
+        position: absolute
+        top: 22cm
+
         .eng
         .rus
 
