@@ -3,11 +3,10 @@
 @import compass/css3
 
 body, div
-  font-family: "Verdana, Arial, sans-serif"
-  font-size: 7pt
+  font-family: "Verdana"
+  font-size: 34px
   font-style: normal
   font-weight: 100
-  letter-spacing: 0px
   margin: 0
   padding: 0
 
@@ -16,164 +15,294 @@ body, div
   .eng
 
   .rus
-    margin: 0.1cm 0 0 0
+    margin: 26px 0 0 0
 
-.first_side
-  background: url("/images/test-0.png") no-repeat
-  height: 25.7cm
-  margin: 2cm 1.7cm
-  padding: 0 0 0 21cm
-  page-break-after: always
-  width: 16.5cm
+  .first_side
+    background: url('/images/test-0.png') no-repeat
+    height: 3158px
+    padding: 175px 176px 175px 2598px
+    page-break-after: always
+    width: 2187px
 
   .left_side
     float: left
-    margin: 0 1cm 0 0
-    width: 4cm
+    height: 3036px
+    width: 472px
 
     .faculty_name
-      font-size: 10pt
-      margin: 10cm 0 0 0
-
-      .eng
-      .rus
+      font-size: 42px
+      position: absolute
+      top: 1635px
+      width: 472px
 
     .diploma_number
-      font-size: 10pt
+      font-size: 54px
+      height: 118px
+      line-height: 118px
       position: absolute
-      top: 17.5cm
+      text-align: center
+      top: 2385px
+      width: 472px
 
   .right_side
     +clearfix
-    padding: 0 0 0 1cm
+    height: 3158px
+    margin: 0 0 0 710px
+    width: 1476px
 
     .holder_info
       .surname
-        font-size: 11pt
-        float: left
-        margin: 0 0.5cm 0 0
+        font-size: 42px
         position: absolute
-        top: 3cm
-        width: 5.5cm
-
-        .eng
-        .rus
+        top: 354px
+        width: 650px
 
       .given_name
         +clearfix
-        font-size: 11pt
+        font-size: 42px
+        left: 4129px
         position: absolute
-        left: 35cm
-        top: 3cm
-
-        .eng
-        .rus
+        top: 354px
+        width: 650px
 
       .birthdate
-        float: left
-        margin: 0 0.5cm 0 0
         position: absolute
-        top: 4.7cm
-        width: 5.5cm
-
-        p
+        top: 600px
+        width: 650px
 
       .student_code
-        +clearfix
         position: absolute
-        top: 4.7cm
-        left: 35cm
-
-        p
+        top: 600px
+        left: 4129px
+        width: 650px
 
     .qualification_info
       .qualification
         position: absolute
-        top: 7.5cm
-
-        .eng
-        .rus
+        top: 992px
+        width: 1476px
 
       .speciality
         position: absolute
-        top: 9.3cm
-
-        .eng
-        .rus
+        top: 1240px
+        width: 1476px
 
       .award_institute
         position: absolute
-        top: 11.2cm
-
-        .eng
-        .rus
+        top: 1500px
+        width: 1476px
 
       .admin_institute
         position: absolute
-        top: 12.9cm
-
-        .eng
-        .rus
+        top: 1750px
+        width: 1476px
 
       .language
         position: absolute
-        top: 14.8cm
-
-        .eng
-        .rus
+        top: 2000px
+        width: 1476px
 
     .qualification_details
       .level
         position: absolute
-        top: 18.1cm
-
-        .eng
-        .rus
+        top: 2470px
+        width: 1476px
 
       .durations
         position: absolute
-        top: 20cm
-
-        .eng
-        .rus
+        top: 2730px
+        width: 1476px
 
       .access_requirements
         position: absolute
-        top: 22cm
+        top: 2970px
+        width: 1476px
 
-        .eng
+        p
+          line-height: 55px
+
         .rus
+          margin-top: 7px
 
 .second_side
   +clearfix
-  padding: 2cm 1.7cm
+  +column-count(2)
+  +column-gap(240px)
+  background: url('/images/test-1.png') no-repeat
+  //height: 3268px
+  height: 1600px
+  padding: 120px 180px
   page-break-before: always
+  width: 4600px
 
   .contents_info
-    .study_mode
-      .eng
-      .rus
+    padding: 185px 0 0 0
+    width: 1940px
+
     .programm_requirments
+      margin: 140px 0 0 0
+
       p
+        line-height: 55px
+
   .programm_details
+    width: 1940px
     table
+      border: none
+      border-collapse: collapse
+      font-family: "Verdana"
+      font-size: 24px
+      font-style: normal
+      font-weight: 100
+      margin: 235px 0 0 0
+      padding: 0
+      width: 1940px
+
       thead
         tr
           th
+            font-weight: bold
+            padding: 35px
+
+          .hours, .credits
+            text-align: center
+
+          .grades
+            padding: 35px 0
+
       tbody
         .title
+          td
+            border: none
+            font-size: 28px
+            font-weight: bold
+            padding: 55px 35px 15px
+
+        .state_examination, .qualification_project
+          td
+            border: none
+            padding-left: 35px
+
         tr
           td
-            font-family: "Verdana, Arial, sans-serif"
-            font-size: 7.5pt
-            font-style: normal
-            font-weight: 100
+            border-bottom: 1px solid #e6e6e6
+            padding: 10px 0
+            width: 1062px
 
-    .average
-      p
-        .left
-        .right
-  .certification
+          .grades
+            width: 457px
+
+          .hours
+            padding: 0 0 0 60px
+            width: 100px
+
+          .credits
+            padding: 0 0 0 100px
+            width: 162px
+
+  .average
+    font-size: 28px
+    font-weight: bold
+    padding: 165px 35px 15px
+    width: 1940px
+
     p
-      .left
       .right
+        float: right
+        text-align: left
+        width: 470px
+
+  .certification
+    margin: 354px 0 0 0
+    padding: 0 0 0 35px
+    width: 1940px
+
+    h2
+      font-size: 35px
+      font-weight: bold
+      margin: 0 0 59px 0
+      text-transform: uppercase
+
+    p
+      font-size: 28px
+      margin: 0 0 25px 0
+
+      .right
+        float: right
+        text-align: right
+        width: 420px
+
+  //.contents_info
+    //.study_mode
+      //position: absolute
+      //top: 3800px
+      //width: 1940px
+
+    //.programm_requirments
+      //position: absolute
+      //top: 4050px
+      //width: 1940px
+
+      //p
+        //line-height: 55px
+
+  //.programm_details
+    //table
+      //border: none
+      //border-collapse: collapse
+      //font-family: "Verdana"
+      //font-size: 24px
+      //font-style: normal
+      //font-weight: 100
+      //margin: 0
+      //padding: 0
+      //position: absolute
+      //top: 4440px
+      //width: 1940px
+
+      //thead
+        //tr
+          //th
+            //font-weight: bold
+            //padding: 35px
+
+          //.hours, .credits
+            //text-align: center
+
+          //.grades
+            //padding: 35px 0
+
+      //tbody
+        //.title
+          //td
+            //border: none
+            //font-size: 28px
+            //font-weight: bold
+            //padding: 55px 35px 15px
+
+        //tr
+          //td
+            //border-bottom: 1px solid #e6e6e6
+            //padding: 10px 0
+            //width: 1062px
+
+          //.grades
+            //width: 457px
+
+          //.hours
+            //padding: 0 0 0 60px
+            //width: 100px
+
+          //.credits
+            //padding: 0 0 0 100px
+            //width: 162px
+
+    //.average
+      //p
+        //.left
+        //.right
+  //.certification
+    //display: none
+    //p
+      //.left
+      //.right
