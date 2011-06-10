@@ -1,7 +1,7 @@
 TusurDiplomer::Application.routes.draw do
   devise_for :users
 
-  match 'diplomas/:id/pdf' => 'diplomas#pdf', :defaults => {:format => :pdf}
+  match 'diplomas/:id/pdf' => 'diplomas#pdf', :defaults => {:format => :pdf}, :as => 'pdf_diploma'
 
   resources :diplomas do
     resources :student

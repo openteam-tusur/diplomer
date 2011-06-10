@@ -1,6 +1,7 @@
 <% title resource %>
 
 <%= link_to t(:edit), edit_diploma_path, :class => 'button floatr' %>
+<%= link_to 'Печать шаблона', pdf_diploma_path(resource), :class => 'button floatr print' %>
 
 <%= show_for resource do |item| %>
   <%= item.association :student, :using => :full_info %>

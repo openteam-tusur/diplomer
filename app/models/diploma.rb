@@ -52,7 +52,7 @@ class Diploma < ActiveRecord::Base
     count += programm_items.grade_good.count
     total += 5 * programm_items.grade_excellent.count
     count += programm_items.grade_excellent.count
-    (total / count).round(1)
+    count > 0 ? (total / count).round(1) : 0
   end
 
   def to_s
