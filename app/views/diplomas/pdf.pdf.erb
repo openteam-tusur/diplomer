@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
     <title><%= @diploma %></title>
-    <%= wicked_pdf_stylesheet_link_tag 'print'  %>
+    <%= stylesheet_link_tag 'print' %>
   </head>
   <body>
     <div class='first_side'>
@@ -111,7 +111,11 @@
                 <td class='grades'><%= course.human_grade %></td>
               </tr>
             <% end %>
-            <tr class='title'>
+          </tbody>
+        </table>
+        <table class='paper_table'>
+          <tbody>
+            <tr class='title course_paper'>
               <td colspan='4'>Course Papers In</td>
             </tr>
             <% @diploma.papers.each_with_index do |paper, index| %>
@@ -120,6 +124,10 @@
                 <td class='grades'><%= paper.human_grade %></td>
               </tr>
             <% end %>
+          </tbody>
+        </table>
+        <table class='practice_table'>
+          <tbody>
             <tr class='title'>
               <td colspan='4'>Practice</td>
             </tr>
@@ -131,6 +139,10 @@
                 <td class='grades'><%= practice.human_grade %></td>
               </tr>
             <% end %>
+          </tbody>
+        </table>
+        <table class='state_examination_table'>
+          <tbody>
             <tr class='title'>
               <td colspan='4'>Final State Examinations</td>
             </tr>
@@ -138,6 +150,10 @@
               <td colspan='3'><%= @diploma.final_state_examination.eng_title %> / <%= @diploma.final_state_examination.title %></td>
               <td class='grades'><%= @diploma.final_state_examination.human_grade %></td>
             </tr>
+          </tbody>
+        </table>
+        <table class='qualification_table'>
+          <tbody>
             <tr class='title'>
               <td colspan='4'>Final Qualification Project</td>
             </tr>

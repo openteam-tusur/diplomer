@@ -20,6 +20,13 @@ GIT
   specs:
     russian (0.2.8.pre)
 
+GIT
+  remote: git://github.com/timriley/princely
+  revision: f83a23406f4a5d1ee55eee3d9eca322a77fb041b
+  branch: disposition
+  specs:
+    princely (1.2.6)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -168,9 +175,7 @@ GEM
     tzinfo (0.3.27)
     warden (1.0.4)
       rack (>= 1.0)
-    wicked_pdf (0.7.0)
     will_paginate (3.0.pre2)
-    wkhtmltopdf-binary (0.9.5.3)
     yamler (0.1.0)
 
 PLATFORMS
@@ -195,6 +200,7 @@ DEPENDENCIES
   itslog
   jquery-rails
   pg
+  princely!
   rails
   rails-erd
   rake (= 0.8.7)
@@ -205,6 +211,4 @@ DEPENDENCIES
   simple-navigation
   sqlite3
   sunspot_rails
-  wicked_pdf
   will_paginate (>= 3.0.pre2)
-  wkhtmltopdf-binary

@@ -1,6 +1,11 @@
 @import compass/reset
 @import compass/utilities
 @import compass/css3
+@page
+  size: A2 landscape
+  prince-shrink-to-fit: auto
+  margin: 0
+
 
 body, div
   font-family: "Verdana"
@@ -11,18 +16,16 @@ body, div
   padding: 0
 
   p
-
   .eng
-
   .rus
     margin: 26px 0 0 0
 
-  .first_side
-    background: url('/images/test-0.png') no-repeat
-    height: 3158px
-    padding: 175px 176px 175px 2598px
-    page-break-after: always
-    width: 2187px
+.first_side
+  //background: url('/images/test-0.png') no-repeat
+  height: 3158px
+  padding: 175px 176px 175px 2598px
+  page-break-after: always
+  width: 2187px
 
   .left_side
     float: left
@@ -45,8 +48,7 @@ body, div
       width: 472px
 
   .right_side
-    +clearfix
-    height: 3158px
+    //height: 3158px
     margin: 0 0 0 710px
     width: 1476px
 
@@ -58,7 +60,6 @@ body, div
         width: 650px
 
       .given_name
-        +clearfix
         font-size: 42px
         left: 4129px
         position: absolute
@@ -128,9 +129,8 @@ body, div
   +clearfix
   +column-count(2)
   +column-gap(240px)
-  background: url('/images/test-1.png') no-repeat
-  //height: 3268px
-  height: 1600px
+  //background: url('/images/test-1.png') no-repeat
+  height: 3268px
   padding: 120px 180px
   page-break-before: always
   width: 4600px
@@ -147,6 +147,9 @@ body, div
 
   .programm_details
     width: 1940px
+    .paper_table, .practice_table, .state_examination_table, .qualification_table
+      margin: 0
+
     table
       border: none
       border-collapse: collapse
@@ -187,7 +190,7 @@ body, div
           td
             border-bottom: 1px solid #e6e6e6
             padding: 10px 0
-            width: 1062px
+            width: 950px
 
           .grades
             width: 457px
@@ -198,7 +201,7 @@ body, div
 
           .credits
             padding: 0 0 0 100px
-            width: 162px
+            width: 270px
 
   .average
     font-size: 28px
@@ -231,78 +234,3 @@ body, div
         float: right
         text-align: right
         width: 420px
-
-  //.contents_info
-    //.study_mode
-      //position: absolute
-      //top: 3800px
-      //width: 1940px
-
-    //.programm_requirments
-      //position: absolute
-      //top: 4050px
-      //width: 1940px
-
-      //p
-        //line-height: 55px
-
-  //.programm_details
-    //table
-      //border: none
-      //border-collapse: collapse
-      //font-family: "Verdana"
-      //font-size: 24px
-      //font-style: normal
-      //font-weight: 100
-      //margin: 0
-      //padding: 0
-      //position: absolute
-      //top: 4440px
-      //width: 1940px
-
-      //thead
-        //tr
-          //th
-            //font-weight: bold
-            //padding: 35px
-
-          //.hours, .credits
-            //text-align: center
-
-          //.grades
-            //padding: 35px 0
-
-      //tbody
-        //.title
-          //td
-            //border: none
-            //font-size: 28px
-            //font-weight: bold
-            //padding: 55px 35px 15px
-
-        //tr
-          //td
-            //border-bottom: 1px solid #e6e6e6
-            //padding: 10px 0
-            //width: 1062px
-
-          //.grades
-            //width: 457px
-
-          //.hours
-            //padding: 0 0 0 60px
-            //width: 100px
-
-          //.credits
-            //padding: 0 0 0 100px
-            //width: 162px
-
-    //.average
-      //p
-        //.left
-        //.right
-  //.certification
-    //display: none
-    //p
-      //.left
-      //.right
