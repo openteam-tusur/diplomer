@@ -7,6 +7,7 @@ class Diploma < ActiveRecord::Base
   has_many :courses, :dependent => :destroy
   has_many :papers, :dependent => :destroy
   has_many :practices, :dependent => :destroy
+  has_many :programm_items
 
   has_one :final_qualification_project, :dependent => :destroy
   has_one :final_state_examination, :dependent => :destroy
@@ -28,6 +29,30 @@ class Diploma < ActiveRecord::Base
 
   def is_translated?
     student.is_translated? && final_state_examination.is_translated? && final_qualification_project.is_translated?
+  end
+
+  def duration
+    result = Date.new(0) + (graduation_date - admission_date)
+  end
+
+  def eng_duration
+    "#{::I18n.t('duration.eng_year', :count => duration.year)}"
+  end
+
+  def rus_duration
+    "#{::I18n.t('duration.year', :count => duration.year)}"
+  end
+
+  def average_grade
+    total = 0.0
+    count = 0.0
+    total += 3 * programm_items.grade_satisfactorily.count
+    count += programm_items.grade_satisfactorily.count
+    total += 4 * programm_items.grade_good.count
+    count += programm_items.grade_good.count
+    total += 5 * programm_items.grade_excellent.count
+    count += programm_items.grade_excellent.count
+    count > 0 ? (total / count).round(1) : 0
   end
 
   def to_s
@@ -55,6 +80,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: diplomas
@@ -72,5 +98,6 @@ end
 #  updated_at      :datetime
 #  chair_id        :integer
 #  eng_number      :string(255)
+#  serial_number   :integer
 #
 

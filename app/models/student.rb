@@ -4,7 +4,7 @@ class Student < ActiveRecord::Base
   belongs_to :diploma
 
   validates_presence_of :surname, :firstname, :patrynomic,
-                        :birthday, :code
+                        :birthday
 
   has_translate
 

@@ -11,6 +11,43 @@ ru:
   "Adding information": Добавление информации
   "Are you sure?": Вы уверены?
 
+  duration:
+    eng_contact_hour:
+      one:   "%{count} contact hour"
+      few:   "%{count} contact hours"
+      many:  "%{count} contact hours"
+      other: "%{count} contact hours"
+
+    contact_hour:
+      one:   "%{count} аудиторный час"
+      few:   "%{count} аудиторных часа"
+      many:  "%{count} аудиторных часов"
+      other: "%{count} аудиторных часа"
+
+    eng_hour:
+      one:   "%{count} hour"
+      few:   "%{count} hours"
+      many:  "%{count} hours"
+      other: "%{count} hours"
+
+    hour:
+      one:   "%{count} час"
+      few:   "%{count} часа"
+      many:  "%{count} часов"
+      other: "%{count} часа"
+
+    eng_year:
+      one:   "%{count} year"
+      few:   "%{count} years"
+      many:  "%{count} years"
+      other: "%{count} years"
+
+    year:
+      one:   "%{count} год"
+      few:   "%{count} года"
+      many:  "%{count} лет"
+      other: "%{count} года"
+
   title:
     devise/sessions:
       new: Вход в систему
@@ -27,19 +64,23 @@ ru:
       create: Создать
       update: Сохранить
 
+    hints:
+      student:
+        code: Student ident. Number, or code
+
   attributes:
     abbr: Сокращенное название
     birthday: День рождения
     chair: Кафедра
     code: Код
-    eng_abbr: Английское сокращенное название
-    eng_code: Английский код
-    eng_firstname: Имя на английском
-    eng_name: Английское название
-    eng_patrynomic: Отчество на английском
-    eng_surname: Фамилия на английском
-    eng_title: Английское название
-    eng_qualification: Квалификация на английском
+    eng_abbr: Сокращенное название на английском языке
+    eng_code: Код на английском языке
+    eng_firstname: Имя на английском языке
+    eng_name: Название на английском языке
+    eng_patrynomic: Отчество на английском языке
+    eng_surname: Фамилия на английском языке
+    eng_title: Название на английском языке
+    eng_qualification: Квалификация на английском языке
     faculty: Факультет
     firstname: Имя
     kind: Тип
@@ -84,10 +125,14 @@ ru:
         number: Номер диплома
         speciality_term: Специальность
         study_form: Форма обучения
+        eng_study_form_enum:
+          fulltime: full time
+          parttime: part time
+          postal: postal
         study_form_enum:
-          fulltime: очная
-          parttime: очно-заочная
-          postal: заочная
+          fulltime: очная форма
+          parttime: очно-заочная форма
+          postal: заочная форма
         study_duration: Продолжительность обучения
         student: Студент
         total_hours: Всего часов
@@ -107,10 +152,10 @@ ru:
         credits: Баллы
         discipline_term: Название
         grade: Оценка
-        hours: Часов
+        hours: Часы
         weeks: Недели
         grade_enum:
-          passed: Passed / Зачтено
-          excellent: 5 (Excellent) / Отлично
-          good: 4 (Good) / Хорошо
-          satisfactorily: 3 (Satisfactorily) / Удовлетворительно
+          passed: passed / зачтено
+          excellent: 5 (excellent / отлично)
+          good: 4 (good / хорошо)
+          satisfactorily: 3 (satisfactorily / удовлетворительно)

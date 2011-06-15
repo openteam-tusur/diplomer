@@ -31,6 +31,7 @@ gem 'has_enum'
 gem 'has_searcher'
 gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
 gem 'jquery-rails', :require => false
+gem 'princely', :git => 'git://github.com/timriley/princely', :branch => 'disposition'
 gem 'rails'
 gem 'rake', '0.8.7'
 gem 'render_inheritable'

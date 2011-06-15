@@ -1,0 +1,236 @@
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+@page
+  size: A2 landscape
+  prince-shrink-to-fit: auto
+  margin: 0
+
+
+body, div
+  font-family: "Verdana"
+  font-size: 34px
+  font-style: normal
+  font-weight: 100
+  margin: 0
+  padding: 0
+
+  p
+  .eng
+  .rus
+    margin: 26px 0 0 0
+
+.first_side
+  //background: url('/images/test-0.png') no-repeat
+  height: 3158px
+  padding: 175px 176px 175px 2598px
+  page-break-after: always
+  width: 2187px
+
+  .left_side
+    float: left
+    height: 3036px
+    width: 472px
+
+    .faculty_name
+      font-size: 42px
+      position: absolute
+      top: 1635px
+      width: 472px
+
+    .diploma_number
+      font-size: 54px
+      height: 118px
+      line-height: 118px
+      position: absolute
+      text-align: center
+      top: 2385px
+      width: 472px
+
+  .right_side
+    //height: 3158px
+    margin: 0 0 0 710px
+    width: 1476px
+
+    .holder_info
+      .surname
+        font-size: 42px
+        position: absolute
+        top: 354px
+        width: 650px
+
+      .given_name
+        font-size: 42px
+        left: 4129px
+        position: absolute
+        top: 354px
+        width: 650px
+
+      .birthdate
+        position: absolute
+        top: 600px
+        width: 650px
+
+      .student_code
+        position: absolute
+        top: 600px
+        left: 4129px
+        width: 650px
+
+    .qualification_info
+      .qualification
+        position: absolute
+        top: 992px
+        width: 1476px
+
+      .speciality
+        position: absolute
+        top: 1240px
+        width: 1476px
+
+      .award_institute
+        position: absolute
+        top: 1500px
+        width: 1476px
+
+      .admin_institute
+        position: absolute
+        top: 1750px
+        width: 1476px
+
+      .language
+        position: absolute
+        top: 2000px
+        width: 1476px
+
+    .qualification_details
+      .level
+        position: absolute
+        top: 2470px
+        width: 1476px
+
+      .durations
+        position: absolute
+        top: 2730px
+        width: 1476px
+
+      .access_requirements
+        position: absolute
+        top: 2970px
+        width: 1476px
+
+        p
+          line-height: 55px
+
+        .rus
+          margin-top: 7px
+
+.second_side
+  +clearfix
+  +column-count(2)
+  +column-gap(240px)
+  //background: url('/images/test-1.png') no-repeat
+  height: 3268px
+  padding: 120px 180px
+  page-break-before: always
+  width: 4600px
+
+  .contents_info
+    padding: 185px 0 0 0
+    width: 1940px
+
+    .programm_requirments
+      margin: 140px 0 0 0
+
+      p
+        line-height: 55px
+
+  .programm_details
+    width: 1940px
+    .paper_table, .practice_table, .state_examination_table, .qualification_table
+      margin: 0
+
+    table
+      border: none
+      border-collapse: collapse
+      font-family: "Verdana"
+      font-size: 24px
+      font-style: normal
+      font-weight: 100
+      margin: 235px 0 0 0
+      padding: 0
+      width: 1940px
+
+      thead
+        tr
+          th
+            font-weight: bold
+            padding: 35px
+
+          .hours, .credits
+            text-align: center
+
+          .grades
+            padding: 35px 0
+
+      tbody
+        .title
+          td
+            border: none
+            font-size: 28px
+            font-weight: bold
+            padding: 55px 35px 15px
+
+        .state_examination, .qualification_project
+          td
+            border: none
+            padding-left: 35px
+
+        tr
+          td
+            border-bottom: 1px solid #e6e6e6
+            padding: 10px 0
+            width: 950px
+
+          .grades
+            width: 457px
+
+          .hours
+            padding: 0 0 0 60px
+            width: 100px
+
+          .credits
+            padding: 0 0 0 100px
+            width: 270px
+
+  .average
+    font-size: 28px
+    font-weight: bold
+    padding: 165px 35px 15px
+    width: 1940px
+
+    p
+      .right
+        float: right
+        text-align: left
+        width: 470px
+
+  .certification
+    margin: 354px 0 0 0
+    padding: 0 0 0 35px
+    width: 1940px
+
+    h2
+      font-size: 35px
+      font-weight: bold
+      margin: 0 0 59px 0
+      text-transform: uppercase
+
+    p
+      font-size: 28px
+      margin: 0 0 25px 0
+
+      .right
+        float: right
+        text-align: right
+        width: 420px

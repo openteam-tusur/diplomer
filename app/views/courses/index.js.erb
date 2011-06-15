@@ -2,4 +2,5 @@
   $('.empty').remove();
   $('.courses_list').append("<%= escape_javascript(raw render(@courses.last))%>");
   $('.inputs input, input[id*=discipline_id], select').val('');
+  numeration();
 <% end %>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+    <title><%= @diploma %></title>
+    <%= stylesheet_link_tag 'print' %>
+  </head>
+  <body>
+    <div class='first_side'>
+      <div class='left_side'>
+        <div class='faculty_name'>
+          <p class='eng'><%= @diploma.chair.faculty.eng_title %></p>
+          <p class='rus'><%= @diploma.chair.faculty.title %></p>
+        </div>
+        <div class='diploma_number'>
+          <%= @diploma.eng_number %>
+        </div>
+      </div>
+
+      <div class='right_side'>
+        <div class='holder_info'>
+          <div class='surname'>
+            <p class='eng'><%= @student.eng_surname %></p>
+            <p class='rus'><%= @student.surname %></p>
+          </div>
+          <div class='given_name'>
+            <p class='eng'><%= "#{@student.eng_firstname} #{@student.eng_patrynomic}" %></p>
+            <p class='rus'><%= "#{@student.firstname} #{@student.patrynomic}" %></p>
+          </div>
+          <div class='birthdate'>
+            <p><%= "#{@student.birthday.strftime('%B %d, %Y')} / #{l(@student.birthday, :format => '%d %B, %Y')}" %></p>
+          </div>
+          <div class='student_code'>
+            <p><%= @student.code %></p>
+          </div>
+        </div>
+
+        <div class='qualification_info'>
+          <div class='qualification'>
+            <p class='eng'><%= @speciality.eng_qualification %></p>
+            <p class='rus'><%= @speciality.qualification %></p>
+          </div>
+          <div class='speciality'>
+            <p class='eng'><%= @speciality.eng_title %></p>
+            <p class='rus'><%= @speciality.title %></p>
+          </div>
+          <div class='award_institute'>
+            <p class='eng'>Tomsk State University of Control Systems and Radioelectronics, State University</p>
+            <p class='rus'>Томский государственный университет систем управления и радиоэлектроники</p>
+          </div>
+          <div class='admin_institute'>
+            <p class='eng'>Tomsk State University of Control Systems and Radioelectronics</p>
+            <p class='rus'>Томский государственный университет систем управления и радиоэлектроники</p>
+          </div>
+          <div class='language'>
+            <p class='eng'>Russian</p>
+            <p class='rus'>Русский</p>
+          </div>
+        </div>
+
+        <div class='qualification_details'>
+          <div class='level'>
+            <p class='eng'>First stage of higher education</p>
+            <p class='rus'>Высшее образование первой ступени</p>
+          </div>
+          <div class='durations'>
+            <p class='eng'>
+              <%= @diploma.eng_duration %>&#59; total: <%= t('duration.eng_hour', :count => @diploma.total_hours) %>, including <%= t('duration.eng_contact_hour', :count => @diploma.contact_hours) %>
+            </p>
+            <p class='rus'>
+              <%= @diploma.rus_duration %>&#59; всего: <%= t('duration.hour', :count => @diploma.total_hours) %>, включая <%= t('duration.contact_hour', :count => @diploma.contact_hours) %>
+            </p>
+          </div>
+          <div class='access_requirements'>
+            <p class='eng'>Complete secondary education (Certificate of Complete Secondary Education)<br/>Entrance examinations</p>
+            <p class='rus'>Полное среднее образование (Аттестат о полном среднем образовании)<br/>Вступительные экзамены</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='second_side'>
+      <div class='contents_info'>
+        <div class='study_mode'>
+          <p class='eng'>Admission &ndash; <%= @diploma.admission_date.strftime('%B %d, %Y') %>&#59; graduation &ndash; <%= @diploma.graduation_date.strftime('%B %d, %Y') %> (<%= Diploma.human_attribute_name("eng_study_form_enum.#{Diploma.first.study_form}") %>)</p>
+          <p class='rus'>Дата зачисления &ndash; <%= l(@diploma.admission_date, :format => '%d %B %Y') %>&#59; дата окончания обучения &ndash; <%= l(@diploma.graduation_date, :format => '%d %B %Y') %><%= " (#{@diploma.human_study_form})" %></p>
+        </div>
+        <div class='programm_requirments'>
+          <p>Compulsory subjects / Обязательные дисциплины &ndash; <%= @diploma.courses.count %></p>
+          <p>Course Papers / Курсовые работы &ndash; <%= @diploma.papers.count %></p>
+          <p>Practice / Практика &ndash; <%= @diploma.practices.count %> </p>
+        </div>
+      </div>
+      <div class='programm_details'>
+        <table>
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th class='credits'>ECTS / Credits</th>
+              <th class='hours'>Hours</th>
+              <th class='grades'>Grades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @diploma.courses.each_with_index do |course, index| %>
+              <tr>
+                <td><%= "#{index + 1}. " %><%= "#{course.eng_title} / #{course.title}" %></td>
+                <td class='credits'><%= course.credits %></td>
+                <td class='hours'><%= course.hours %></td>
+                <td class='grades'><%= course.human_grade %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <table class='paper_table'>
+          <tbody>
+            <tr class='title course_paper'>
+              <td colspan='4'>Course Papers In</td>
+            </tr>
+            <% @diploma.papers.each_with_index do |paper, index| %>
+              <tr>
+                <td colspan='3'><%= "#{index + 1}. " %><%= "#{paper.eng_title} / #{paper.title}" %></td>
+                <td class='grades'><%= paper.human_grade %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <table class='practice_table'>
+          <tbody>
+            <tr class='title'>
+              <td colspan='4'>Practice</td>
+            </tr>
+            <% @diploma.practices.each_with_index do |practice, index| %>
+              <tr>
+                <td><%= "#{index + 1}. " %><%= "#{practice.eng_title} / #{practice.title}" %></td>
+                <td class='credits'><%= practice.credits %></td>
+                <td class='hours'><%= practice.weeks %></td>
+                <td class='grades'><%= practice.human_grade %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <table class='state_examination_table'>
+          <tbody>
+            <tr class='title'>
+              <td colspan='4'>Final State Examinations</td>
+            </tr>
+            <tr class='state_examination'>
+              <td colspan='3'><%= @diploma.final_state_examination.eng_title %> / <%= @diploma.final_state_examination.title %></td>
+              <td class='grades'><%= @diploma.final_state_examination.human_grade %></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class='qualification_table'>
+          <tbody>
+            <tr class='title'>
+              <td colspan='4'>Final Qualification Project</td>
+            </tr>
+            <tr class='qualification_project'>
+              <td><%= @diploma.final_qualification_project.eng_title %> / <%= @diploma.final_qualification_project.title %></td>
+              <td class='credits'><%= @diploma.final_qualification_project.credits %></td>
+              <td class='hours'><%= @diploma.final_qualification_project.weeks %></td>
+              <td class='grades'><%= @diploma.final_qualification_project.human_grade %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class='average'>
+        <p><span class='left' >Average Grade</span> <span class='right'><%= @diploma.average_grade %></span> </p>
+      </div>
+      <div class='certification'>
+        <h2>Certification of the supplement</h2>
+        <p><span class='left'>Rector of Tomsk State Unoversity of Control Systems and Radioelectronics</span><span class='right'>Prof.Yury Shurygin</span></p>
+        <p><span class='left'>Director Institute Innovation</span><span class='right'>Dr.Alexander Uvarov</span>
+      </p>
+      </div>
+    </div>
+  </body>
+  </html>
