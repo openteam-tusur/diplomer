@@ -1,10 +1,9 @@
-#source 'http://gems.openteam.ru'
 source :rubygems
 
 group :production do
   gem 'configatron'
   gem 'hoptoad_notifier'
-  gem 'hassle',           :git => 'git://github.com/koppen/hassle'
+  gem 'hassle', :git => 'git://github.com/koppen/hassle'
   gem 'pg'
 end
 
@@ -13,6 +12,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'sqlite3'
+  gem "spork", :require => false
 end
 
 group :development do
@@ -40,3 +40,4 @@ gem 'show_for'
 gem 'simple-navigation'
 gem 'sunspot_rails'
 gem 'will_paginate', '>= 3.0.pre2'
+

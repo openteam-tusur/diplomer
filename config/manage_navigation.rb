@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
                  :highlights_on => /chairs/
 
     primary.item :specialities, 'Специальности',  specialities_path,
-                 :highlights_on => /specialties/
+                 :highlights_on => /specialities/
 
     primary.item :disciplines,  'Дисциплины', disciplines_path,
                  :highlights_on => /disciplines/
