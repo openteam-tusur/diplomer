@@ -16,7 +16,10 @@ function diploma_disciplines(){
 
 function delete_discipline(){
   $(".details table tr td:first-child").bind('ajax:success', function(){
-    $(this).parent('tr').fadeOut(300, function() { $(this).remove(); });
+    $(this).parent('tr').fadeOut(300, function() {
+      $(this).remove();
+      numeration();
+    });
   });
 };
 
@@ -28,7 +31,35 @@ function numeration(){
   });
 };
 
+function courses_manipulations(){
+  var table = $('.courses_list');
+  $('#new_course').bind('ajax:success', function(evt, data, status, xhr){
+    table.find('.empty').remove();
+    table.append(xhr.responseText);
+    $('.inputs input, input[id*=discipline_id], select').val('');
+    numeration();
+  });
+};
+
+function edit_programm_item(){
+  $('.edit_link').live('click', function(){
+    var path = $(this).attr('href');
+    var line = $(this).parent().parent();
+    $.ajax({
+      url: path,
+      type: 'GET',
+      success: function(data, status, xhr){
+        line.append(xhr.responseText);
+      }
+    });
+    return false;
+  });
+};
+
 $(function() {
+  courses_manipulations();
+  edit_programm_item();
+
   if ($('.list').length>0){
     numeration();
   };

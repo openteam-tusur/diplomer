@@ -1,0 +1,8 @@
+<%= semantic_form_for @diploma.courses.new, :url => diploma_courses_path(@diploma), :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+  <%= form.error_messages %>
+  <%= render :partial => 'courses/form', :locals => {:form => form} %>
+  <%= form.buttons do %>
+    <%= form.commit_button :button_html => { :class => "button" } %>
+  <% end %>
+<% end %>
+

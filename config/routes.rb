@@ -5,9 +5,9 @@ TusurDiplomer::Application.routes.draw do
 
   resources :diplomas do
     resources :student
-    resources :courses, :except => [:show]
-    resources :papers, :except => [:show]
-    resources :practices, :except => [:show]
+    resources :courses
+    resources :papers
+    resources :practices
     resource  :final_state_examination
     resource  :final_qualification_project
   end
