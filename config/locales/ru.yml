@@ -144,9 +144,7 @@ ru:
         faculty: Факультет
 
       speciality:
-        end_recruitment_year: Год окончания набора
         qualification: Квалификация
-        start_recruitment_year: Год начала набора
 
       programm_item:
         credits: Баллы
@@ -159,3 +157,4 @@ ru:
           excellent: 5 (excellent / отлично)
           good: 4 (good / хорошо)
           satisfactorily: 3 (satisfactorily / удовлетворительно)
+

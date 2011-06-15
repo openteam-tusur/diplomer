@@ -47,3 +47,4 @@ Discipline.create!(:eng_title => 'programing',
 Speciality.create!(:code => '230105',
                    :qualification => 'Инженер',
                    :title => 'Программное обсепечение вычислительной техники и автоматизированных систем')
+
