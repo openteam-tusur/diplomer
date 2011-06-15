@@ -12,12 +12,6 @@ class Faculty < ActiveRecord::Base
   searchable do
     boolean :translated
   end
-
-  def self.search
-    solr_search do
-      facet :translated
-    end
-  end
 end
 
 

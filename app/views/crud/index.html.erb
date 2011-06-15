@@ -1,11 +1,5 @@
 <% title resource_class.model_name.human %>
 
-<ul>
-  <% @facets.each do |facet| %>
-    <li><%= "#{facet.value} (#{facet.count})" %></li>
-  <% end %>
-</ul>
-
 <div class="actions">
   <%= link_to t(:new), new_resource_url, :class => "button floatr" %>
 </div>

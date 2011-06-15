@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 class Diploma < ActiveRecord::Base
-  belongs_to :speciality
   belongs_to :chair
+  belongs_to :speciality
 
   has_many :courses, :dependent => :destroy
   has_many :papers, :dependent => :destroy

@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Discipline < ActiveRecord::Base
+  has_many :programm_items
+
   validates_presence_of :title
 
   def to_s
@@ -9,11 +11,17 @@ class Discipline < ActiveRecord::Base
 
   has_translate
 
+  protected_parent_of :diplomas
+
   searchable do
     text :term
   end
 
   alias :term :to_s
+
+  def diplomas
+    programm_items.map(&:diploma)
+  end
 end
 
 

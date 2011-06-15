@@ -1,0 +1,29 @@
+<h2><%= resource %></h2>
+
+<% if resource.protected? %>
+  <p>Нельзя удалить этот объект, пока существуют связанные объекты.</p>
+<% else %>
+  <p>Вы уверены что хотите удалить?</p>
+<% end %>
+
+<%= show_for resource do |s| %>
+  <% unless resource.protected_children.empty? %>
+      С этим объектом связаны:
+      <% resource.protected_children.each do |attribute| %>
+        <%= s.association attribute.to_sym %>
+      <% end %>
+  <% end %>
+<% end %>
+
+<%= semantic_form_for resource, :url => resource_path, :html => {:method => :delete} do |form| %>
+  <%= form.error_messages %>
+  <%= form.buttons do %>
+    <%= form.commit_button t(:destroy), :wrapper_html => {:class => 'button'} %>
+    <li>
+      <%= link_to content_tag(:span, t(:cancel), :class => 'inner'),
+                  smart_resource_url,
+                  :class => 'button cancel' %>
+    </li>
+  <% end %>
+<% end %>
+
