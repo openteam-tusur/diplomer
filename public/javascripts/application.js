@@ -45,13 +45,20 @@ function edit_programm_item(){
   $('.edit_link').live('click', function(){
     var path = $(this).attr('href');
     var line = $(this).parent().parent();
+    var form = '#';
     $.ajax({
       url: path,
       type: 'GET',
       success: function(data, status, xhr){
         line.append(xhr.responseText);
+        form += line.find('form').attr('id');
+        $(form).live('ajax:success', function(evt, data, status, xhr){
+          $(form).replaceWith(xhr.responseText);
+        });
       }
     });
+
+
     return false;
   });
 };
