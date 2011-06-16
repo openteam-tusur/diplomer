@@ -56,10 +56,33 @@ function edit_programm_item(){
   });
 };
 
+function sort_programm_item(){
+  $('.courses_list').sortable({
+    axis: 'y',
+    dropOnEmpty: false,
+    handle: '.handle',
+    cursor: 'crosshair',
+    items: 'li',
+    opacity: 0.4,
+    scroll: true,
+    update: function(){
+      $.ajax({
+        type: 'post',
+        data: $('.courses_list').sortable('serialize'),
+        dataType: 'script',
+        complete: function(request){
+          $('.courses_list').effect('highlight');
+        },
+        url: '/diplomas/1/programm_items/sort'})
+    }
+  });
+};
+
 $(function() {
   selecting_discipline_type_on_diploma();
   adding_programm_item();
   edit_programm_item();
+  sort_programm_item();
 
   if ($('.details ol li').length>0) {
     delete_discipline_item();

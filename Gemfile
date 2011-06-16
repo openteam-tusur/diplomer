@@ -22,6 +22,7 @@ group :development do
 end
 
 gem 'aasm'
+gem 'acts_as_list'
 gem 'compass'
 gem 'devise'
 gem 'dynamic_form'

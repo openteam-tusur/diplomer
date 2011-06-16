@@ -28,8 +28,8 @@
       </div>
       <ol class='courses_list list'>
         <% if @diploma.courses.any? %>
-          <% @diploma.courses.each do |course| %>
-            <li class="item">
+          <% @diploma.courses.order('position ASC').each do |course| %>
+            <li class="item" id="programm_item_<%= course.id %>">
               <%= render :partial => "courses/course", :locals => {:course => course} %>
             </li>
           <% end %>

@@ -10,6 +10,9 @@ TusurDiplomer::Application.routes.draw do
     resources :practices
     resource  :final_state_examination
     resource  :final_qualification_project
+    resources :programm_items do
+      post :sort, :on => :collection
+    end
   end
 
   resources :chairs
