@@ -1,11 +1,11 @@
-function diploma_disciplines(){
+function selecting_discipline_type_on_diploma(){
   var items = $('.tabs_menu li');
   items.removeClass('current');
   items.first().addClass('current');
   $('.details_wrapper .details').children('li').hide();
   $('#courses').show();
-  $('.tabs_menu a').click(function(){
-    var element = "#"+$(this).attr('class');
+  $('.tabs_menu li').click(function(){
+    var element = "#"+$(this).children().attr('class');
     items.removeClass('current');
     $('.details_wrapper .details').children('li').hide();
     $(this).parent('li').addClass('current');
@@ -14,66 +14,57 @@ function diploma_disciplines(){
   });
 };
 
-function delete_discipline(){
-  $(".details table tr td:first-child").bind('ajax:success', function(){
-    $(this).parent('tr').fadeOut(300, function() {
+function delete_discipline_item(){
+  $(".details ol li .delete_link").live('ajax:success', function(){
+    $(this).closest('li').fadeOut(300, function() {
       $(this).remove();
-      numeration();
     });
   });
 };
 
-function numeration(){
-  $('tbody.list').each(function(i){
-    $(this).find('td:first-child').each(function(l){
-      $(this).find('span').html(l+1+". ");
-    });
-  });
-};
-
-function courses_manipulations(){
+function adding_programm_item(){
   var table = $('.courses_list');
-  $('#new_course').bind('ajax:success', function(evt, data, status, xhr){
-    table.find('.empty').remove();
-    table.append(xhr.responseText);
-    $('.inputs input, input[id*=discipline_id], select').val('');
-    numeration();
+  $('#new_course').live('ajax:success', function(evt, data, status, xhr){
+    if ($(xhr.responseText)[0].tagName.toLowerCase() == 'form') {
+      console.log(xhr.responseText);
+      $('#courses .form_new').html(xhr.responseText);
+    } else {
+      table.find('.empty').remove();
+      table.append(xhr.responseText);
+      $('.inputs input, input[id*=discipline_id], select').val('');
+    };
   });
 };
 
 function edit_programm_item(){
   $('.edit_link').live('click', function(){
     var path = $(this).attr('href');
-    var line = $(this).parent().parent();
+    var line = $(this).closest('li');
     var form = '#';
     $.ajax({
       url: path,
       type: 'GET',
       success: function(data, status, xhr){
-        line.append(xhr.responseText);
-        form += line.find('form').attr('id');
-        $(form).live('ajax:success', function(evt, data, status, xhr){
-          $(form).replaceWith(xhr.responseText);
+        line.addClass('form_edit').html(xhr.responseText);
+        var form_id = line.find('form').attr('id');
+        $('#'+form_id).live('ajax:success', function(evt, data, status, xhr){
+          line.html(xhr.responseText);
         });
       }
     });
-
-
     return false;
   });
 };
 
 $(function() {
-  courses_manipulations();
+  selecting_discipline_type_on_diploma();
+  adding_programm_item();
   edit_programm_item();
 
-  if ($('.list').length>0){
-    numeration();
+  if ($('.details ol li').length>0) {
+    delete_discipline_item();
   };
-  if ($('.details table').length>0) {
-    delete_discipline();
-  };
-  diploma_disciplines();
+
   $(".focus_first:first").focus();
 
   $("form.formtastic li.date input").datepicker({
@@ -95,13 +86,15 @@ $(function() {
     }
   });
 
-  $('input[id*=discipline_term]').autocomplete({
-    source: '/suggestions/?utf8=✓&model=discipline',
-    minLength: 2,
-    select: function(event, ui){
-      var id = '#'+$(this).attr('id').split('_discipline_term')[0]+'_discipline_id';
-      $(id).val(ui.item.id);
-    }
+  $('input[id*=discipline_term]').live('keyup.autocomplete', function (){
+      $(this).autocomplete({
+        source: '/suggestions/?utf8=✓&model=discipline',
+        minLength: 2,
+        select: function(event, ui){
+          var id = '#'+$(this).attr('id').split('_discipline_term')[0]+'_discipline_id';
+          $(id).val(ui.item.id);
+        }
+      })
   });
 
   $(".formtastic abbr, a[rel=tipsy], a.show_tipsy").tipsy({

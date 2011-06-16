@@ -9,45 +9,41 @@
 <% end %>
 
 <ul class='tabs_menu'>
-  <li><%= link_to "1. Дисциплины", '#', :class => 'courses' %></li>
-  <li><%= link_to "2. Курсовые работы", '#', :class => 'papers' %></li>
-  <li><%= link_to "3. Практики", '#', :class => 'practices' %></li>
-  <li><%= link_to "4. Гос. экзамен", '#', :class => 'state_examination' %></li>
-  <li class='last'><%= link_to "5. Квалификационная работа", '#', :class => 'qualification_project' %></li>
+  <li class='first'><%= link_to "Дисциплины", '#', :class => 'courses' %></li>
+  <li><%= link_to "Курс. работы", '#', :class => 'papers' %></li>
+  <li><%= link_to "Практики", '#', :class => 'practices' %></li>
+  <li><%= link_to "Гос. экзамен", '#', :class => 'state_examination' %></li>
+  <li class='last'><%= link_to "Квал. работа", '#', :class => 'qualification_project' %></li>
 </ul>
 
 <div class='details_wrapper'>
   <ul class='details'>
     <li id='courses'>
-      <h4>Дисциплины</h4>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Название</th>
-            <th>Название на английском языке</th>
-            <th>Баллы</th>
-            <th>Часы</th>
-            <th>Оценка</th>
-          </tr>
-        </thead>
-        <tbody class='courses_list list'>
-          <% if @diploma.courses.any? %>
-            <%= render @diploma.courses %>
-          <% else %>
-            <tr>
-              <td colspan='5' class='empty'>нет дисциплин</td>
-            </tr>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='credits'>Баллы</span>
+        <span class='hours'>Часы</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ol class='courses_list list'>
+        <% if @diploma.courses.any? %>
+          <% @diploma.courses.each do |course| %>
+            <li class="item">
+              <%= render :partial => "courses/course", :locals => {:course => course} %>
+            </li>
           <% end %>
-        </tbody>
-      </table>
-
-      <%= render :file => "courses/new.html.erb", :locals => {:diploma => resource} %>
+        <% else %>
+          <li class='empty'>нет дисциплин</li>
+        <% end %>
+      </ol>
+      <div class='form_new'>
+        <h4>Добавление новой дисциплины</h4>
+        <%= render :file => "courses/new.html.erb", :locals => {:diploma => resource} %>
+      </div>
     </li>
 
     <li id='papers'>
-      <h4>Курсовые работы</h4>
-
       <table>
         <thead>
           <tr>
@@ -71,8 +67,6 @@
     </li>
 
     <li id='practices'>
-      <h4>Практики</h4>
-
       <table>
         <thead>
           <tr>
@@ -98,7 +92,6 @@
     </li>
 
     <li id='state_examination'>
-      <h4>Гос. экзамен</h4>
       <ul class='state_examination_list list'>
         <% if @diploma.final_state_examination %>
           <%= render @diploma.final_state_examination %>
@@ -111,7 +104,6 @@
     </li>
 
     <li id='qualification_project'>
-      <h4>Квалификационная работа</h4>
       <ul class='qualification_project_list list'>
         <% if @diploma.final_qualification_project %>
           <%= render @diploma.final_qualification_project %>

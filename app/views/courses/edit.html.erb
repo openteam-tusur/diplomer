@@ -3,5 +3,6 @@
   <%= render :partial => 'courses/form', :locals => {:form => form} %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
+    <%= link_to t(:cancel), smart_resource_url,  :class => 'button cancel red', :remote => true, :'data-type' => 'html' %>
   <% end %>
 <% end %>
