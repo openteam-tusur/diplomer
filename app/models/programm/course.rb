@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
-  validates_presence_of :credits, :hours, :grade, :discipline
+  validates_presence_of :credits, :hours, :grade, :discipline, :discipline_term
 
   delegate :title, :eng_title, :to => :discipline
 
