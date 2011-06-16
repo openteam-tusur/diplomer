@@ -34,7 +34,7 @@ gem 'jquery-rails', :require => false
 gem 'princely',             :git => 'git://github.com/timriley/princely', :branch => 'disposition'
 gem 'protected_parent'
 gem 'rails'
-gem 'rake', '0.8.7'
+gem 'rake'
 gem 'render_inheritable'
 gem 'russian',              :git => 'git://github.com/tacid/russian'
 gem 'show_for'
