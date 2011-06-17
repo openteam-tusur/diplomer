@@ -38,7 +38,7 @@
         <% end %>
       </ol>
       <div class='form_new'>
-        <%= render :file => "courses/new.html.erb", :locals => {:diploma => resource} %>
+        <%= render :file => "courses/new.html.erb" %>
       </div>
     </li>
 
@@ -60,7 +60,7 @@
         <% end %>
       </ol>
       <div class='form_new'>
-        <%= render :file => "papers/new.html.erb", :locals => {:diploma => resource} %>
+        <%= render :file => "papers/new.html.erb" %>
       </div>
     </li>
 
@@ -84,7 +84,7 @@
         <% end %>
       </ol>
       <div class='form_new'>
-        <%= render :file => "practices/new.html.erb", :locals => {:diploma => resource} %>
+        <%= render :file => "practices/new.html.erb" %>
       </div>
     </li>
 
@@ -103,9 +103,6 @@
           <li class='empty'>Нет гос.экзамена </li>
         <% end %>
       </ul>
-      <div class="form_new">
-        <%= render :partial => "final_state_examinations/form" %>
-      </div>
     </li>
 
     <li id='qualification_project'>
@@ -125,10 +122,6 @@
           <li class='empty'>Нет квалификационной работы</li>
         <% end %>
       </ul>
-
-      <div class='form_new'>
-        <%= render :partial => "final_qualification_projects/form" %>
-      </div>
     </li>
   </ul>
 

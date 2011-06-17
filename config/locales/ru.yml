@@ -111,6 +111,10 @@ ru:
       person:
         name: Имя
 
+      faculty:
+        chief_name: ФИО руководителя
+        chief_post: Должность руководителя
+
       user:
         current_password: Текущий пароль
         email: E-mail

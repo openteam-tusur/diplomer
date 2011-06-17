@@ -1,7 +1,7 @@
 <span class='handle'><span>[drag]</span></span>
 <div>
   <span class='title'><%= paper.title %></span>
-  <span class='eng_title'><%= paper.eng_title %></span>
+  <span class='eng_title'><%= paper.eng_title.present? ? paper.eng_title : 'не указано' %></span>
   <span class='human_grade'><%= paper.human_grade %></span>
   <span class='actions'>
     <%= link_to t(:destroy), diploma_paper_path(paper.diploma, paper), :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
