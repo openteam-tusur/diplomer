@@ -7,6 +7,8 @@ class ProgrammItem < ActiveRecord::Base
 
   has_enum :grade, %w[satisfactorily good excellent passed], :scopes => true
 
+  default_scope :order => 'position DESC, created_at ASC'
+
   def to_s
     title
   end
