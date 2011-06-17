@@ -33,7 +33,7 @@ gem 'has_searcher'
 gem 'inherited_resources', :git => 'git://github.com/openteam/inherited_resources'
 gem 'jquery-rails', :require => false
 gem 'princely', :git => 'git://github.com/timriley/princely', :branch => 'disposition'
-gem 'rails'
+gem 'rails', '3.0.7'
 gem 'rake', '0.8.7'
 gem 'render_inheritable'
 gem 'russian', :git => 'git://github.com/tacid/russian'

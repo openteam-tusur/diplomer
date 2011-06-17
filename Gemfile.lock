@@ -203,7 +203,7 @@ DEPENDENCIES
   jquery-rails
   pg
   princely!
-  rails
+  rails (= 3.0.7)
   rails-erd
   rake (= 0.8.7)
   render_inheritable
