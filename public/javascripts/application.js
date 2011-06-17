@@ -30,7 +30,7 @@ function adding_programm_item(){
       $('#courses .form_new').html(xhr.responseText);
     } else {
       table.find('.empty').remove();
-      table.append(xhr.responseText);
+      table.append('<li class="item">'+xhr.responseText+'</li>');
       $('.inputs input, input[id*=discipline_id], select').val('');
     };
   });
