@@ -4,8 +4,8 @@
   <span class='eng_title'><%= paper.eng_title.present? ? paper.eng_title : 'не указано' %></span>
   <span class='human_grade'><%= paper.human_grade %></span>
   <span class='actions'>
-    <%= link_to t(:destroy), [paper.context, course], :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
-    <%= link_to t(:edit), [:edit, paper.context, course], :class => 'edit_link' %>
+    <%= link_to t(:destroy), [paper.context, paper], :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), [:edit, paper.context, paper], :class => 'edit_link' %>
   </span>
 </div>
 
