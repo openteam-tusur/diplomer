@@ -1,0 +1,103 @@
+<%= show_for resource do |item| %>
+  <%= item.attributes :code, :title, :eng_title, :qualification, :eng_qualification %>
+<% end %>
+
+<ul class='tabs_menu'>
+  <li class='first'><%= link_to "Дисциплины", '#', :class => 'courses' %></li>
+  <li><%= link_to "Курс. работы", '#', :class => 'papers' %></li>
+  <li><%= link_to "Практики", '#', :class => 'practices' %></li>
+  <li><%= link_to "Гос. экзамен", '#', :class => 'state_examination' %></li>
+  <li class='last'><%= link_to "Квал. работа", '#', :class => 'qualification_project' %></li>
+</ul>
+
+<div class='details_wrapper'>
+  <ul class='details'>
+    <li id='courses'>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='credits'>Баллы</span>
+        <span class='hours'>Часы</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ol class='courses_list list'>
+        <% if @speciality.courses.any? %>
+          <% @speciality.courses.order('position ASC').each do |course| %>
+            <li class="item" id="programm_item_<%= course.id %>">
+              <%= render :partial => "courses/course", :locals => {:course => course} %>
+            </li>
+          <% end %>
+        <% else %>
+          <li class='empty'>нет дисциплин</li>
+        <% end %>
+      </ol>
+      <div class='form_new'>
+        <%= render :file => "courses/new.html.erb" %>
+      </div>
+    </li>
+
+    <li id='papers'>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ol class='papers_list list'>
+        <% if @speciality.papers.any? %>
+          <% @speciality.papers.order('position ASC').each do |paper| %>
+            <li class="item" id="programm_item_<%= paper.id %>">
+              <%= render :partial => "papers/paper", :locals => {:paper => paper} %>
+            </li>
+          <% end %>
+        <% else %>
+          <li class='empty'>нет курсовых работ</li>
+        <% end %>
+      </ol>
+      <div class='form_new'>
+        <%= render :file => "papers/new.html.erb" %>
+      </div>
+    </li>
+
+    <li id='practices'>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='credits'>Баллы</span>
+        <span class='hours'>Недели</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ol class='practices_list list'>
+        <% if @speciality.practices.any? %>
+          <% @speciality.practices.order('position ASC').each do |practice| %>
+            <li class="item" id="programm_item_<%= practice.id %>">
+              <%= render :partial => "practices/practice", :locals => {:practice => practice} %>
+            </li>
+          <% end %>
+        <% else %>
+          <li class='empty'>нет практик</li>
+        <% end %>
+      </ol>
+      <div class='form_new'>
+        <%= render :file => "practices/new.html.erb" %>
+      </div>
+    </li>
+
+    <li id='state_examination'>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ul class='state_examination_list list'>
+        <% if @speciality.final_state_examination %>
+          <li class="item">
+            <%= render @speciality.final_state_examination %>
+          </li>
+        <% else %>
+          <li class='empty'>Нет гос.экзамена </li>
+        <% end %>
+      </ul>
+    </li>
+
+  </ul>
+

@@ -73,10 +73,11 @@ ActiveRecord::Schema.define(:version => 20110617054408) do
     t.integer  "weeks"
     t.string   "type"
     t.integer  "discipline_id"
-    t.integer  "diploma_id"
+    t.integer  "context_id"
     t.text     "title"
     t.text     "eng_title"
     t.integer  "position"
+    t.string   "context_type"
   end
 
   create_table "roles", :force => true do |t|

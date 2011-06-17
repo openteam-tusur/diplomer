@@ -1,8 +1,5 @@
-<%= semantic_form_for @course, :url => diploma_courses_path(@diploma), :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+<%= semantic_form_for @course, :url => [@course.context, :courses], :remote => true, :html => {:'data-type' => 'html'} do |form| %>
   <h4>Добавление новой дисциплины</h4>
-  <%= form.error_messages %>
-  <%= render :partial => 'courses/form', :locals => {:form => form} %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
-  <% end %>
+  <%= render :partial => 'courses/form', :locals => {:form => form, :cancel => false} %>
 <% end %>
+

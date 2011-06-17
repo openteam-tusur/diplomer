@@ -1,9 +1,5 @@
-<%= semantic_form_for @paper, :url => diploma_papers_path(@diploma), :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+<%= semantic_form_for @paper, :url => [@paper.context, :papers], :remote => true, :html => {:'data-type' => 'html'} do |form| %>
   <h4>Добавление новой курсовой работы</h4>
-  <%= form.error_messages %>
-  <%= render :partial => 'papers/form', :locals => {:form => form} %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
-  <% end %>
+  <%= render :partial => 'papers/form', :locals => {:form => form, :cancel => false} %>
 <% end %>
 

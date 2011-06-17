@@ -4,14 +4,14 @@ class Diploma < ActiveRecord::Base
   belongs_to :chair
   belongs_to :speciality
 
-  has_many :courses, :dependent => :destroy
-  has_many :papers, :dependent => :destroy
-  has_many :practices, :dependent => :destroy
-  has_many :programm_items
+  has_many :courses,        :dependent => :destroy, :as => :context
+  has_many :papers,         :dependent => :destroy, :as => :context
+  has_many :practices,      :dependent => :destroy, :as => :context
+  has_many :programm_items,                         :as => :context
 
-  has_one :final_qualification_project, :dependent => :destroy
-  has_one :final_state_examination, :dependent => :destroy
-  has_one :student, :dependent => :destroy
+  has_one :final_qualification_project, :dependent => :destroy, :as => :context
+  has_one :final_state_examination,     :dependent => :destroy, :as => :context
+  has_one :student,                     :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
                         :study_form, :total_hours, :contact_hours, :chair

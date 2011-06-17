@@ -1,8 +1,4 @@
-<%= semantic_form_for @paper, :url => diploma_paper_path(@paper.diploma, @paper), :remote => true, :html => {:'data-type' => 'html'} do |form| %>
-  <%= form.error_messages %>
-  <%= render :partial => 'papers/form', :locals => {:form => form} %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
-    <%= link_to t(:cancel), smart_resource_url,  :class => 'button cancel red', :remote => true, :'data-type' => 'html' %>
-  <% end %>
+<%= semantic_form_for @paper, :url => resource_url, :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+  <%= render :partial => 'papers/form', :locals => {:form => form, :cancel => true } %>
 <% end %>
+

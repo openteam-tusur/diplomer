@@ -3,7 +3,15 @@
 class Speciality < ActiveRecord::Base
   has_many :diplomas
 
+  has_many :courses,       :dependent => :destroy, :as => :context
+  has_many :papers,        :dependent => :destroy, :as => :context
+  has_many :practices,     :dependent => :destroy, :as => :context
+
+  has_one :final_state_examination,     :dependent => :destroy, :as => :context
+
   validates_presence_of :code, :title, :qualification
+
+  after_create :create_final_state_examination
 
   has_translate
 

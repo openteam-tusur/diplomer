@@ -6,7 +6,8 @@
   <span class='hours'><%= practice.weeks %></span>
   <span class='human_grade'><%= practice.human_grade %></span>
   <span class='actions'>
-    <%= link_to t(:destroy), diploma_practice_path(practice.diploma, practice), :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
-    <%= link_to t(:edit), edit_diploma_practice_path(practice.diploma, practice), :class => 'edit_link' %>
+    <%= link_to t(:destroy), [practice.context, practice], :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), [:edit, practice.context, practice], :class => 'edit_link' %>
   </span>
 </div>
+
