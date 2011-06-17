@@ -29,7 +29,6 @@
                             :html => { :'data-type' => 'html' } do |form| %>
         <h4>Добавление новой дисциплины</h4>
         <%= form.error_messages %>
-        <%= form.input : %>
         <%= render :partial => 'courses/form', :locals => {:form => form} %>
         <%= form.buttons do %>
           <%= form.commit_button :button_html => { :class => "button" } %>

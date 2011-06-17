@@ -1,11 +1,13 @@
 # encoding: utf-8
 
 class CoursesController < CrudController
-  belongs_to :context, :polymorphic => true
-  respond_to :html
+  actions :all
+
+  belongs_to :diploma, :speciality, :optional => true
+
   layout :false, :only => [:show, :edit]
 
-  actions :all
+  respond_to :html
 
   def show
     @course = Course.find(params[:id])
