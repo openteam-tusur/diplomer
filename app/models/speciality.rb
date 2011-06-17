@@ -7,7 +7,6 @@ class Speciality < ActiveRecord::Base
   has_many :papers,        :dependent => :destroy, :as => :context
   has_many :practices,     :dependent => :destroy, :as => :context
 
-
   validates_presence_of :code, :title, :qualification
 
   has_translate

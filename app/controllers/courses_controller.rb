@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class CoursesController < CrudController
-  belongs_to :diploma
+  belongs_to :context, :polymorphic => true
   respond_to :html
   layout :false, :only => [:show, :edit]
 
@@ -18,3 +18,4 @@ class CoursesController < CrudController
     }
   end
 end
+

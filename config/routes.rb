@@ -18,7 +18,13 @@ TusurDiplomer::Application.routes.draw do
   resources :chairs
   resources :disciplines,  :except => :show
   resources :faculties,    :except => :show
-  resources :specialities, :except => :show
+
+  resources :specialities do
+    resources :courses
+    resources :papers
+    resources :practices
+  end
+
   resources :suggestions,  :only => :index
   resources :users
 
