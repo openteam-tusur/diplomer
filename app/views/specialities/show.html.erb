@@ -1,3 +1,4 @@
+<% title @speciality.title %>
 <%= show_for resource do |item| %>
   <%= item.attributes :code, :title, :eng_title, :qualification, :eng_qualification %>
 <% end %>
@@ -7,7 +8,6 @@
   <li><%= link_to "Курс. работы", '#', :class => 'papers' %></li>
   <li><%= link_to "Практики", '#', :class => 'practices' %></li>
   <li><%= link_to "Гос. экзамен", '#', :class => 'state_examination' %></li>
-  <li class='last'><%= link_to "Квал. работа", '#', :class => 'qualification_project' %></li>
 </ul>
 
 <div class='details_wrapper'>
@@ -18,7 +18,6 @@
         <span class='eng_title'>Название на англ. языке</span>
         <span class='credits'>Баллы</span>
         <span class='hours'>Часы</span>
-        <span class='human_grade'>Оценка</span>
       </div>
       <ol class='courses_list list'>
         <% if @speciality.courses.any? %>
@@ -40,7 +39,6 @@
       <div class="headline">
         <span class='title'>Название</span>
         <span class='eng_title'>Название на англ. языке</span>
-        <span class='human_grade'>Оценка</span>
       </div>
       <ol class='papers_list list'>
         <% if @speciality.papers.any? %>
@@ -64,7 +62,6 @@
         <span class='eng_title'>Название на англ. языке</span>
         <span class='credits'>Баллы</span>
         <span class='hours'>Недели</span>
-        <span class='human_grade'>Оценка</span>
       </div>
       <ol class='practices_list list'>
         <% if @speciality.practices.any? %>
@@ -81,12 +78,10 @@
         <%= render :file => "practices/new.html.erb" %>
       </div>
     </li>
-
     <li id='state_examination'>
       <div class="headline">
         <span class='title'>Название</span>
         <span class='eng_title'>Название на англ. языке</span>
-        <span class='human_grade'>Оценка</span>
       </div>
       <ul class='state_examination_list list'>
         <% if @speciality.final_state_examination %>

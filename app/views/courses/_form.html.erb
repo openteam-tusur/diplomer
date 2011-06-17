@@ -4,7 +4,7 @@
     <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
     <%= form.input :credits, :wrapper_html => {:class => 'tight'} %>
     <%= form.input :hours, :wrapper_html => {:class => 'tight'} %>
-    <%= form.input :grade %>
+    <%= form.input :grade if form.object.context.is_a?(Diploma) %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>

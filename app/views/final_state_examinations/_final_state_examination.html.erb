@@ -3,8 +3,7 @@
   <span class='eng_title'><%= final_state_examination.eng_title.present? ? final_state_examination.eng_title : 'не указано' %></span>
   <span class='human_grade'><%= final_state_examination.human_grade %></span>
   <span class='actions'>
-    <%= link_to t(:edit), [:edit, final_state_examination.context] , :class => 'edit_link' %>
-
+    <%= link_to t(:edit), [:edit, final_state_examination.context, :final_state_examination] , :class => 'edit_link' %>
   </span>
 </div>
 

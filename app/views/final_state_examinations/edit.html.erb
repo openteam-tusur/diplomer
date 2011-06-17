@@ -1,5 +1,5 @@
-<%= semantic_form_for @diploma.final_state_examination,
-                      :url => diploma_final_state_examination_path(@diploma),
+<%= semantic_form_for @final_state_examination,
+                      :url => resource_url,
                       :remote => true,
                       :html => {:'data-type' => 'html'} do |form| %>
   <h4>Государственный экзамен</h4>
@@ -7,7 +7,7 @@
   <%= form.inputs do %>
     <%= form.input :title %>
     <%= form.input :eng_title %>
-    <%= form.input :grade %>
+    <%= form.input :grade if form.object.context.is_a?(Diploma) %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>

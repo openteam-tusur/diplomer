@@ -8,8 +8,7 @@ class FinalStateExaminationsController < CrudController
   actions :all, :except => :index
 
   def show
-    @final_state_examination = FinalStateExamination.where(:diploma_id => params[:diploma_id]).first
-    render :partial => 'final_state_examinations/final_state_examination', :locals => { :final_state_examination => @final_state_examination }
+    render :partial => 'final_state_examinations/final_state_examination', :locals => {:final_state_examination => resource}
   end
 end
 
