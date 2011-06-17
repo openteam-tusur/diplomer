@@ -1,7 +1,7 @@
 <%= semantic_form_for @diploma.final_state_examination,
                       :url => diploma_final_state_examination_path(@diploma),
                       :remote => true,
-                      :'data-type' => 'html' do |form| %>
+                      :html => {:'data-type' => 'html'} do |form| %>
   <h4>Государственный экзамен</h4>
   <%= form.error_messages %>
   <%= form.inputs do %>
