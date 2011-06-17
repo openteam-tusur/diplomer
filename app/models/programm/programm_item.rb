@@ -3,6 +3,7 @@
 class ProgrammItem < ActiveRecord::Base
   belongs_to :diploma
   belongs_to :discipline
+  acts_as_list
 
   has_enum :grade, %w[satisfactorily good excellent passed], :scopes => true
 
@@ -12,7 +13,7 @@ class ProgrammItem < ActiveRecord::Base
 
   protected
     def create_discipline_if_necessury
-      self.discipline = Discipline.create!(:title => self.discipline_term) unless self.discipline
+      self.discipline = Discipline.create!(:title => self.discipline_term) if self.discipline_term.present? && !self.discipline
     end
 end
 

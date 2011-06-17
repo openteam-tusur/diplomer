@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110606030022) do
+ActiveRecord::Schema.define(:version => 20110616060148) do
 
   create_table "chairs", :force => true do |t|
     t.text     "title"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110606030022) do
     t.integer  "diploma_id"
     t.text     "title"
     t.text     "eng_title"
+    t.integer  "position"
   end
 
   create_table "roles", :force => true do |t|

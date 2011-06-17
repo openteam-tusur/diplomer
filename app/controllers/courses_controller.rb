@@ -2,11 +2,14 @@
 
 class CoursesController < CrudController
   belongs_to :diploma
+  respond_to :html
+  layout :false, :only => [:show, :edit]
 
-  actions :all, :except => :show
+  actions :all
 
-  def index
-    @courses = Course.where(:diploma_id => params[:diploma_id])
+  def show
+    @course = Course.find(params[:id])
+    render :partial => 'courses/course', :locals => { :course => @course }
   end
 
   def destroy

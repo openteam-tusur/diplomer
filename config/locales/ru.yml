@@ -9,7 +9,7 @@ ru:
 
   "Changing information": Изменение информации
   "Adding information": Добавление информации
-  "Are you sure?": Вы уверены?
+  "Are you sure?": Вы уверены, что хотите удалить?
 
   duration:
     eng_contact_hour:
@@ -94,6 +94,7 @@ ru:
     models:
       chair: Кафедры
       chair_chief: Заведующий кафедрой
+      course: Дисциплина
       dean: Декан
       diploma: Дипломы
       discipline: Дисциплины

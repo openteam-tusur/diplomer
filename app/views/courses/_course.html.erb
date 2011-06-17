@@ -1,8 +1,13 @@
-<tr>
-  <td><span></span><%= course.title %><%= link_to t(:delete), diploma_course_path(course.diploma, course), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
-  <td><%= course.eng_title %></td>
-  <td><%= course.credits %></td>
-  <td><%= course.hours %></td>
-  <td><%= course.human_grade %></td>
-</tr>
+<span class="handle"><span>[drag]</span></span>
+<div>
+  <span class='title'><%= course.title %></span>
+  <span class='eng_title'><%= course.eng_title %></span>
+  <span class='credits'><%= course.credits %></span>
+  <span class='hours'><%= course.hours %></span>
+  <span class='human_grade'><%= course.human_grade %></span>
+  <span class='actions'>
+    <%= link_to t(:destroy), diploma_course_path(course.diploma, course), :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), edit_diploma_course_path(course.diploma, course), :class => 'edit_link' %>
+  </span>
+</div>
 

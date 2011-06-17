@@ -22,7 +22,8 @@ group :development do
 end
 
 gem 'aasm'
-gem 'compass'
+gem 'acts_as_list'
+gem 'compass', '0.11.1'
 gem 'devise'
 gem 'dynamic_form'
 gem 'fancy-buttons'
@@ -31,10 +32,10 @@ gem 'has_enum'
 gem 'has_searcher'
 gem 'inherited_resources',  :git => 'git://github.com/openteam/inherited_resources'
 gem 'jquery-rails', :require => false
-gem 'princely',             :git => 'git://github.com/timriley/princely', :branch => 'disposition'
+gem 'princely', :git => 'git://github.com/timriley/princely', :branch => 'disposition'
 gem 'protected_parent'
-gem 'rails'
-gem 'rake'
+gem 'rails', '3.0.7'
+gem 'rake', '0.8.7'
 gem 'render_inheritable'
 gem 'russian',              :git => 'git://github.com/tacid/russian'
 gem 'show_for'

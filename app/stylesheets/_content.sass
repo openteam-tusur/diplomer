@@ -84,71 +84,279 @@
 
 .tabs_menu
   +border-top-left-radius
-  +border-bottom-left-radius
-  background: #fff5d5
-  border: 1px solid #ff8100
-  border-right: none
-  float: left
-  font-size: 14px
-  width: 240px
+  +border-top-right-radius
+  +clearfix
+  background: #A1BECD
+  padding: 0 0 15px 0
+  width: 100%
 
   li
-    border-bottom: 1px solid #ff8100
-    padding: 5px 10px
+    +border-radius
+    +box-shadow(#888 2px 2px 6px)
+    background: #416E86 url('/images/circle_grey.png') no-repeat center 22px
+    border: 1px solid #777
+    float: left
+    margin: 12px 5px
+    padding: 3px 0 15px
+    text-align: center
+    width: 110px
+
+    &:hover
+      background: #5d8295 url('/images/circle_yellow.png') no-repeat center 23px
+      cursor: pointer
+
+    a
+      color: #D3E1E9
+      text-decoration: none
 
   .current
-    background: #d5dbff
-    padding-right: 11px
-    position: relative
-    width: 220px
-    z-index: 2
+    +box-shadow(#aaa, 1px 1px 1px)
+    background: #5d8295 url('/images/circle_yellow.png') no-repeat center 23px
 
   .last
-    border: none
+  .first
+    margin-left: 170px
 
 .details_wrapper
-  +border-top-right-radius
-  +border-bottom-right-radius
-  +clearfix
-  border: 1px solid #ff8100
-  background: #d5dbff
-  padding: 5px 15px
-  position: relative
-  z-index: 1
-
   .details
-    h4
-      color: #184475
+    +border-bottom-left-radius
+    +border-bottom-right-radius
+    background: #A1BECD
 
-    .empty
-      text-align: center
+    .handle
+      height: 0
+      left: -27px
+      position: relative
+      top: 18px
 
-    table
-      margin: 0 0 25px 0
+      span
+        background: url('/images/sort.png') no-repeat
+        display: block
+        height: 16px
+        margin:  5px 5px 0 0
+        text-indent: -99999px
+        width: 16px
+
+        &:hover
+          cursor: move
+
+    .headline
+      +clearfix
       width: 100%
 
-      thead
-        tr
-          th
-            color: #333
-            font-size: 10px
-            padding: 3px 2px
-            text-align: center
-
-      tbody
-
-      td, th
-        border: 1px solid #838AB2
+      span
         color: #555
-        padding: 4px 10px
+        font-size: 10px
+        font-weight: bold
+        float: left
+        padding: 5px 0
+        text-transform: uppercase
+
+      .title
+        padding: 0 0 0 30px
+        width: 315px
+
+      .eng_title
+        width: 315px
+
+      .credits
+        text-align: center
+        width: 52px
+
+      .hours
+        text-align: center
+        width: 51px
+
+      .human_grade
+        text-align: center
+        width: 150px
+
+    .list
+      counter-reset: li
+      font-size: 11px
+      list-style: none
+      padding: 0
+
+      &.state_examination_list, &.qualification_project_list
+        .item
+          margin-left: 0
+          padding-left: 2em
+
+          &:before
+            content: none
+            padding: 0
+            width: 0
+
+      .item
+        +min-height(30px)
+        background: rgba(245, 245, 245, 0.2)
+        border-top: 2px solid #666
+        margin: 0 0 6px 2em
+        padding: 4px 8px
+        position: relative
+
+        &:before
+          background: #84A2B2
+          border-top: 2px solid #666
+          color: #fff
+          content: counter(li)
+          counter-increment: li
+          font-family: "Helvetica Neue", Arial, sans-serif
+          font-weight: bold
+          left: -2em
+          padding: 4px 0
+          position: absolute
+          text-align: center
+          top: -2px
+          width: 2em
+
+        div
+          +clearfix
+          +inline-block
 
         a
           +inline-block
-          background: url('/images/icon_delete.png') no-repeat
           height: 16px
-          margin: 0 0 0 10px
           text-indent: -9999px
           width: 16px
 
-    .list
-      margin-bottom: 15px
+        .delete_link
+          background: url('/images/icon_delete.png') no-repeat
+
+        .edit_link
+          background: url('/images/icon_edit.png') no-repeat
+
+        span
+          float: left
+          vertical-align: middle
+
+        .title
+          width: 315px
+
+        .eng_title
+          width: 315px
+
+        .credits
+          text-align: center
+          width: 52px
+
+        .hours
+          text-align: center
+          width: 51px
+
+        .human_grade
+          text-align: center
+          width: 150px
+
+        .actions
+          margin: 0 0 0 0 !important
+          width: 37px
+
+      .empty
+        list-style: none
+        text-align: center
+
+      .form_edit
+        height: auto
+
+        .formtastic
+          +clearfix
+
+          .inputs
+            float: left
+            margin: 0 10px 0 0
+
+            .wide
+              #course_discipline_term
+                width: 400px !important
+
+          .buttons
+            padding: 10px 0 0 744px
+            margin: 0 !important
+
+            .commit
+              input
+                font-size: 12px
+
+            .cancel
+              font-size: 12px
+              height: auto
+              text-indent: 0px
+              width: auto
+
+    .form_new
+      +border-bottom-left-radius
+      +border-bottom-right-radius
+      background: #BCD25C
+      border-top: 2px solid #666
+      padding: 5px 0 5px 25px
+
+      .formtastic
+        +clearfix
+
+        .inputs
+          float: left
+          margin: 0 10px 0 0
+
+        .buttons
+          padding: 23px 0 0 850px
+
+          .commit
+            input
+              font-size: 12px
+
+        ol
+          #course_credits_input
+            margin: 0 10px 0 0
+
+          #course_hours_input
+            margin: 0 10px 0 0
+
+          #course_discipline_term_input
+            margin: 0 10px 0 0
+
+          #course_grade_input
+            margin: 0 10px 0 0
+
+    .form_new, .form_edit
+      .formtastic
+        .inputs
+          #course_grade_input
+            margin-right: 0
+
+          #course_grade
+            width: 165px
+
+          .tight
+            #course_credits, #course_hours
+              width: 140px !important
+
+        .errorExplanation
+          +border-radius
+          background: #F7E7DD
+          display: block
+          margin: 0 0 5px 0
+          padding: 10px
+          width: 320px
+
+          h2
+            font-size: 12px
+            margin: 0 0 10px 0 !important
+
+          p
+            font-size: 10px
+            margin: 0 0 3px 0 !important
+
+          ul
+            font-size: 10px
+
+            li
+              margin: 0 0 0 10px
+
+
+        .inline-errors
+          position: absolute
+
+        &.final_state_examination, &.final_qualification_project
+          .inputs
+            width: 915px
