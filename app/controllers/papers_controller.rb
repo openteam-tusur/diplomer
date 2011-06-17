@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class PapersController < CrudController
-  belongs_to :diploma
+  belongs_to :diploma, :speciality, :optional => true
   respond_to :html
   layout :false, :only => [:show, :edit]
 
@@ -18,3 +18,4 @@ class PapersController < CrudController
     }
   end
 end
+

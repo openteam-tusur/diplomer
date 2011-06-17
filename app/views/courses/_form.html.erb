@@ -1,8 +1,13 @@
+  <%= form.error_messages %>
   <%= form.inputs do %>
     <%= form.input :discipline_id, :as => :hidden %>
     <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
     <%= form.input :credits, :wrapper_html => {:class => 'tight'} %>
     <%= form.input :hours, :wrapper_html => {:class => 'tight'} %>
     <%= form.input :grade %>
+  <% end %>
+  <%= form.buttons do %>
+    <%= form.commit_button :button_html => { :class => "button" } %>
+    <%= link_to t(:cancel), smart_resource_url,  :class => 'button cancel red', :remote => true, :'data-type' => 'html' if cancel %>
   <% end %>
 

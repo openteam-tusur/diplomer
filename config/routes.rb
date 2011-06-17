@@ -23,6 +23,7 @@ TusurDiplomer::Application.routes.draw do
     resources :courses
     resources :papers
     resources :practices
+    resource  :final_state_examination
   end
 
   resources :suggestions,  :only => :index
