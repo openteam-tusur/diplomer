@@ -2,7 +2,7 @@
   <%= form.inputs do %>
     <%= form.input :discipline_id, :as => :hidden %>
     <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
-    <%= form.input :grade %>
+    <%= form.input :grade if form.object.context.is_a?(Diploma) %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>

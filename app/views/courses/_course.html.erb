@@ -4,7 +4,7 @@
   <span class='eng_title'><%= course.eng_title.present? ? course.eng_title : 'не указано' %></span>
   <span class='credits'><%= course.credits %></span>
   <span class='hours'><%= course.hours %></span>
-  <span class='human_grade'><%= course.human_grade %></span>
+  <%= content_tag(:span, course.human_grade, :class => 'human_grade') if course.context.is_a?(Diploma) %>
   <span class='actions'>
     <%= link_to t(:destroy), [course.context, course], :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
     <%= link_to t(:edit), [:edit, course.context, course], :class => 'edit_link' %>

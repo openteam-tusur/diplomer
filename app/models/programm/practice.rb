@@ -2,7 +2,7 @@
 
 class Practice < ProgrammItem
   validates_presence_of :credits, :weeks
-  validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma)}
+  validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }
 
   delegate :title, :eng_title, :to => :discipline
 

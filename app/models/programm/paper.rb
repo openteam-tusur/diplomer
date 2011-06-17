@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Paper < ProgrammItem
-  validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma)}
+  validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }
 
   delegate :title, :eng_title, :to => :discipline
 

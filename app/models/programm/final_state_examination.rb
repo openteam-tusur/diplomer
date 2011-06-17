@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 class FinalStateExamination < ProgrammItem
-  validates_presence_of :title, :grade, :on => :update
+  validates_presence_of :title, :on => :update
+  validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }, :on => :update
 
   has_translate
 
