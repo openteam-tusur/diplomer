@@ -11,6 +11,8 @@ class ProgrammItem < ActiveRecord::Base
     title
   end
 
+  alias :diploma :context
+
   protected
     def create_discipline_if_necessury
       self.discipline = Discipline.create!(:title => self.discipline_term) if self.discipline_term.present? && !self.discipline

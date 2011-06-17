@@ -5,7 +5,6 @@
   <h4>Государственный экзамен</h4>
   <%= form.error_messages %>
   <%= form.inputs do %>
-    <%= form.input :diploma_id, :as => :hidden %>
     <%= form.input :title %>
     <%= form.input :eng_title %>
     <%= form.input :grade %>
@@ -14,3 +13,4 @@
     <%= form.commit_button :button_html => { :class => "button" } %>
   <% end %>
 <% end %>
+

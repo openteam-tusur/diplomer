@@ -5,7 +5,6 @@
   <h4>Квалификационная работа</h4>
   <%= form.error_messages %>
   <%= form.inputs do %>
-    <%= form.input :diploma_id, :as => :hidden %>
     <%= form.input :title %>
     <%= form.input :eng_title %>
     <%= form.input :credits %>
@@ -16,3 +15,4 @@
     <%= form.commit_button :button_html => { :class => "button" } %>
   <% end %>
 <% end %>
+
