@@ -77,7 +77,7 @@ function sort_programm_item(){
         complete: function(request){
           $('.courses_list').effect('highlight');
         },
-        url: '/diplomas/1/programm_items/sort'})
+        url: window.location.pathname + '/programm_items/sort'})
     }
   });
 };
@@ -131,3 +131,4 @@ $(function() {
   });
 
 });
+
