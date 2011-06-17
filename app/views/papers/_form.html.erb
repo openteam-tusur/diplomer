@@ -1,13 +1,6 @@
-<%= semantic_form_for Paper.new, :url => diploma_papers_path(diploma), :remote => true do |form| %>
-  <%= form.error_messages %>
   <%= form.inputs do %>
-    <%= form.input :diploma_id, :as => :hidden, :value => diploma.id %>
+    <%= form.input :diploma_id, :as => :hidden %>
     <%= form.input :discipline_id, :as => :hidden %>
     <%= form.input :discipline_term, :wrapper_html => {:class => 'wide'} %>
     <%= form.input :grade %>
   <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
-    <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
-  <% end %>
-<% end %>

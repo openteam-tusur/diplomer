@@ -2,11 +2,14 @@
 
 class PracticesController < CrudController
   belongs_to :diploma
+  respond_to :html
+  layout :false, :only => [:show, :edit]
 
-  actions :all, :except => :show
+  actions :all
 
-  def index
-    @practices = Practice.where(:diploma_id => params[:diploma_id])
+  def show
+    @practice = Practice.find(params[:id])
+    render :partial => 'practices/practice', :locals => { :practice => @practice }
   end
 
   def destroy

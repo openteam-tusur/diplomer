@@ -1,7 +1,12 @@
-<tr>
-  <td><span></span><%= practice.title %><%= link_to t(:delete), diploma_practice_path(practice.diploma, practice), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
-  <td><%= practice.eng_title %></td>
-  <td><%= practice.credits %></td>
-  <td><%= practice.weeks %></td>
-  <td><%= practice.human_grade %></td>
-</tr>
+<span class="handle"><span>[drag]</span></span>
+<div>
+  <span class='title'><%= practice.title %></span>
+  <span class='eng_title'><%= practice.eng_title %></span>
+  <span class='credits'><%= practice.credits %></span>
+  <span class='hours'><%= practice.weeks %></span>
+  <span class='human_grade'><%= practice.human_grade %></span>
+  <span class='actions'>
+    <%= link_to t(:destroy), diploma_practice_path(practice.diploma, practice), :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), edit_diploma_practice_path(practice.diploma, practice), :class => 'edit_link' %>
+  </span>
+</div>

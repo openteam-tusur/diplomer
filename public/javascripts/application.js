@@ -8,7 +8,7 @@ function selecting_discipline_type_on_diploma(){
     var element = "#"+$(this).children().attr('class');
     items.removeClass('current');
     $('.details_wrapper .details').children('li').hide();
-    $(this).parent('li').addClass('current');
+    $(this).addClass('current');
     $(element).show();
     return false;
   });
@@ -61,9 +61,9 @@ function sort_programm_item(){
     axis: 'y',
     dropOnEmpty: false,
     handle: '.handle',
-    cursor: 'crosshair',
+    cursor: 'move',
     items: 'li',
-    opacity: 0.4,
+    opacity: 0.7,
     scroll: true,
     update: function(){
       $.ajax({
@@ -127,4 +127,3 @@ $(function() {
   });
 
 });
-

@@ -1,15 +1,16 @@
 <%= semantic_form_for @diploma.final_state_examination,
-                      :url => diploma_final_state_examination_path(diploma),
-                      :remote => true do |form| %>
+                      :url => diploma_final_state_examination_path(@diploma),
+                      :remote => true,
+                      :'data-type' => 'html' do |form| %>
+  <h4>Государственный экзамен</h4>
   <%= form.error_messages %>
   <%= form.inputs do %>
-    <%= form.input :diploma_id, :as => :hidden, :value => diploma.id %>
+    <%= form.input :diploma_id, :as => :hidden %>
     <%= form.input :title %>
     <%= form.input :eng_title %>
     <%= form.input :grade %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
-    <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
   <% end %>
 <% end %>

@@ -2,6 +2,8 @@
 
 class FinalStateExaminationsController < CrudController
   belongs_to :diploma, :singleton => true
+  respond_to :html
+  layout :false, :only => [:show, :edit]
 
   actions :all, :except => :index
 

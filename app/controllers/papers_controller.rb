@@ -2,11 +2,14 @@
 
 class PapersController < CrudController
   belongs_to :diploma
+  respond_to :html
+  layout :false, :only => [:show, :edit]
 
-  actions :all, :except => :show
+  actions :all
 
-  def index
-    @papers = Paper.where(:diploma_id => params[:diploma_id])
+  def show
+    @paper = Paper.find(params[:id])
+    render :partial => 'papers/paper', :locals => { :paper => @paper }
   end
 
   def destroy

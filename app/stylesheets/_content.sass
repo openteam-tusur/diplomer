@@ -102,7 +102,7 @@
     width: 110px
 
     &:hover
-      background: #84A2B2 url('/images/circle_yellow.png') no-repeat center 23px
+      background: #5d8295 url('/images/circle_yellow.png') no-repeat center 23px
       cursor: pointer
 
     a
@@ -110,7 +110,8 @@
       text-decoration: none
 
   .current
-    background: #416E86 url('/images/circle_yellow.png') no-repeat center 23px
+    +box-shadow(#aaa, 1px 1px 1px)
+    background: #5d8295 url('/images/circle_yellow.png') no-repeat center 23px
 
   .last
   .first
@@ -121,6 +122,23 @@
     +border-bottom-left-radius
     +border-bottom-right-radius
     background: #A1BECD
+
+    .handle
+      height: 0
+      left: -27px
+      position: relative
+      top: 18px
+
+      span
+        background: url('/images/sort.png') no-repeat
+        display: block
+        height: 16px
+        margin:  5px 5px 0 0
+        text-indent: -99999px
+        width: 16px
+
+        &:hover
+          cursor: move
 
     .headline
       +clearfix
@@ -139,17 +157,18 @@
         width: 315px
 
       .eng_title
-        width: 325px
+        width: 315px
 
       .credits
         text-align: center
-        width: 47px
+        width: 52px
 
       .hours
         text-align: center
-        width: 46px
+        width: 51px
 
       .human_grade
+        text-align: center
         width: 150px
 
     .list
@@ -157,6 +176,16 @@
       font-size: 11px
       list-style: none
       padding: 0
+
+      &.state_examination_list, &.qualification_project_list
+        .item
+          margin-left: 0
+          padding-left: 2em
+
+          &:before
+            content: none
+            padding: 0
+            width: 0
 
       .item
         +min-height(30px)
@@ -205,17 +234,18 @@
           width: 315px
 
         .eng_title
-          width: 325px
+          width: 315px
 
         .credits
           text-align: center
-          width: 47px
+          width: 52px
 
         .hours
           text-align: center
-          width: 46px
+          width: 51px
 
         .human_grade
+          text-align: center
           width: 150px
 
         .actions
@@ -326,3 +356,7 @@
 
         .inline-errors
           position: absolute
+
+        &.final_state_examination, &.final_qualification_project
+          .inputs
+            width: 915px

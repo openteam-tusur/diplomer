@@ -1,5 +1,10 @@
-<tr>
-  <td><span></span><%= paper.title %><%= link_to t(:delete), diploma_paper_path(paper.diploma, paper), :confirm => t('Are you sure?'), :method => :delete, :remote => true %></td>
-  <td><%= paper.eng_title %></td>
-  <td><%= paper.human_grade %></td>
-</tr>
+<span class='handle'><span>[drag]</span></span>
+<div>
+  <span class='title'><%= paper.title %></span>
+  <span class='eng_title'><%= paper.eng_title %></span>
+  <span class='human_grade'><%= paper.human_grade %></span>
+  <span class='actions'>
+    <%= link_to t(:destroy), diploma_paper_path(paper.diploma, paper), :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), edit_diploma_paper_path(paper.diploma, paper), :class => 'edit_link' %>
+  </span>
+</div>
