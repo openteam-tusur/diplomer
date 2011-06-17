@@ -23,15 +23,19 @@ function delete_discipline_item(){
 };
 
 function adding_programm_item(){
-  var table = $('.courses_list');
-  $('#new_course').live('ajax:success', function(evt, data, status, xhr){
+  $('#new_course, #new_paper, #new_practice, .final_state_examination, .final_qualification_project').live('ajax:success', function(evt, data, status, xhr){
+    var form_new = $(this).parent();
+    var list = form_new.prev('.list');
     if ($(xhr.responseText)[0].tagName.toLowerCase() == 'form') {
-      console.log(xhr.responseText);
-      $('#courses .form_new').html(xhr.responseText);
+      form_new.html(xhr.responseText);
     } else {
-      table.find('.empty').remove();
-      table.append('<li class="item">'+xhr.responseText+'</li>');
-      $('.inputs input, input[id*=discipline_id], select').val('');
+      list.find('.empty').remove();
+      if (list.hasClass('state_examination_list') || list.hasClass('qualification_project_list')) {
+        list.html('<li class="item">'+xhr.responseText+'</li>');
+      } else {
+        list.append('<li class="item">'+xhr.responseText+'</li>');
+        $('.inputs input, input[id*=discipline_id], select').val('');
+      };
     };
   });
 };
