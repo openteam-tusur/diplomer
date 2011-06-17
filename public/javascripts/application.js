@@ -82,11 +82,19 @@ function sort_programm_item(){
   });
 };
 
+function special_edit_link(){
+  $('.special_edit_link').live('click', function(){
+    $(this).closest('.list').next('.form_new').toggle();
+    return false;
+  });
+};
+
 $(function() {
   selecting_discipline_type_on_diploma();
   adding_programm_item();
   edit_programm_item();
   sort_programm_item();
+  special_edit_link();
 
   if ($('.details ol li').length>0) {
     delete_discipline_item();

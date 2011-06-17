@@ -1,7 +1,7 @@
 <span class="handle"><span>[drag]</span></span>
 <div>
   <span class='title'><%= practice.title %></span>
-  <span class='eng_title'><%= practice.eng_title %></span>
+  <span class='eng_title'><%= practice.eng_title.present? ? practice.eng_title : 'не указано' %></span>
   <span class='credits'><%= practice.credits %></span>
   <span class='hours'><%= practice.weeks %></span>
   <span class='human_grade'><%= practice.human_grade %></span>
