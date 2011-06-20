@@ -31,7 +31,7 @@ class CrudController < ApplicationController
     end
 
     def per_page
-      10
+      15
     end
 
     def render_new_button?

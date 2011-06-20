@@ -5,6 +5,9 @@ class Speciality < ActiveRecord::Base
 
   validates_presence_of :code, :title, :qualification
 
+
+  default_scope :order => 'title ASC'
+
   has_translate
 
   has_programm_items

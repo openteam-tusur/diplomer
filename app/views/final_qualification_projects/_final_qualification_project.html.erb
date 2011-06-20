@@ -1,5 +1,5 @@
 <div>
-  <span class='title'><%= final_qualification_project.title %></span>
+  <span class='title'><%= final_qualification_project.title? ? final_qualification_project.title : 'не указано' %></span>
   <span class='eng_title'><%= final_qualification_project.eng_title.present? ? final_qualification_project.eng_title : 'не указано' %></span>
   <span class='credits'><%= final_qualification_project.credits %></span>
   <span class='hours'><%= final_qualification_project.weeks %></span>
