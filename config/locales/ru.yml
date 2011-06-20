@@ -57,6 +57,8 @@ ru:
       index: Главная страница
     disciplines:
       delete: Удаление дисциплины
+    diplomas:
+      delete: Удаление диплома
 
   formtastic:
     required: обязательное поле
