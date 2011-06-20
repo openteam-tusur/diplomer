@@ -9,6 +9,8 @@ class Chair < ActiveRecord::Base
 
   has_translate
 
+  default_scope :order => 'title ASC'
+
   def to_s
     "#{title}"
   end

@@ -11,6 +11,8 @@ class Person < ActiveRecord::Base
 
   delegate :email, :to => :user, :allow_nil => true
 
+  default_scope :order => 'surname ASC'
+
   def name
     "#{surname} #{firstname} #{patrynomic}"
   end

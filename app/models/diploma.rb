@@ -26,6 +26,8 @@ class Diploma < ActiveRecord::Base
 
   has_autosuggest_for :speciality
 
+  default_scope :order => 'number DESC'
+
   has_enum :study_form, %w[fulltime parttime postal]
 
   def is_translated?

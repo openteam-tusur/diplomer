@@ -6,7 +6,7 @@
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
-    <li class="floatr"><%= link_to t(:destroy), resource_url, :confirm => t('Are you sure?'), :method => :delete, :class => "button red light" %></li>
+    <li class="floatr"><%= link_to t(:destroy), delete_resource_url, :class => "button red light" %></li>
   <% end %>
 <% end %>
 

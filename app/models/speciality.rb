@@ -13,6 +13,8 @@ class Speciality < ActiveRecord::Base
 
   after_create :create_final_state_examination
 
+  default_scope :order => 'title ASC'
+
   has_translate
 
   searchable do

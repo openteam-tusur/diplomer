@@ -7,6 +7,8 @@ class Faculty < ActiveRecord::Base
 
   validates_presence_of :title, :abbr, :chief_name, :chief_post
 
+  default_scope :order => 'title ASC'
+
   has_translate
 
   searchable do
