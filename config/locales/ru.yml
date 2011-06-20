@@ -55,6 +55,8 @@ ru:
       edit: Редактирование профиля
     application:
       index: Главная страница
+    disciplines:
+      delete: Удаление дисциплины
 
   formtastic:
     required: обязательное поле
@@ -95,6 +97,10 @@ ru:
       chair: Кафедры
       chair_chief: Заведующий кафедрой
       course: Дисциплина
+      paper: Курсовая работы
+      final_state_examination: Государственный экзамен
+      final_qualification_project: Выпускная квалификацонная работа
+      practice: Практика
       dean: Декан
       diploma: Дипломы
       discipline: Дисциплины

@@ -18,7 +18,7 @@
 <%= semantic_form_for resource, :url => resource_path, :html => {:method => :delete} do |form| %>
   <%= form.error_messages %>
   <%= form.buttons do %>
-    <%= form.commit_button t(:destroy), :wrapper_html => {:class => 'button'} %>
+    <%= form.commit_button t(:destroy), :button_html => {:class => 'button red'} %>
     <li>
       <%= link_to content_tag(:span, t(:cancel), :class => 'inner'),
                   smart_resource_url,

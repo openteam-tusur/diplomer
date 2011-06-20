@@ -1,20 +1,22 @@
 # encoding: utf-8
 
 class Discipline < ActiveRecord::Base
+  default_scope :order => 'title ASC'
+
   has_many :programm_items
-
-  validates_presence_of :title
-
-  def to_s
-    title
-  end
 
   has_translate
 
   protected_parent_of :diplomas
 
+  validates_presence_of :title
+
   searchable do
     text :term
+  end
+
+  def to_s
+    title
   end
 
   alias :term :to_s
