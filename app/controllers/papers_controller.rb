@@ -8,8 +8,9 @@ class PapersController < CrudController
   actions :all
 
   def show
-    @paper = Paper.find(params[:id])
-    render :partial => 'papers/paper', :locals => { :paper => @paper }
+    show! do
+      render :partial => 'papers/paper', :locals => { :paper => @paper } and return
+    end
   end
 
   def destroy

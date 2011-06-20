@@ -10,8 +10,9 @@ class CoursesController < CrudController
   respond_to :html
 
   def show
-    @course = Course.find(params[:id])
-    render :partial => 'courses/course', :locals => { :course => @course }
+    show! do
+      render :partial => 'courses/course', :locals => { :course => @course } and return
+    end
   end
 
   def destroy

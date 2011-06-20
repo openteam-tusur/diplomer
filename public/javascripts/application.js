@@ -61,7 +61,7 @@ function edit_programm_item(){
 };
 
 function sort_programm_item(){
-  $('.courses_list').sortable({
+  $('.courses_list, .papers_list, .practices_list').sortable({
     axis: 'y',
     dropOnEmpty: false,
     handle: '.handle',
