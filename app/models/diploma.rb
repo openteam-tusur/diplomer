@@ -88,9 +88,11 @@ class Diploma < ActiveRecord::Base
         end
       end
 
-      self.final_state_examination.attributes = self.speciality.final_state_examination.attributes
-      self.final_state_examination.context = self
-      self.final_state_examination.save(false)
+      if self.speciality.final_state_examination
+        self.final_state_examination.attributes = self.speciality.final_state_examination.attributes
+        self.final_state_examination.context = self
+        self.final_state_examination.save(false)
+      end
     end
 end
 
