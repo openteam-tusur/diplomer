@@ -3,11 +3,9 @@
 class ProgrammItem < ActiveRecord::Base
   belongs_to :context, :polymorphic => true
   belongs_to :discipline
-  acts_as_list :scope => :context
+  acts_as_list :scope => [:context_id, :context_type]
 
   has_enum :grade, %w[satisfactorily good excellent passed], :scopes => true
-
-  default_scope :order => 'position, created_at'
 
   def to_s
     title
