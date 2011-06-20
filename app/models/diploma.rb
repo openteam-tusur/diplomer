@@ -20,6 +20,7 @@ class Diploma < ActiveRecord::Base
 
   after_create :create_final_qualification_project
   after_create :create_final_state_examination
+  after_create :create_program_items
 
   before_create :generate_number
 
@@ -67,13 +68,27 @@ class Diploma < ActiveRecord::Base
      if diplomas.last
        number = diplomas.last.serial_number + 1
      else
-      self.serial_number = 1
-      number = 1
+       number = 1
      end
-      formatted_number = sprintf("%05i",number)
+     formatted_number = sprintf("%05i",number)
 
-      self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
-      self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+     self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+     self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+     self.serial_number = number
+    end
+
+    def create_program_items
+      %w[courses papers practices].each do |association|
+        self.speciality.send(association).each do |item|
+          i = item.clone
+          i.context = self
+          i.save(false)
+        end
+      end
+
+      self.final_state_examination.attributes = self.speciality.final_state_examination.attributes
+      self.final_state_examination.context = self
+      self.final_state_examination.save(false)
     end
 end
 

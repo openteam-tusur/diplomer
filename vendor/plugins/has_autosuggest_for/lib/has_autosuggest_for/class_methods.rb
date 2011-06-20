@@ -22,3 +22,4 @@ module HasAutosuggestFor::ClassMethods
     end
   end
 end
+
