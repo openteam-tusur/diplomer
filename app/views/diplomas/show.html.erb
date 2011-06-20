@@ -28,7 +28,7 @@
       </div>
       <ol class='courses_list list'>
         <% if @diploma.courses.any? %>
-          <% @diploma.courses.order('position ASC').each do |course| %>
+          <% @diploma.courses.order('position DESC').each do |course| %>
             <li class="item" id="programm_item_<%= course.id %>">
               <%= render :partial => "courses/course", :locals => {:course => course} %>
             </li>
@@ -50,7 +50,7 @@
       </div>
       <ol class='papers_list list'>
         <% if @diploma.papers.any? %>
-          <% @diploma.papers.order('position ASC').each do |paper| %>
+          <% @diploma.papers.order('position DESC').each do |paper| %>
             <li class="item" id="programm_item_<%= paper.id %>">
               <%= render :partial => "papers/paper", :locals => {:paper => paper} %>
             </li>
@@ -74,7 +74,7 @@
       </div>
       <ol class='practices_list list'>
         <% if @diploma.practices.any? %>
-          <% @diploma.practices.order('position ASC').each do |practice| %>
+          <% @diploma.practices.order('position DESC').each do |practice| %>
             <li class="item" id="programm_item_<%= practice.id %>">
               <%= render :partial => "practices/practice", :locals => {:practice => practice} %>
             </li>
