@@ -61,7 +61,7 @@ function edit_programm_item(){
 };
 
 function sort_programm_item(){
-  $('.courses_list').sortable({
+  $('.courses_list, .papers_list, .practices_list').sortable({
     axis: 'y',
     dropOnEmpty: false,
     handle: '.handle',
@@ -77,7 +77,7 @@ function sort_programm_item(){
         complete: function(request){
           $('.courses_list').effect('highlight');
         },
-        url: '/diplomas/1/programm_items/sort'})
+        url: window.location.pathname + '/programm_items/sort'})
     }
   });
 };
@@ -131,3 +131,4 @@ $(function() {
   });
 
 });
+

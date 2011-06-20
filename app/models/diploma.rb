@@ -4,13 +4,7 @@ class Diploma < ActiveRecord::Base
   belongs_to :chair
   belongs_to :speciality
 
-  has_many :courses,        :dependent => :destroy, :as => :context
-  has_many :papers,         :dependent => :destroy, :as => :context
-  has_many :practices,      :dependent => :destroy, :as => :context
-  has_many :programm_items,                         :as => :context
-
   has_one :final_qualification_project, :dependent => :destroy, :as => :context
-  has_one :final_state_examination,     :dependent => :destroy, :as => :context
   has_one :student,                     :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
@@ -19,7 +13,6 @@ class Diploma < ActiveRecord::Base
   accepts_nested_attributes_for :student, :update_only => true
 
   after_create :create_final_qualification_project
-  after_create :create_final_state_examination
   after_create :create_program_items
 
   before_create :generate_number
@@ -29,6 +22,8 @@ class Diploma < ActiveRecord::Base
   default_scope :order => 'number DESC'
 
   has_enum :study_form, %w[fulltime parttime postal]
+
+  has_programm_items
 
   def is_translated?
     student.is_translated? && final_state_examination.is_translated? && final_qualification_project.is_translated?

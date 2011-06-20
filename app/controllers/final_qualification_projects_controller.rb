@@ -8,6 +8,7 @@ class FinalQualificationProjectsController < CrudController
   actions :all, :except => :index
 
   def show
-    render :partial => 'final_qualification_projects/final_qualification_project', :locals => { :final_qualification_project => resource} end
+    render :partial => 'final_qualification_projects/final_qualification_project', :locals => { :final_qualification_project => resource}
+  end
 end
 
