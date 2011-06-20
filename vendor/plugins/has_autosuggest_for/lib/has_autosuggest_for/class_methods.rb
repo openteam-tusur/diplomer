@@ -9,6 +9,7 @@ module HasAutosuggestFor::ClassMethods
       validates :"#{association}_term", :autosuggested => true
 
       define_method "#{association}_term" do
+        return self.instance_variable_get("@#{association}_term") if self.instance_variable_get("@#{association}_term").present?
         self.send(association) ? self.send(association).term : self.instance_variable_get("@#{association}_term")
       end
 

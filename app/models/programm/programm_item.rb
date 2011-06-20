@@ -16,7 +16,7 @@ class ProgrammItem < ActiveRecord::Base
 
   protected
     def create_discipline_if_necessury
-      self.discipline = Discipline.create!(:title => self.discipline_term) if self.discipline_term.present? && !self.discipline
+      self.discipline = Discipline.find_or_create_by_title(self.discipline_term)
     end
 end
 
