@@ -60,6 +60,15 @@ class Diploma < ActiveRecord::Base
     "Диплом №#{number}"
   end
 
+  searchable do
+    text :search_string do
+      "#{student_surname} #{chair_abbr} #{chair_title} #{I18n.l graduation_date, :format => '%Y'}"
+    end
+  end
+
+  delegate :surname, :to => :student, :prefix => true
+  delegate :abbr, :title, :to => :chair, :prefix => true
+
   private
     def generate_number
       diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
