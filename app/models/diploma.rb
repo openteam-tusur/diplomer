@@ -25,6 +25,8 @@ class Diploma < ActiveRecord::Base
 
   has_enum :study_form, %w[fulltime parttime postal]
 
+  delegate :full_info, :to => :student, :prefix => true
+
 
   def is_translated?
     student.is_translated? && final_state_examination.is_translated? && final_qualification_project.is_translated?
