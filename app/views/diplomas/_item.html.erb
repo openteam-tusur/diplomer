@@ -1,0 +1,18 @@
+<li class="<%= item.class.name.downcase %> item">
+  <h4>
+    <%= link_to t(:edit), edit_resource_url(item), :class => "edit" %>
+
+    <% if controller.respond_to?(:show) %>
+      <%= link_to "#{item} - #{item.student_full_info}", resource_path(item) %>
+    <% else %>
+      <%= item.title %>
+    <% end %>
+  </h4>
+
+  <% if item.respond_to? :translated? %>
+    <% unless item.translated? %>
+      <p><%= t('translate_missing') %></p>
+    <% end %>
+  <% end %>
+</li>
+
