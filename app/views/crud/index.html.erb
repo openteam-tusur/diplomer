@@ -2,9 +2,8 @@
 
 <div class="actions">
   <%= link_to t(:new), new_resource_url, :class => "button floatr" %>
+  <%= render :partial => "search_form" %>
 </div>
-
-<%= render :partial => "search_form" %>
 
 <% if collection.any? %>
   <ul class="<%= resource_class.name.downcase.pluralize %>_list collection ">

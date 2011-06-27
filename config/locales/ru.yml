@@ -131,6 +131,12 @@ ru:
         password_confirmation: Подтвердить пароль
         remember_me: Запомнить
 
+      diploma_search:
+        search_string: Поиск
+
+      discipline_search:
+        term: Поиск
+
       diploma:
         admission_date: Дата поступления
         contact_hours: Аудиторных часов
