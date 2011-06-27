@@ -57,6 +57,7 @@ ru:
       index: Главная страница
     disciplines:
       delete: Удаление дисциплины
+      search: Поиск дисциплины
     diplomas:
       delete: Удаление диплома
 
