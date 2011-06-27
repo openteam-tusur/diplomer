@@ -5,6 +5,8 @@ class DisciplineSearch < Search
 end
 
 
+
+
 # == Schema Information
 #
 # Table name: searches

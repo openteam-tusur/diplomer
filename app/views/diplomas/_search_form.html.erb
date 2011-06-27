@@ -1,0 +1,9 @@
+<%= semantic_search_form_for :diploma, :url => diplomas_path, :html => {:method => :get, :class => 'search_form'} do |form| %>
+  <%= form.inputs do %>
+    <%= form.input :search_string %>
+  <% end %>
+  <%= form.buttons do %>
+    <%= form.commit_button 'Найти', :button_html => {:class => 'button'} %>
+  <% end %>
+<% end %>
+
