@@ -63,8 +63,8 @@ class Diploma < ActiveRecord::Base
       diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
                                   :chair_id => self.chair.id)
 
-     if diplomas.last
-       number = diplomas.last.serial_number + 1
+     if last_diploma = diplomas.first
+       number = last_diploma.serial_number + 1
      else
        number = 1
      end
