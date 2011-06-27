@@ -16,18 +16,23 @@ Person.create!(:surname => 'Иванов',
 f1 = Faculty.create!(:title => 'Факультет систем управления',
                      :abbr => 'ФСУ',
                      :eng_title => 'Faculty of system control',
-                     :eng_abbr => 'FSC')
+                     :eng_abbr => 'FSC',
+                     :chief_post => 'директор',
+                     :chief_name => 'Иванов')
 
 f2 = Faculty.create!(:title => 'Факультет электрониники',
                      :abbr => 'ФЭ',
                      :eng_title => 'Faculty of electronics',
-                     :eng_abbr => 'FE')
+                     :eng_abbr => 'FE',
+                     :chief_post => 'директор',
+                     :chief_name => 'Иванов')
 
 Chair.create!(:title => 'Автоматизированной обработки информации',
               :abbr => 'АОИ',
               :eng_title => 'Automated data processing',
               :eng_abbr => 'ADP',
-              :faculty_id => f1.id)
+              :faculty_id => f1.id,
+              )
 
 Chair.create!(:title => 'Автоматизированных систем управления',
               :abbr => 'АСУ',

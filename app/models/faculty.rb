@@ -17,6 +17,7 @@ class Faculty < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: faculties
@@ -28,5 +29,7 @@ end
 #  eng_abbr   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  chief_post :string(255)
+#  chief_name :string(255)
 #
 
