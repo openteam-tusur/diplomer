@@ -4,6 +4,8 @@
   <%= link_to t(:new), new_resource_url, :class => "button floatr" %>
 </div>
 
+<%= render :partial => "search_form" %>
+
 <% if collection.any? %>
   <ul class="<%= resource_class.name.downcase.pluralize %>_list collection ">
     <% collection.each do |obj| %>
