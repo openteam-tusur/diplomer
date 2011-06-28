@@ -37,11 +37,11 @@ class Diploma < ActiveRecord::Base
   end
 
   def eng_duration
-    "#{::I18n.t('duration.eng_year', :count => duration.year)}"
+    "#{::I18n.t('duration.eng_year', :count => duration)}"
   end
 
   def rus_duration
-    "#{::I18n.t('duration.year', :count => duration.year)}"
+    "#{::I18n.t('duration.year', :count => duration)}"
   end
 
   def average_grade
