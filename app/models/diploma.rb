@@ -33,7 +33,7 @@ class Diploma < ActiveRecord::Base
   end
 
   def duration
-    result = Date.new(0) + (graduation_date.year - admission_date.year)
+    result = graduation_date.year - admission_date.year
   end
 
   def eng_duration
