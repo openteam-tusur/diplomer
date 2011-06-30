@@ -70,12 +70,13 @@ function sort_programm_item(){
     opacity: 0.7,
     scroll: true,
     update: function(){
+      var target = $(this);
       $.ajax({
         type: 'post',
-        data: $('.courses_list').sortable('serialize'),
+        data: target.sortable('serialize'),
         dataType: 'script',
         complete: function(request){
-          $('.courses_list').effect('highlight');
+          target.effect('highlight');
         },
         url: window.location.pathname + '/programm_items/sort'})
     }
