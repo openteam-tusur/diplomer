@@ -3,7 +3,7 @@
 class ProgrammItem < ActiveRecord::Base
   belongs_to :context, :polymorphic => true
   belongs_to :discipline
-  acts_as_list :scope => [:context_id, :context_type]
+  acts_as_list :scope => [:context_id, :context_type, :type]
 
   has_enum :grade, %w[satisfactorily good excellent passed], :scopes => true
 

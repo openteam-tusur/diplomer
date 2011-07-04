@@ -33,7 +33,8 @@ function adding_programm_item(){
       if (list.hasClass('state_examination_list') || list.hasClass('qualification_project_list')) {
         list.html('<li class="item">'+xhr.responseText+'</li>');
       } else {
-        list.append('<li class="item">'+xhr.responseText+'</li>');
+        var item_id = $(xhr.responseText).find('.delete_link').attr('href').match(/\d+$/)
+        list.append('<li class="item" id="programm_item_'+item_id+'">'+xhr.responseText+'</li>');
         $('.inputs input, input[id*=discipline_id], select').val('');
       };
     };
@@ -70,13 +71,13 @@ function sort_programm_item(){
     opacity: 0.7,
     scroll: true,
     update: function(){
-      var target = $(this);
+      var target = $(this).attr('id');
       $.ajax({
         type: 'post',
-        data: target.sortable('serialize'),
+        data: $('#'+target).sortable('serialize'),
         dataType: 'script',
         complete: function(request){
-          target.effect('highlight');
+          $('#'+target).effect('highlight');
         },
         url: window.location.pathname + '/programm_items/sort'})
     }

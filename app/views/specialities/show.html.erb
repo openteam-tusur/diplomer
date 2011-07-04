@@ -19,7 +19,7 @@
         <span class='credits'>Баллы</span>
         <span class='hours'>Часы</span>
       </div>
-      <ol class='courses_list list'>
+      <ol class='courses_list list' id='courses_list'>
         <% if @speciality.courses.any? %>
           <% @speciality.courses.order('position ASC').each do |course| %>
             <li class="item" id="programm_item_<%= course.id %>">
@@ -40,7 +40,7 @@
         <span class='title'>Название</span>
         <span class='eng_title'>Название на англ. языке</span>
       </div>
-      <ol class='papers_list list'>
+      <ol class='papers_list list' id='papers_list'>
         <% if @speciality.papers.any? %>
           <% @speciality.papers.order('position ASC').each do |paper| %>
             <li class="item" id="programm_item_<%= paper.id %>">
@@ -63,7 +63,7 @@
         <span class='credits'>Баллы</span>
         <span class='hours'>Недели</span>
       </div>
-      <ol class='practices_list list'>
+      <ol class='practices_list list' id='practices_list'>
         <% if @speciality.practices.any? %>
           <% @speciality.practices.order('position ASC').each do |practice| %>
             <li class="item" id="programm_item_<%= practice.id %>">
