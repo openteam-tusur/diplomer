@@ -33,7 +33,11 @@ function adding_programm_item(){
       if (list.hasClass('state_examination_list') || list.hasClass('qualification_project_list')) {
         list.html('<li class="item">'+xhr.responseText+'</li>');
       } else {
-        var item_id = $(xhr.responseText).find('.delete_link').attr('href').match(/\d+$/)
+        var text = $(xhr.responseText);
+        var item_id = '';
+        if (text.find('.delete_link').length > 0) {
+          item_id = $(xhr.responseText).find('.delete_link').attr('href').match(/\d+$/)
+        };
         list.append('<li class="item" id="programm_item_'+item_id+'">'+xhr.responseText+'</li>');
         $('.inputs input, input[id*=discipline_id], select').val('');
       };
