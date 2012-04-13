@@ -9,8 +9,8 @@
     <div class='first_side'>
       <div class='left_side'>
         <div class='faculty_name'>
-          <p class='eng'><%= @diploma.chair.faculty.eng_title %></p>
-          <p class='rus'><%= @diploma.chair.faculty.title %></p>
+          <p class='eng'><%= @diploma.real_faculty.eng_title %></p>
+          <p class='rus'><%= @diploma.real_faculty.title %></p>
         </div>
         <div class='diploma_number'>
           <%= @diploma.eng_number %>
@@ -172,7 +172,7 @@
       <div class='certification'>
         <h2>Certification of the supplement</h2>
         <p><span class='left'>Rector of Tomsk State University of Control Systems and Radioelectronics</span><span class='right'>Prof.Yury Shurygin</span></p>
-        <p><span class='left'><%= @diploma.chair.faculty.chief_post %> <%= @diploma.chair.faculty.eng_title %></span><span class='right'><%= @diploma.chair.faculty.chief_name %></span>
+        <p><span class='left'><%= @diploma.real_faculty.chief_post %> <%= @diploma.real_faculty.eng_title %></span><span class='right'><%= @diploma.real_faculty.chief_name %></span>
       </p>
       </div>
     </div>

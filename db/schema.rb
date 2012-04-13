@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617054408) do
+ActiveRecord::Schema.define(:version => 20120413020942) do
 
   create_table "chairs", :force => true do |t|
     t.text     "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110617054408) do
     t.integer  "chair_id"
     t.string   "eng_number"
     t.integer  "serial_number"
+    t.integer  "faculty_id"
   end
 
   create_table "disciplines", :force => true do |t|

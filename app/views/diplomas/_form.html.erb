@@ -12,6 +12,7 @@
 <% end %>
 
 <%= form.inputs do %>
+  <%= form.input :faculty, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '9'} %>
   <%= form.input :chair, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '9'} %>
   <%= form.input :speciality_id, :as => :hidden, :input_html => {:tabindex => '10'} %>
   <%= form.input :speciality_term, :required => true, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '11'} %>

@@ -4,6 +4,7 @@ class Diploma < ActiveRecord::Base
   has_programm_items
 
   belongs_to :chair
+  belongs_to :faculty
   belongs_to :speciality
 
   has_one :final_qualification_project, :dependent => :destroy, :as => :context
@@ -58,6 +59,10 @@ class Diploma < ActiveRecord::Base
 
   def to_s
     "Диплом №#{number}"
+  end
+
+  def real_faculty
+    faculty || chair.faculty
   end
 
   searchable do
