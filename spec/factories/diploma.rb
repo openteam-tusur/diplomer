@@ -7,7 +7,7 @@ Factory.define :diploma, :default_strategy => :attributes_for do |diploma|
   diploma.total_hours     '3652'
   diploma.study_duration  '6'
   diploma.study_form      'fulltime'
-  diploma.speciality_term 'temp'
+  diploma.speciality_term 'Программное обеспечение вычислительной техники и автоматизированных систем'
   diploma.association     :speciality
   diploma.association     :chair
 end

@@ -4,8 +4,10 @@ require 'spec_helper'
 
 describe ProgrammItem do
   it "должен создавать дисциплину если она не найдена" do
-    diploma = Factory.create :diploma
+    diploma = Factory.create(:diploma)
+
     diploma.courses.create! Factory(:course, :discipline_term => 'Математика')
+
     course = diploma.courses.first
 
     course.discipline.should eql Discipline.first

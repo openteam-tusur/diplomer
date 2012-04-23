@@ -103,7 +103,7 @@ class Diploma < ActiveRecord::Base
       if self.speciality.final_state_examination
         self.final_state_examination.attributes = self.speciality.final_state_examination.attributes
         self.final_state_examination.context = self
-        self.final_state_examination.save(false)
+        self.final_state_examination.save(:validate => false)
       end
     end
 end

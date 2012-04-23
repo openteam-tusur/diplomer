@@ -5,4 +5,6 @@ Factory.define :faculty, :default_strategy => :attributes_for do |faculty|
   faculty.eng_abbr 'FSU'
   faculty.title 'Факультет Систем Управления'
   faculty.eng_title 'Faculty of Manage System'
+  faculty.chief_name 'Chief'
+  faculty.chief_post 'Dean'
 end
