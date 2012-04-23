@@ -1,0 +1,5 @@
+<%= semantic_form_for @final_state_examination, :url => [@final_state_examination.context, :final_state_examinations], :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+  <h4>Добавление нового гос. экзамена</h4>
+  <%= render :partial => 'final_state_examinations/form', :locals => {:form => form, :cancel => false} %>
+<% end %>
+

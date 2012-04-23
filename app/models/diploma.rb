@@ -92,18 +92,12 @@ class Diploma < ActiveRecord::Base
     end
 
     def create_program_items
-      %w[courses papers practices].each do |association|
+      %w[courses papers practices final_state_examinations].each do |association|
         self.speciality.send(association).each do |item|
           i = item.clone
           i.context = self
-          i.save(false)
+          i.save(:validate => false)
         end
-      end
-
-      if self.speciality.final_state_examination
-        self.final_state_examination.attributes = self.speciality.final_state_examination.attributes
-        self.final_state_examination.context = self
-        self.final_state_examination.save(:validate => false)
       end
     end
 end

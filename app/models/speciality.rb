@@ -5,7 +5,6 @@ class Speciality < ActiveRecord::Base
 
   validates_presence_of :code, :title, :qualification
 
-
   default_scope :order => 'title ASC'
 
   has_translate
@@ -16,12 +15,9 @@ class Speciality < ActiveRecord::Base
     text :term
   end
 
-  def to_s
-    title
-  end
+  alias_attribute :to_s, :title
 
   alias :term :to_s
-
 end
 
 

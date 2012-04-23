@@ -6,6 +6,7 @@ class DiplomasController < CrudController
       @course = @diploma.courses.new
       @paper = @diploma.papers.new
       @practice = @diploma.practices.new
+      @final_state_examination = @diploma.final_state_examinations.new
     }
   end
 

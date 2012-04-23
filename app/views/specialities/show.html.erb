@@ -19,6 +19,7 @@
         <span class='credits'>Баллы</span>
         <span class='hours'>Часы</span>
       </div>
+
       <ol class='courses_list list' id='courses_list'>
         <% if @speciality.courses.any? %>
           <% @speciality.courses.order('position ASC').each do |course| %>
@@ -40,6 +41,7 @@
         <span class='title'>Название</span>
         <span class='eng_title'>Название на англ. языке</span>
       </div>
+
       <ol class='papers_list list' id='papers_list'>
         <% if @speciality.papers.any? %>
           <% @speciality.papers.order('position ASC').each do |paper| %>
@@ -63,6 +65,7 @@
         <span class='credits'>Баллы</span>
         <span class='hours'>Недели</span>
       </div>
+
       <ol class='practices_list list' id='practices_list'>
         <% if @speciality.practices.any? %>
           <% @speciality.practices.order('position ASC').each do |practice| %>
@@ -78,21 +81,26 @@
         <%= render :file => "practices/new.html.erb" %>
       </div>
     </li>
+
     <li id='state_examination'>
       <div class="headline">
         <span class='title'>Название</span>
         <span class='eng_title'>Название на англ. языке</span>
       </div>
-      <ul class='state_examination_list list'>
-        <% if @speciality.final_state_examination %>
-          <li class="item">
-            <%= render @speciality.final_state_examination %>
-          </li>
+
+      <ol class='final_state_examinations_list list' id='final_state_examinations_list'>
+        <% if @speciality.final_state_examinations.any? %>
+          <% @speciality.final_state_examinations.order('position ASC').each do |final_state_examination| %>
+            <li class="item" id="programm_item_<%= final_state_examination.id %>">
+              <%= render :partial => 'final_state_examinations/final_state_examination', :locals => { :final_state_examination => final_state_examination } %>
+            </li>
+          <% end %>
         <% else %>
-          <li class='empty'>Нет гос.экзамена </li>
+          <li class='empty'>нет гос. экзаменов</li>
         <% end %>
-      </ul>
+        <div class='form_new'>
+          <%= render :file => "final_state_examinations/new.html.erb" %>
+        </div>
+      </ol>
     </li>
-
   </ul>
-

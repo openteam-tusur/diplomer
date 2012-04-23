@@ -1,14 +1,24 @@
 # encoding: utf-8
 
 class FinalStateExaminationsController < CrudController
-  belongs_to :diploma, :speciality, :optional => true, :singleton => true
-  respond_to :html
+  actions :all
+
+  belongs_to :diploma, :speciality, :optional => true
+
   layout :false, :only => [:show, :edit]
 
-  actions :all, :except => :index
+  respond_to :html
 
   def show
-    render :partial => 'final_state_examinations/final_state_examination', :locals => {:final_state_examination => resource}
+    show! do
+      render :partial => 'final_state_examinations/final_state_examination', :locals => {:final_state_examination => resource} and return
+    end
+  end
+
+  def destroy
+    destroy!{
+      render :nothing => true and return
+    }
   end
 end
 

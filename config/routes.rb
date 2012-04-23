@@ -8,8 +8,10 @@ TusurDiplomer::Application.routes.draw do
     resources :courses
     resources :papers
     resources :practices
-    resource  :final_state_examination
+    resources  :final_state_examinations
+
     resource  :final_qualification_project
+
     resources :programm_items, :only => [] do
       post :sort, :on => :collection
     end
@@ -23,7 +25,7 @@ TusurDiplomer::Application.routes.draw do
     resources :courses
     resources :papers
     resources :practices
-    resource  :final_state_examination
+    resources  :final_state_examinations
     resources :programm_items, :only => [] do
       post :sort, :on => :collection
     end

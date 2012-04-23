@@ -1,8 +1,14 @@
 # encoding: utf-8
 
 class FinalStateExamination < ProgrammItem
-  validates_presence_of :title, :on => :update
+  validates_presence_of :discipline, :discipline_term
   validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }, :on => :update
+
+  delegate :title, :eng_title, :to => :discipline
+
+  before_validation :create_discipline_if_necessury
+
+  has_autosuggest_for :discipline
 
   has_translate
 

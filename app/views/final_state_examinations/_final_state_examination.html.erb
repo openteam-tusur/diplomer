@@ -1,9 +1,11 @@
 <div>
-  <span class='title'><%= final_state_examination.title? ? final_state_examination.title : 'не указано' %></span>
+  <span class='title'><%= final_state_examination.title %></span>
   <span class='eng_title'><%= final_state_examination.eng_title.present? ? final_state_examination.eng_title : 'не указано' %></span>
-  <span class='human_grade'><%= final_state_examination.human_grade %></span>
+  <%= content_tag(:span, final_state_examination.grade? ? final_state_examination.human_grade : 'не указано', :class => 'human_grade') if final_state_examination.context.is_a?(Diploma) %>
+
   <span class='actions'>
-    <%= link_to t(:edit), [:edit, final_state_examination.context, :final_state_examination] , :class => 'edit_link' %>
+    <%= link_to t(:destroy), [final_state_examination.context, final_state_examination], :confirm => t('Are you sure?'), :method => :delete, :remote => true, :class=>'delete_link' %>
+    <%= link_to t(:edit), [:edit, final_state_examination.context, final_state_examination] , :class => 'edit_link' %>
   </span>
 </div>
 
