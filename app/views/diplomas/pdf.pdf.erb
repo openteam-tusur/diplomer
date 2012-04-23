@@ -146,10 +146,12 @@
             <tr class='title'>
               <td colspan='4'>Final State Examinations</td>
             </tr>
-            <tr class='state_examination'>
-              <td colspan='3'><%= @diploma.final_state_examination.eng_title %> / <%= @diploma.final_state_examination.title %></td>
-              <td class='grades'><%= @diploma.final_state_examination.human_grade %></td>
-            </tr>
+            <% @diploma.final_state_examinations.each do |final_state_examination, index| %>
+              <tr class='state_examination'>
+                <td colspan='3'><%= "#{index + 1}. "%><%= final_state_examination.eng_title %> / <%= final_state_examination.title %></td>
+                <td class='grades'><%= final_state_examination.human_grade %></td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
         <table class='qualification_table'>
