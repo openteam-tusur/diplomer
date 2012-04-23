@@ -146,7 +146,7 @@
             <tr class='title'>
               <td colspan='4'>Final State Examinations</td>
             </tr>
-            <% @diploma.final_state_examinations.each do |final_state_examination, index| %>
+            <% @diploma.final_state_examinations.each_with_index do |final_state_examination, index| %>
               <tr class='state_examination'>
                 <td colspan='3'><%= "#{index + 1}. "%><%= final_state_examination.eng_title %> / <%= final_state_examination.title %></td>
                 <td class='grades'><%= final_state_examination.human_grade %></td>
