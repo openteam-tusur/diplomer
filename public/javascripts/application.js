@@ -23,7 +23,7 @@ function delete_discipline_item(){
 };
 
 function adding_programm_item(){
-  $('#new_course, #new_paper, #new_practice, .final_state_examination, .final_qualification_project').live('ajax:success', function(evt, data, status, xhr){
+  $('#new_course, #new_paper, #new_practice, #new_final_state_examination, .final_qualification_project').live('ajax:success', function(evt, data, status, xhr){
     var form_new = $(this).parent();
     var list = form_new.prev('.list');
     if ($(xhr.responseText)[0].tagName.toLowerCase() == 'form') {
@@ -66,7 +66,7 @@ function edit_programm_item(){
 };
 
 function sort_programm_item(){
-  $('.courses_list, .papers_list, .practices_list').sortable({
+  $('.courses_list, .papers_list, .practices_list, .final_state_examinations_list').sortable({
     axis: 'y',
     dropOnEmpty: false,
     handle: '.handle',
