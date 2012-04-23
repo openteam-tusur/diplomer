@@ -4,7 +4,7 @@ class FinalStateExamination < ProgrammItem
   validates_presence_of :discipline, :discipline_term
   validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }, :on => :update
 
-  #delegate :title, :eng_title, :to => :discipline
+  delegate :title, :eng_title, :to => :discipline
 
   before_validation :create_discipline_if_necessury
 
