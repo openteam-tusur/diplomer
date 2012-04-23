@@ -15,9 +15,7 @@ class Discipline < ActiveRecord::Base
     text :term
   end
 
-  def to_s
-    title
-  end
+  alias_attribute :to_s, :title
 
   alias :term :to_s
 
