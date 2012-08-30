@@ -83,7 +83,7 @@
     <div class='second_side'>
       <div class='contents_info'>
         <div class='study_mode'>
-          <p class='eng'>Admission &ndash; <%= @diploma.admission_date.strftime('%B %d, %Y') %>&#59; graduation &ndash; <%= @diploma.graduation_date.strftime('%B %d, %Y') %> (<%= Diploma.human_attribute_name("eng_study_form_enum.#{Diploma.first.study_form}") %>)</p>
+          <p class='eng'>Admission &ndash; <%= @diploma.admission_date.strftime('%B %d, %Y') %>&#59; graduation &ndash; <%= @diploma.graduation_date.strftime('%B %d, %Y') %> (<%= Diploma.human_attribute_name("eng_study_form_enum.#{@diploma.study_form}") %>)</p>
           <p class='rus'>Дата зачисления &ndash; <%= l(@diploma.admission_date, :format => '%d %B %Y') %>&#59; дата окончания обучения &ndash; <%= l(@diploma.graduation_date, :format => '%d %B %Y') %><%= " (#{@diploma.human_study_form})" %></p>
         </div>
         <div class='programm_requirments'>
