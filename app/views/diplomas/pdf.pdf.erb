@@ -111,6 +111,17 @@
                 <td class='grades'><%= course.human_grade %></td>
               </tr>
             <% end %>
+
+            <% if @diploma.courses.count < 29 %>
+              <% (@diploma.courses.count + 1..29).each do %>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              <% end %>
+            <% end %>
           </tbody>
         </table>
         <table class='paper_table'>
