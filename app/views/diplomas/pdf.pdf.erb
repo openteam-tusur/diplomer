@@ -113,13 +113,13 @@
             <% end %>
 
             <%# NOTE: так сделато чтобы дисциплины были на нужной странице %>
-            <% if @diploma.courses.count < 40 %>
-              <% (@diploma.courses.count + 1..40).each do %>
+            <% if @diploma.courses.count < 37 %>
+              <% (@diploma.courses.count + 1..37).each do %>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td style="border: none"></td>
+                  <td style="border: none"></td>
+                  <td style="border: none"></td>
+                  <td style="border: none"></td>
                 </tr>
               <% end %>
             <% end %>
