@@ -156,6 +156,20 @@ ru:
         study_duration: Продолжительность обучения
         student: Студент
         total_hours: Всего часов
+        access_requirements: Условия приёма
+        access_requirements_enum:
+          bachelor_diploma: Высшее профессиональное образование (диплом бакалавра)
+          specialist_diploma: Высшее профессиональное образование (диплом о высшем профессиональном образовании)
+          certificate_of_complete_secondary_education: Полное среднее образование (аттестат о полном среднем образовании)
+          certificate_of_professional_education: Среднее профессиональное образование (Диплом о среднем профессиональном образовании)
+          certificate_of_vocational_education: Начальное профессиональное образование (Диплом о начальном профессиональном образовании)
+
+        access_requirements_eng:
+          bachelor_diploma: Higher professional education (Bachelor Diploma)
+          specialist_diploma: Higher professional education (Specialist Diploma)
+          certificate_of_complete_secondary_education: Complete secondary education (Certificate of Complete Secondary Education)
+          certificate_of_professional_education: Professional education, non-university level (Certificate of Professional Education)
+          certificate_of_vocational_education: Vocational education, non-university level (Certificate of Vocational Education)
 
       discipline:
         name: Название

@@ -11,7 +11,8 @@ class Diploma < ActiveRecord::Base
   has_one :student,                     :dependent => :destroy
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
-                        :study_form, :total_hours, :contact_hours, :chair
+                        :study_form, :total_hours, :contact_hours, :chair,
+                        :access_requirements
 
   accepts_nested_attributes_for :student, :update_only => true
 
@@ -25,6 +26,8 @@ class Diploma < ActiveRecord::Base
   default_scope :order => 'number DESC'
 
   has_enum :study_form, %w[fulltime parttime postal]
+  has_enum :access_requirements, %w[bachelor_diploma specialist_diploma certificate_of_complete_secondary_
+                                    education certificate_of_professional_education certificate_of_vocational_education]
 
   delegate :full_info, :to => :student, :prefix => true
 
@@ -74,32 +77,37 @@ class Diploma < ActiveRecord::Base
   delegate :surname, :to => :student, :prefix => true
   delegate :abbr, :title, :to => :chair, :prefix => true
 
+  def access_requirements_eng
+    I18n.t("activerecord.attributes.#{self.class.name.underscore}.access_requirements_eng.#{access_requirements}")
+  end
+
   private
-    def generate_number
-      diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
-                                  :chair_id => self.chair.id)
 
-     if last_diploma = diplomas.first
-       number = last_diploma.serial_number + 1
-     else
-       number = 1
-     end
-     formatted_number = sprintf("%05i",number)
+  def generate_number
+    diplomas = self.class.where(:graduation_date => (self.graduation_date.at_beginning_of_year..self.graduation_date.at_end_of_year),
+                                :chair_id => self.chair.id)
 
-     self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
-     self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
-     self.serial_number = number
+    if last_diploma = diplomas.first
+      number = last_diploma.serial_number + 1
+    else
+      number = 1
     end
+    formatted_number = sprintf("%05i",number)
 
-    def create_program_items
-      %w[courses papers practices final_state_examinations].each do |association|
-        self.speciality.send(association).each do |item|
-          i = item.clone
-          i.context = self
-          i.save(:validate => false)
-        end
+    self.eng_number = "#{chair.eng_abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+    self.number = "#{chair.abbr.upcase}#{I18n.l graduation_date, :format => '%y'}-#{formatted_number}"
+    self.serial_number = number
+  end
+
+  def create_program_items
+    %w[courses papers practices final_state_examinations].each do |association|
+      self.speciality.send(association).each do |item|
+        i = item.clone
+        i.context = self
+        i.save(:validate => false)
       end
     end
+  end
 end
 
 
