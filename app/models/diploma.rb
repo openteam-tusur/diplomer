@@ -26,11 +26,12 @@ class Diploma < ActiveRecord::Base
   default_scope :order => 'number DESC'
 
   has_enum :study_form, %w[fulltime parttime postal]
-  has_enum :access_requirements, %w[bachelor_diploma specialist_diploma certificate_of_complete_secondary_
-                                    education certificate_of_professional_education certificate_of_vocational_education]
+  has_enum :access_requirements, %w[bachelor_diploma specialist_diploma certificate_of_complete_secondary_education
+                                    certificate_of_professional_education certificate_of_vocational_education]
 
   delegate :full_info, :to => :student, :prefix => true
 
+  default_value_for :access_requirements, 'certificate_of_complete_secondary_education'
 
   def is_translated?
     student.is_translated? && final_state_examination.is_translated? && final_qualification_project.is_translated?

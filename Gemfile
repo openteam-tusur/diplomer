@@ -4,6 +4,7 @@ group :default do
   gem 'aasm'
   gem 'acts_as_list'
   gem 'compass',              '0.11.1'
+  gem 'default_value_for'
   gem 'devise'
   gem 'dynamic_form'
   gem 'fancy-buttons'
