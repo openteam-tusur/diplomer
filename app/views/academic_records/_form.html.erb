@@ -15,7 +15,12 @@
   <%= semester_fields.inputs do %>
     <%= semester_fields.input :year, :input_html => {:tabindex => '1'} %>
     <%= semester_fields.input :kind, :input_html => {:tabindex => '1'} %>
-    <%= semester_fields.link_to_remove 'Удалить' %>
+    <li class='remove_link'>
+      <%= semester_fields.link_to_remove 'Удалить' %>
+    </li>
   <% end %>
 <% end %>
+
+<div class="add_link">
 <%= form.link_to_add 'Добавить семестер', :semesters %>
+</div>
