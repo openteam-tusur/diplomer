@@ -3,7 +3,7 @@
 class CoursesController < CrudController
   actions :all
 
-  belongs_to :diploma, :speciality, :optional => true
+  belongs_to :diploma, :speciality, :academic_record, :optional => true
 
   layout :false, :only => [:show, :edit]
 

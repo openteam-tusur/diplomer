@@ -143,6 +143,16 @@ ru:
         number: Номер справки
         student: Студент
 
+      semester:
+        year: Год!
+        kind: Семестр
+        kind_enum:
+          fall: Осенний
+          spring: Весенний
+
+      course:
+        context_id: Семестр
+
       diploma:
         admission_date: Дата поступления
         contact_hours: Аудиторных часов

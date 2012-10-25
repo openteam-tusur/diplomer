@@ -1,6 +1,6 @@
 <% title "#{resource.class.model_name.human}. #{t('Adding information')}" %>
 
-<%= semantic_form_for resource, :url => collection_url do |form| %>
+<%= semantic_nested_form_for resource, :url => collection_url do |form| %>
   <%= form.error_messages %>
   <%= render :partial => "form", :object => form %>
   <%= form.buttons do %>

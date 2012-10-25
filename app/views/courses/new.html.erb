@@ -1,4 +1,6 @@
-<%= semantic_form_for @course, :url => [@course.context, :courses], :remote => true, :html => {:'data-type' => 'html'} do |form| %>
+<% url = @academic_record ? [@academic_record, :courses] : [@course.context, :courses] %>
+
+<%= semantic_form_for @course, :url => url, :remote => true, :html => {:'data-type' => 'html'} do |form| %>
   <h4>Добавление новой дисциплины</h4>
   <%= render :partial => 'courses/form', :locals => {:form => form, :cancel => false} %>
 <% end %>

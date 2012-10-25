@@ -3,9 +3,13 @@
 class AcademicRecord < ActiveRecord::Base
   belongs_to :faculty
 
+  has_many :semesters, :dependent => :destroy
+  has_many :courses, :through => :semesters, :before_add => :set_context_type
+
   has_one :student, :dependent => :destroy, :as => :studentable
 
   accepts_nested_attributes_for :student, :update_only => true
+  accepts_nested_attributes_for :semesters, :reject_if => :all_blank, :allow_destroy => true
 
   before_create :generate_number
 
@@ -14,6 +18,10 @@ class AcademicRecord < ActiveRecord::Base
   end
 
   private
+
+  def set_context_type(course)
+    course.context_type = 'Semester'
+  end
 
   def generate_number
     academic_records = self.class.where(:issued_on => (Date.today.beginning_of_year..Date.today.end_of_year), :faculty_id => self.faculty)
@@ -29,3 +37,17 @@ class AcademicRecord < ActiveRecord::Base
     self.serial_number = number
   end
 end
+
+# == Schema Information
+#
+# Table name: academic_records
+#
+#  id            :integer          not null, primary key
+#  faculty_id    :integer
+#  serial_number :integer
+#  number        :string(255)
+#  issued_on     :date
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

@@ -8,3 +8,30 @@
   <%= item.attributes :number, :issued_on %>
 <% end %>
 
+<div class='details_wrapper'>
+  <ul class='details'>
+    <li id='courses'>
+      <div class="headline">
+        <span class='title'>Название</span>
+        <span class='eng_title'>Название на англ. языке</span>
+        <span class='credits'>Баллы</span>
+        <span class='hours'>Часы</span>
+        <span class='human_grade'>Оценка</span>
+      </div>
+      <ol class='courses_list list' id='courses_list'>
+        <% if @academic_record.courses.any? %>
+          <% @academic_record.courses.order('position DESC').each do |course| %>
+            <li class="item" id="programm_item_<%= course.id %>">
+              <%= render :partial => "courses/course", :locals => {:course => course} %>
+            </li>
+          <% end %>
+        <% else %>
+          <li class='empty'>нет дисциплин</li>
+        <% end %>
+      </ol>
+      <div class='form_new'>
+        <%= render :file => "courses/new.html.erb" %>
+      </div>
+    </li>
+  </div>
+</div>

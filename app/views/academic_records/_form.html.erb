@@ -11,3 +11,11 @@
   <%= form.input :issued_on %>
 <% end %>
 
+<%= form.fields_for :semesters, @academic_record.semesters do |semester_fields| %>
+  <%= semester_fields.inputs do %>
+    <%= semester_fields.input :year, :input_html => {:tabindex => '1'} %>
+    <%= semester_fields.input :kind, :input_html => {:tabindex => '1'} %>
+    <%= semester_fields.link_to_remove 'Удалить' %>
+  <% end %>
+<% end %>
+<%= form.link_to_add 'Добавить семестер', :semesters %>
