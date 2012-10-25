@@ -13,6 +13,7 @@ group :default do
   gem 'has_searcher'
   gem 'inherited_resources',        :git => 'git://github.com/openteam/inherited_resources'
   gem 'jquery-rails',           :require => false
+  gem 'nested_form'
   gem 'princely',                   :git => 'git://github.com/timriley/princely', :branch => 'disposition'
   gem 'protected_parent'
   gem 'rails',                '3.0.7'
@@ -26,6 +27,7 @@ group :default do
 end
 
 group :development do
+  gem 'annotate',               :require => false
   gem 'hirb',                   :require => false
   gem 'itslog'
   gem 'rails-erd'
