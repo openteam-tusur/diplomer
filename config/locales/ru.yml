@@ -60,6 +60,8 @@ ru:
       search: Поиск дисциплины
     diplomas:
       delete: Удаление диплома
+    academic_records:
+      delete: Удаление диплома
 
   formtastic:
     required: обязательное поле
