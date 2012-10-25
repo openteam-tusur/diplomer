@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Student < ActiveRecord::Base
-  belongs_to :diploma
+  belongs_to :studentable, :polymorphic => true
 
   validates_presence_of :surname, :firstname, :patrynomic,
                         :birthday

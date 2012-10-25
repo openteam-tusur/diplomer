@@ -8,7 +8,7 @@ class Diploma < ActiveRecord::Base
   belongs_to :speciality
 
   has_one :final_qualification_project, :dependent => :destroy, :as => :context
-  has_one :student,                     :dependent => :destroy
+  has_one :student,                     :dependent => :destroy, :as => :studentable
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
                         :study_form, :total_hours, :contact_hours, :chair,
