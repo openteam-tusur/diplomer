@@ -16,6 +16,9 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :diplomas,     'Дипломы', diplomas_path,
                  :highlights_on => /diplomas/
 
+    primary.item :academic_records, 'Академические справки', academic_records_path,
+                 :highlights_on => /academic_records/
+
     primary.item :people ,      'Пользователи',  people_path,
                  :highlights_on => /people/
 

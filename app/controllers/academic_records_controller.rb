@@ -1,0 +1,3 @@
+class AcademicRecordsController < CrudController
+
+end

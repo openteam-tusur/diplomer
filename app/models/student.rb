@@ -3,8 +3,7 @@
 class Student < ActiveRecord::Base
   belongs_to :studentable, :polymorphic => true
 
-  validates_presence_of :surname, :firstname, :patrynomic,
-                        :birthday
+  validates_presence_of :surname, :firstname, :birthday
 
   has_translate
 
@@ -13,7 +12,13 @@ class Student < ActiveRecord::Base
   end
 
   def full_info
-    "#{surname} #{firstname} #{patrynomic}, дата рождения: #{I18n.l birthday}"
+    filled_attributes.join(' ') << ", дата рождения: #{I18n.l birthday}"
+  end
+
+  private
+
+  def filled_attributes
+    [surname, firstname, patrynomic].select { |attribute| attribute.present? }
   end
 end
 

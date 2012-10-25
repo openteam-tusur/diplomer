@@ -113,10 +113,9 @@ ru:
       speciality: Специальности
       student: Студенты
       user: Пользователи
-
+      academic_record: Академические справки
 
     attributes:
-
       person:
         name: Имя
 
@@ -136,6 +135,11 @@ ru:
 
       discipline_search:
         term: Поиск
+
+      academic_record:
+        issued_on: Дата поступления!
+        number: Номер справки
+        student: Студент
 
       diploma:
         admission_date: Дата поступления

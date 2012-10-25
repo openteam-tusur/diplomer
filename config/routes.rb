@@ -17,6 +17,7 @@ TusurDiplomer::Application.routes.draw do
     end
   end
 
+  resources :academic_records
   resources :chairs
   resources :disciplines,  :except => :show
   resources :faculties,    :except => :show
