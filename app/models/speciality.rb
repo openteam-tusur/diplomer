@@ -20,16 +20,11 @@ class Speciality < ActiveRecord::Base
   alias :term :to_s
 end
 
-
-
-
-
-
 # == Schema Information
 #
 # Table name: specialities
 #
-#  id                :integer         not null, primary key
+#  id                :integer          not null, primary key
 #  code              :string(255)
 #  title             :text
 #  eng_title         :text

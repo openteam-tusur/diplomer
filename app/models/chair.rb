@@ -16,12 +16,11 @@ class Chair < ActiveRecord::Base
   end
 end
 
-
 # == Schema Information
 #
 # Table name: chairs
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  title      :text
 #  abbr       :string(255)
 #  eng_title  :text

@@ -17,19 +17,11 @@ class FinalStateExamination < ProgrammItem
   end
 end
 
-
-
-
-
-
-
-
-
 # == Schema Information
 #
 # Table name: programm_items
 #
-#  id            :integer         not null, primary key
+#  id            :integer          not null, primary key
 #  created_at    :datetime
 #  updated_at    :datetime
 #  grade         :string(255)
@@ -43,5 +35,6 @@ end
 #  eng_title     :text
 #  position      :integer
 #  context_type  :string(255)
+#  semester_id   :integer
 #
 

@@ -24,14 +24,11 @@ class Discipline < ActiveRecord::Base
   end
 end
 
-
-
-
 # == Schema Information
 #
 # Table name: disciplines
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  title      :text
 #  eng_title  :text
 #  created_at :datetime

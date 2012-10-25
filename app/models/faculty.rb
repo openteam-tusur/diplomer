@@ -16,13 +16,11 @@ class Faculty < ActiveRecord::Base
   end
 end
 
-
-
 # == Schema Information
 #
 # Table name: faculties
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  title      :text
 #  eng_title  :text
 #  abbr       :string(255)

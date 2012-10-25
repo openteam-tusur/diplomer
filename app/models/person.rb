@@ -20,12 +20,11 @@ class Person < ActiveRecord::Base
   alias :to_s :name
 end
 
-
 # == Schema Information
 #
 # Table name: people
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  surname    :string(255)
 #  firstname  :string(255)
 #  patrynomic :string(255)

@@ -111,27 +111,25 @@ class Diploma < ActiveRecord::Base
   end
 end
 
-
-
-
-
 # == Schema Information
 #
 # Table name: diplomas
 #
-#  id              :integer         not null, primary key
-#  speciality_id   :integer
-#  number          :string(255)
-#  admission_date  :date
-#  graduation_date :date
-#  study_form      :string(255)
-#  study_duration  :string(255)
-#  total_hours     :integer
-#  contact_hours   :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  chair_id        :integer
-#  eng_number      :string(255)
-#  serial_number   :integer
+#  id                  :integer          not null, primary key
+#  speciality_id       :integer
+#  number              :string(255)
+#  admission_date      :date
+#  graduation_date     :date
+#  study_form          :string(255)
+#  study_duration      :string(255)
+#  total_hours         :integer
+#  contact_hours       :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  chair_id            :integer
+#  eng_number          :string(255)
+#  serial_number       :integer
+#  faculty_id          :integer
+#  access_requirements :string(255)
 #
 
