@@ -135,6 +135,9 @@ ru:
       diploma_search:
         search_string: Поиск
 
+      academic_record_search:
+        search_string: Поиск
+
       discipline_search:
         term: Поиск
 

@@ -13,6 +13,15 @@ class AcademicRecord < ActiveRecord::Base
 
   before_create :generate_number
 
+  delegate :surname, :full_info,  :to => :student, :prefix => true
+  delegate :abbr, :title,         :to => :faculty, :prefix => true
+
+  searchable do
+    text :search_string do
+      "#{student_surname} #{faculty_abbr} #{faculty_title} #{I18n.l issued_on, :format => '%Y'}"
+    end
+  end
+
   def to_s
     "Академическая справка №#{number}"
   end
