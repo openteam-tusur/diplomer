@@ -4,6 +4,8 @@ TusurDiplomer::Application.routes.draw do
   match 'diplomas/:id/pdf' => 'diplomas#pdf', :defaults => {:format => :pdf}, :as => 'pdf_diploma'
   match 'academic_records/:id/pdf' => 'academic_records#pdf', :defaults => {:format => :pdf}, :as => 'pdf_academic_record'
 
+  match 'academic_records/:id/debug' => 'academic_records#debug'
+
   resources :diplomas do
     resources :student
     resources :courses
