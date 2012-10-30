@@ -26,6 +26,10 @@ class AcademicRecord < ActiveRecord::Base
     "Академическая справка №#{number}"
   end
 
+  def courses_grouped_by_semester
+    courses.group_by(&:context)
+  end
+
   private
 
   def set_context_type(course)

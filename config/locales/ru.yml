@@ -7,6 +7,9 @@ ru:
   save: Сохранить
   translate_missing: отсутствует перевод
 
+  rector_name: Yuri Shurygin
+  rector_post: Rector of Tomsk State University of Controll Systems and Radioelectronics
+
   "Changing information": Изменение информации
   "Adding information": Добавление информации
   "Are you sure?": Вы уверены, что хотите удалить?
@@ -150,8 +153,8 @@ ru:
         year: Год!
         kind: Семестр
         kind_enum:
-          fall: Осенний
-          spring: Весенний
+          fall: Fall
+          spring: Spring
 
       course:
         context_id: Семестр
@@ -210,4 +213,9 @@ ru:
           excellent: 5 (excellent / отлично)
           good: 4 (good / хорошо)
           satisfactorily: 3 (satisfactory / удовлетворительно)
+        grade_eng_enum:
+          passed: Passed
+          excellent: 5 (Excellent)
+          good: 4 (Good)
+          satisfactorily: 3 (Satisfactory)
 

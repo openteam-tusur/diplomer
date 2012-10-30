@@ -12,6 +12,10 @@ class ProgrammItem < ActiveRecord::Base
     title
   end
 
+  def human_grade_eng
+    I18n.t("activerecord.attributes.programm_item.grade_eng_enum.#{grade}")
+  end
+
   alias :diploma :context
 
   protected
