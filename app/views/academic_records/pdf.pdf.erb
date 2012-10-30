@@ -6,10 +6,6 @@
     <%= stylesheet_link_tag 'print_academic_records' %>
   </head>
   <body>
-    <div class='header'>
-
-    </div>
-
     <div class='wrapper'>
       <h1 class='uppercase center'>Transcript of academic records</h1>
       <div class='left_info'>
@@ -21,7 +17,7 @@
 
       <div class='right_info'>
         <ul>
-          <li><span class='page_numbers'>Page 1 of 1</span></li>
+          <li><span class='page_numbers'></span></li>
           <li>Registration №: <%= @academic_record.number %></li>
           <li>Date of Birth: <%= @academic_record.student.birthday.strftime('%B %d, %Y') %></li>
           <li>Date Issued: <%= @academic_record.issued_on.strftime('%B %d, %Y') %></li>
@@ -42,39 +38,28 @@
           <tbody>
             <% @academic_record.courses_grouped_by_semester.each do |semester, courses| %>
               <% courses.each_with_index do |course, index| %>
-                <tr>
-                  <td class='semester'><%= semester %></td>
-                  <td><%= course.eng_title %></td>
-                  <td class='credits'><%= course.credits %></td>
-                  <td class='hours'><%= course.hours %></td>
-                  <td class='grades'><%= course.human_grade_eng %></td>
-                </tr>
+              <tr>
+                <% if index.zero? %>
+                  <td rowspan="<%= courses.count %>" class='semester'><%= semester %></td>
+                <% end %>
+                <td><%= course.eng_title %></td>
+                <td class='credits'><%= course.credits %></td>
+                <td class='hours'><%= course.hours %></td>
+                <td class='grades'><%= course.human_grade_eng %></td>
+              </tr>
               <% end %>
             <% end %>
 
-              d<tr>
+              <tr>
                 <td style="border: none"></td>
                 <td class='total_title'>Total</td>
-                <td class='total_credits'>0</td>
-                <td class='total_hours'>0</td>
+                <td class='total_credits'><%= @academic_record.total_credits %></td>
+                <td class='total_hours'><%= @academic_record.total_hours %></td>
                 <td style="border: none"></td>
               </tr>
 
-            <%# NOTE: так сделато чтобы дисциплины были на нужной странице %>
-            <% if @academic_record.courses.count < 17 %>
-              <% (@academic_record.courses.count + 1..17).each do %>
-                <tr>
-                  <td style="border: none"></td>
-                  <td style="border: none"></td>
-                  <td style="border: none"></td>
-                  <td style="border: none"></td>
-                  <td style="border: none"></td>
-                </tr>
-              <% end %>
-            <% end %>
           </tbody>
         </table>
-
       </div>
 
       <div class='sign'>
@@ -84,9 +69,9 @@
         </div>
 
         <div class='right_sign'>
-          <%= "#{@academic_record.faculty.eng_title}" %>
-          <span class='strong'><%= @academic_record.faculty.chief_name %></strong>
+          <div class='fio strong'><%= @academic_record.faculty.chief_name %></div>
           <%= @academic_record.faculty.chief_post %>
+          <%= "#{@academic_record.faculty.eng_title}" %>
         </div>
       </div>
 

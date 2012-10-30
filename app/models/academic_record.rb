@@ -30,6 +30,14 @@ class AcademicRecord < ActiveRecord::Base
     courses.group_by(&:context)
   end
 
+  def total_credits
+    courses.map(&:credits).sum
+  end
+
+  def total_hours
+    courses.map(&:hours).sum
+  end
+
   private
 
   def set_context_type(course)
