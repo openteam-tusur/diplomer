@@ -7,21 +7,22 @@
   </head>
   <body>
     <div class='wrapper'>
-      <h1 class='uppercase center'>Transcript of academic records</h1>
-      <div class='left_info'>
-        <ul>
-          <li><%= @academic_record.faculty.eng_title %></li>
-          <li><span class='strong'><%= @academic_record.student %></span></li>
-        </ul>
-      </div>
 
-      <div class='right_info'>
-        <ul>
-          <li><span class='page_numbers'></span></li>
-          <li>Registration №: <%= @academic_record.number %></li>
-          <li>Date of Birth: <%= @academic_record.student.birthday.strftime('%B %d, %Y') %></li>
-          <li>Date Issued: <%= @academic_record.issued_on.strftime('%B %d, %Y') %></li>
-        </ul>
+      <div class='header'>
+        <h1 class='uppercase center'>Transcript of academic records</h1>
+          <div class='left_info'>
+            <ul>
+              <li><%= @academic_record.faculty.eng_title %></li>
+              <li><span class='strong'><%= @academic_record.student %></span></li>
+            </ul>
+          </div>
+          <div class='right_info'>
+            <ul>
+              <li>Registration №: <%= @academic_record.number %></li>
+              <li>Date of Birth: <%= @academic_record.student.birthday.strftime('%B %d, %Y') %></li>
+              <li>Date Issued: <%= @academic_record.issued_on.strftime('%B %d, %Y') %></li>
+            </ul>
+          </div>
       </div>
 
       <div class='content'>
@@ -49,7 +50,6 @@
               </tr>
               <% end %>
             <% end %>
-
               <tr>
                 <td style="border: none"></td>
                 <td class='total_title'>Total</td>
@@ -57,7 +57,6 @@
                 <td class='total_hours'><%= @academic_record.total_hours %></td>
                 <td style="border: none"></td>
               </tr>
-
           </tbody>
         </table>
       </div>
@@ -67,7 +66,6 @@
           <div class='fio strong'><%= t 'rector_name' %></div>
           <%= t 'rector_post' %>
         </div>
-
         <div class='right_sign'>
           <div class='fio strong'><%= @academic_record.faculty.chief_name %></div>
           <%= @academic_record.faculty.chief_post %>
@@ -76,6 +74,5 @@
       </div>
 
     </div>
-
   </body>
   </html>

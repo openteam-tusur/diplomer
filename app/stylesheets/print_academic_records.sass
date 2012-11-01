@@ -3,9 +3,14 @@
 @import compass/css3
 @page
   size: A4
-  margin: 85px 0
   padding: 0
+  margin: 120px 0 100px 0
   prince-shrink-to-fit: auto
+  @bottom-right
+    content: "Page " counter(page) " of " counter(pages)
+    color: #777
+    margin: 0 35px 120px 0
+    font-size: 12px
 
 body, div
   font-family: "Sans-serif"
@@ -16,18 +21,17 @@ body, div
   margin: 0
   padding: 0
 
-  .header
-    padding: 55px 0 0 0
   .wrapper
     margin: 0 35px 0 35px
+    .header
+      margin: 0 0 35px 0
+      float: left
+      width: 100%
     .left_info, .left_sign
       float: left
     .right_info, .right_sign
       float: right
       text-align: right
-      .page_numbers
-        content: "Page " counter(page) " of " counter(pages)
-        color: #777
     .left_info, .right_info
       width: 50%
     .left_sign, .right_sign
@@ -44,7 +48,7 @@ body, div
         font-style: normal
         font-weight: 100
         float: left
-        margin: 45px 0 85px 0
+        margin: 0 0 85px 0
         padding: 0
         width: 100%
 
