@@ -5,9 +5,13 @@ class Chair < ActiveRecord::Base
 
   has_one :role
 
+  has_many :diplomas
+
   validates_presence_of :title, :abbr, :faculty
 
   has_translate
+
+  protected_parent_of :diplomas
 
   default_scope :order => 'title ASC'
 

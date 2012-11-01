@@ -64,6 +64,7 @@ class Diploma < ActiveRecord::Base
   def to_s
     "Диплом №#{number}"
   end
+  alias_method :title, :to_s
 
   def real_faculty
     faculty || chair.faculty

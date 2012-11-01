@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 class Faculty < ActiveRecord::Base
+  has_many :academic_records
   has_many :chairs
+  has_many :diplomas
 
   has_one :role
 
@@ -11,9 +13,17 @@ class Faculty < ActiveRecord::Base
 
   has_translate
 
+  protected_parent_of :academic_records
+  protected_parent_of :chairs
+  protected_parent_of :diplomas
+
   searchable do
     boolean :translated
   end
+
+  alias_attribute :to_s, :title
+
+  alias :term :to_s
 end
 
 # == Schema Information

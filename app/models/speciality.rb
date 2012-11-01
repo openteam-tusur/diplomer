@@ -11,6 +11,8 @@ class Speciality < ActiveRecord::Base
 
   has_programm_items
 
+  protected_parent_of :diplomas
+
   searchable do
     text :term
   end

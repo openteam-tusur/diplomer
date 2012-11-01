@@ -63,8 +63,16 @@ ru:
       search: Поиск дисциплины
     diplomas:
       delete: Удаление диплома
+    chairs:
+      delete: Удаление кафедры
+    faculties:
+      delete: Удаление факультета
     academic_records:
-      delete: Удаление диплома
+      delete: Удаление академической справки
+    people:
+      delete: Удаление пользователя
+    specialities:
+      delete: Удаление специальности
 
   formtastic:
     required: обязательное поле

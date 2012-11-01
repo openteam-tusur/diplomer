@@ -9,8 +9,8 @@
 <%= show_for resource do |s| %>
   <% unless resource.protected_children.empty? %>
       С этим объектом связаны:
-      <% resource.protected_children.each do |attribute| %>
-        <%= s.association attribute.to_sym %>
+      <% resource.protected_children.each do |association| %>
+        <%= s.association association.to_sym %>
       <% end %>
   <% end %>
 <% end %>
