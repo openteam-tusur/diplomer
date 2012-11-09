@@ -165,6 +165,7 @@ ru:
           spring: Spring
 
       course:
+        context: Семестр
         context_id: Семестр
 
       diploma:
