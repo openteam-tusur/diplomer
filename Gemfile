@@ -17,7 +17,7 @@ group :default do
   gem 'princely',                   :git => 'git://github.com/timriley/princely', :branch => 'disposition'
   gem 'protected_parent'
   gem 'rails',                '3.0.20'
-  gem 'rake',                 '0.8.7'
+  gem 'rake'
   gem 'render_inheritable'
   gem 'russian',                    :git => 'git://github.com/tacid/russian'
   gem 'show_for'
