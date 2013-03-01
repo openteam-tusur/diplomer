@@ -16,7 +16,7 @@ group :default do
   gem 'nested_form'
   gem 'princely',                   :git => 'git://github.com/timriley/princely', :branch => 'disposition'
   gem 'protected_parent'
-  gem 'rails',                '3.0.7'
+  gem 'rails',                '3.0.20'
   gem 'rake',                 '0.8.7'
   gem 'render_inheritable'
   gem 'russian',                    :git => 'git://github.com/tacid/russian'
@@ -28,6 +28,7 @@ end
 
 group :development do
   gem 'annotate',               :require => false
+  gem 'brakeman'
   gem 'hirb',                   :require => false
   gem 'itslog'
   gem 'rails-erd'
