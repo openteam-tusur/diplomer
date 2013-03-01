@@ -40,6 +40,7 @@ group :production do
   gem 'hoptoad_notifier'
   gem 'hassle',                     :git => 'git://github.com/koppen/hassle'
   gem 'pg'
+  gem 'unicorn'
 end
 
 group :test do
