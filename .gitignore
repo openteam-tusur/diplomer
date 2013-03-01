@@ -6,6 +6,7 @@ solr/data/
 bin/
 photos/
 config/database.yml
+config/deploy.yml
 config/sunspot.yml
 config/initializers/setup_mail.rb
 public/stylesheets/*.css

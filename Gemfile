@@ -1,4 +1,4 @@
-source :rubygems
+source 'http://rubygems.org'
 
 group :default do
   gem 'aasm'
@@ -30,6 +30,7 @@ group :development do
   gem 'annotate',               :require => false
   gem 'brakeman'
   gem 'hirb',                   :require => false
+  gem 'rvm-capistrano'
   gem 'itslog'
   gem 'rails-erd'
 end
