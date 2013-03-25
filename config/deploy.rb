@@ -27,14 +27,24 @@ namespace :deploy do
   task :sunspot_reindex do
     run "cd #{deploy_to}/current && RAILS_ENV=production bin/rake sunspot:reindex"
   end
+
+end
+
+namespace :compass do
+  desc "Compass assets precompile"
+  task :precompile do
+    run "cd #{deploy_to}/current && bundle exec compass compile -e production --force"
+  end
 end
 
 # deploy
 after "deploy:finalize_update", "deploy:config_app"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:copy_unicorn_config"
+after "deploy", "compass:precompile"
 after "deploy", "deploy:reload_servers"
 after "deploy:restart", "deploy:cleanup"
 
 # deploy:rollback
 after "deploy:rollback", "deploy:reload_servers"
+after "deploy:rollback", "compass:precompile"
