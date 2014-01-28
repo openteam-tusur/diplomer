@@ -1,7 +1,7 @@
 <%= form.fields_for :student do |student| %>
   <%= student.inputs do %>
-    <%= student.input :surname, :input_html => {:tabindex => '1'} %>
-    <%= student.input :firstname, :input_html => {:tabindex => '2'} %>
+    <%= student.input :surname, :input_html => {:tabindex => '1'}, :label => 'Имя' %>
+    <%= student.input :firstname, :input_html => {:tabindex => '2'}, :label => 'Фамилия' %>
     <%= student.input :birthday, :input_html => {:tabindex => '8'} %>
   <% end %>
 <% end %>
