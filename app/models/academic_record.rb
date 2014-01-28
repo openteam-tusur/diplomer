@@ -27,7 +27,7 @@ class AcademicRecord < ActiveRecord::Base
   end
 
   def courses_grouped_by_semester
-    courses.group_by(&:context)
+    courses.ordered.group_by(&:context)
   end
 
   def total_credits

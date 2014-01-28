@@ -20,7 +20,7 @@
       </div>
       <ol class='courses_list list' id='courses_list'>
         <% if @academic_record.courses.any? %>
-          <% @academic_record.courses.order('position DESC').each do |course| %>
+          <% @academic_record.courses.ordered.each do |course| %>
             <li class="item" id="programm_item_<%= course.id %>">
               <%= render :partial => "courses/course", :locals => {:course => course} %>
             </li>

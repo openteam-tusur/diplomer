@@ -31,9 +31,10 @@ group :development do
   gem 'annotate',               :require => false
   gem 'brakeman'
   gem 'hirb',                   :require => false
-  gem 'rvm-capistrano'
   gem 'itslog'
   gem 'rails-erd'
+  gem 'rvm-capistrano'
+  gem 'sunspot_solr',         '~> 1.3.3'
 end
 
 group :production do
