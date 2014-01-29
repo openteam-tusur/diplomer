@@ -20,8 +20,8 @@
             <ul>
               <li>Registration №: <%= @academic_record.number %></li>
               <li>Date of Birth: <%= @academic_record.student.birthday.strftime('%B %d, %Y') %></li>
-              <li>Date Issued: <%= @academic_record.issued_on.strftime('%B %d, %Y') %></li>
-              <li>Date Produced: <%= @academic_record.produced_on.strftime('%B %d, %Y') %></li>
+              <li>Date of Admission: <%= @academic_record.admission_date.strftime('%B %d, %Y') %></li>
+              <li>Date of Issue: <%= @academic_record.issue_date.strftime('%B %d, %Y') %></li>
             </ul>
           </div>
       </div>

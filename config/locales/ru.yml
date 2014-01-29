@@ -153,10 +153,10 @@ ru:
         term: Поиск
 
       academic_record:
-        issued_on: Дата поступления
-        produced_on: Дата выпуска
         number: Номер справки
         student: Студент
+        admission_date: Дата поступления
+        issue_date: Дата выдачи
 
       semester:
         year: Год!

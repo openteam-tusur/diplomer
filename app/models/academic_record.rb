@@ -18,7 +18,7 @@ class AcademicRecord < ActiveRecord::Base
 
   searchable do
     text :search_string do
-      "#{student_surname} #{faculty_abbr} #{faculty_title} #{I18n.l issued_on, :format => '%Y'}"
+      "#{student_surname} #{faculty_abbr} #{faculty_title} #{I18n.l issue_date, :format => '%Y'}"
     end
   end
 
