@@ -9,6 +9,7 @@
 <%= form.inputs do %>
   <%= form.input :faculty, :wrapper_html => {:class => 'right wide'}, :input_html => {:tabindex => '9'} %>
   <%= form.input :issued_on %>
+  <%= form.input :produced_on %>
 <% end %>
 
 <%= form.fields_for :semesters, @academic_record.semesters do |semester_fields| %>

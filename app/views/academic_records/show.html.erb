@@ -5,7 +5,7 @@
 
 <%= show_for resource do |item| %>
   <%= item.association :student, :using => :full_info %>
-  <%= item.attributes :number, :issued_on %>
+  <%= item.attributes :number, :issued_on, :produced_on %>
 <% end %>
 
 <div class='details_wrapper'>

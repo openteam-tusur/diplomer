@@ -8,7 +8,7 @@ ru:
   translate_missing: отсутствует перевод
 
   rector_name: Yuri Shurygin
-  rector_post: Rector of Tomsk State University of Controll Systems and Radioelectronics
+  rector_post: Rector of Tomsk State University of Control Systems and Radioelectronics
 
   "Changing information": Изменение информации
   "Adding information": Добавление информации
@@ -153,7 +153,8 @@ ru:
         term: Поиск
 
       academic_record:
-        issued_on: Дата поступления!
+        issued_on: Дата поступления
+        produced_on: Дата выпуска
         number: Номер справки
         student: Студент
 
