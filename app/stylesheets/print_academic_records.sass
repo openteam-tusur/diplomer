@@ -61,7 +61,7 @@ body, div
               text-align: center
               width: 90px
             th.course_title, th.hours, th.credits, th.grades
-              border-bottom: 1px solid #e6e6e6
+              border-bottom: 2px solid #e6e6e6
             th.course_title
               width: 200px
             th.hours
@@ -74,29 +74,36 @@ body, div
           tr
             td
               border: none
+              line-height: 36px
               padding: 5px 0
+
             td.semester
               font-weight: bold
               vertical-align: top
+
             td.hours
               width: 60px
+
             td.credits
               width: 60px
+
             td.grades
               width: 100px
 
             td.hours, td.credits, td.grades
               text-align: center
+
             td.total_title
               text-align: right
               font-weight: bold
+
             td.total_hours, td.total_credits
               text-align: center
               font-weight: bold
 
-          tr
-            td
-              line-height: 36px
+            td.course_title, td.hours, td.credits, td.grades
+              border-bottom: 1px solid #e6e6e6
+
       .sign
         +clearfix
 
