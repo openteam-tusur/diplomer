@@ -83,7 +83,7 @@ function sort_programm_item(){
         complete: function(request){
           $('#'+target).effect('highlight');
         },
-        url: window.location.pathname + '/programm_items/sort'})
+        url: $(this).data('sort-url') })
     }
   });
 };

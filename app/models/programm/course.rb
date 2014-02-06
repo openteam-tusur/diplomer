@@ -11,7 +11,7 @@ class Course < ProgrammItem
 
   has_autosuggest_for :discipline
 
-  scope :ordered, -> { order 'position DESC' }
+  scope :ordered, -> { order 'position' }
 
   def to_s
     "#{title} #{credits} #{hours} #{human_grade}"

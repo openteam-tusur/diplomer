@@ -22,6 +22,10 @@ TusurDiplomer::Application.routes.draw do
 
   resources :academic_records do
     resources :courses
+
+    resources :courses, :only => [] do
+      post :sort, :on => :collection
+    end
   end
 
   resources :chairs

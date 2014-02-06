@@ -18,7 +18,7 @@
         <span class='hours'>Часы</span>
         <span class='human_grade'>Оценка</span>
       </div>
-      <ol class='courses_list list' id='courses_list'>
+      <ol class='courses_list list' id='courses_list' data-sort-url="<%= sort_academic_record_courses_path(resource) %>">
         <% if @academic_record.courses.any? %>
           <% @academic_record.courses.ordered.each do |course| %>
             <li class="item" id="programm_item_<%= course.id %>">

@@ -22,6 +22,13 @@ class AcademicRecord < ActiveRecord::Base
     end
   end
 
+  def sort_courses(course_ids)
+    course_ids.each_with_index do |course_id, index|
+      # NOTE: avoid ActiveRecord::ReadOnlyRecord
+      Course.where(:id => courses.map(&:id)).find(course_id).update_attribute(:position, index+1)
+    end
+  end
+
   def to_s
     "Академическая справка №#{number}"
   end

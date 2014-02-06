@@ -26,7 +26,7 @@
         <span class='hours'>Часы</span>
         <span class='human_grade'>Оценка</span>
       </div>
-      <ol class='courses_list list' id='courses_list'>
+      <ol class='courses_list list' id='courses_list' data-sort-url="<%= sort_diploma_programm_items_path(resource) %>">
         <% if @diploma.courses.any? %>
           <% @diploma.courses.order('position DESC').each do |course| %>
             <li class="item" id="programm_item_<%= course.id %>">
@@ -48,7 +48,7 @@
         <span class='eng_title'>Название на англ. языке</span>
         <span class='human_grade'>Оценка</span>
       </div>
-      <ol class='papers_list list' id='papers_list'>
+      <ol class='papers_list list' id='papers_list' data-sort-url="<%= sort_diploma_programm_items_path(resource) %>">
         <% if @diploma.papers.any? %>
           <% @diploma.papers.order('position DESC').each do |paper| %>
             <li class="item" id="programm_item_<%= paper.id %>">
@@ -72,7 +72,7 @@
         <span class='hours'>Недели</span>
         <span class='human_grade'>Оценка</span>
       </div>
-      <ol class='practices_list list' id='practices_list'>
+      <ol class='practices_list list' id='practices_list' data-sort-url="<%= sort_diploma_programm_items_path(resource) %>">
         <% if @diploma.practices.any? %>
           <% @diploma.practices.order('position DESC').each do |practice| %>
             <li class="item" id="programm_item_<%= practice.id %>">
