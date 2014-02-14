@@ -52,7 +52,7 @@ class AcademicRecord < ActiveRecord::Base
   end
 
   def generate_number
-    academic_records = self.class.where(:issued_on => (Date.today.beginning_of_year..Date.today.end_of_year), :faculty_id => self.faculty)
+    academic_records = self.class.where(:issue_date => (Date.today.beginning_of_year..Date.today.end_of_year), :faculty_id => self.faculty)
 
     if last_academic_record = academic_records.last
       number = last_academic_record.serial_number + 1
