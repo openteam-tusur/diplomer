@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129073120) do
+ActiveRecord::Schema.define(:version => 20140214030445) do
 
   create_table "academic_records", :force => true do |t|
     t.integer  "faculty_id"
     t.integer  "serial_number"
     t.string   "number"
-    t.date     "issue_date"
+    t.date     "issued_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "admission_date"
+    t.date     "produced_on"
   end
 
   create_table "chairs", :force => true do |t|
