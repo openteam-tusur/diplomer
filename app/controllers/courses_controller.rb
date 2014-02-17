@@ -11,6 +11,14 @@ class CoursesController < CrudController
 
   respond_to :html
 
+  def update
+    @course = Course.find(params[:id])
+
+    @course.update_attributes params[:course]
+
+    render :partial => 'courses/course', :locals => { :course => @course } and return
+  end
+
   def show
     show! do
       render :partial => 'courses/course', :locals => { :course => @course } and return
