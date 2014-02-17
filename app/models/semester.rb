@@ -7,7 +7,7 @@ class Semester < ActiveRecord::Base
 
   validates_presence_of :year, :kind
 
-  default_scope order('year, kind DESC')
+  default_scope order('year, kind')
 
   has_enum :kind, %w[fall spring]
 

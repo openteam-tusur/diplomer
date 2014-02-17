@@ -35,7 +35,7 @@ class AcademicRecord < ActiveRecord::Base
 
   def courses_grouped_by_semester
     semester_ids = courses.map(&:context_id).uniq
-    ordered_semesters = Semester.where(:id => semester_ids).order('year ASC').order('kind ASC')
+    ordered_semesters = Semester.where(:id => semester_ids)
 
     ordered_semesters.inject({}) do |hash, semester|
       hash[semester] = semester.courses.ordered
