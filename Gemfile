@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 group :default do
+  gem 'airbrake',                '3.1.2'
   gem 'aasm'
   gem 'acts_as_list'
   gem 'compass',              '0.11.1'
@@ -30,10 +31,12 @@ end
 group :development do
   gem 'annotate',               :require => false
   gem 'brakeman'
+  gem 'capistrano-db-tasks',    :git => 'git://github.com/sgruhier/capistrano-db-tasks', :ref => '396cbbf', :require => false
+  gem 'capistrano-unicorn',     '= 0.1.7', :require => false
   gem 'hirb',                   :require => false
   gem 'itslog'
+  gem 'openteam-capistrano',    :require => false
   gem 'rails-erd'
-  gem 'rvm-capistrano'
   gem 'sunspot_solr',         '~> 1.3.3'
 end
 
