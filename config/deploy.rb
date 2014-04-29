@@ -6,9 +6,8 @@ set :shared_children, fetch(:shared_children) + %w[config/config.yml config/suns
 namespace :compass do
   desc "Compass assets precompile"
   task :precompile do
-    run "cd #{deploy_to}/current && bundle exec compass compile -e production --force"
+    run "cd #{deploy_to}/current && RAILS_ENV=production bundle exec compass compile -e production --force"
   end
 end
 
-after "deploy", "compass:precompile"
-after "deploy:rollback", "compass:precompile"
+after "deploy:create_symlink", "compass:precompile"
