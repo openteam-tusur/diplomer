@@ -5,11 +5,12 @@ class Semester < ActiveRecord::Base
 
   has_many :courses, :as => :context
 
-  validates_presence_of :year, :kind
+  validates_presence_of :kind
+  validates_presence_of :year, :unless => Proc.new { |s| s.kind_no_matter? }
 
   default_scope order('year, kind')
 
-  has_enum :kind, %w[fall spring]
+  has_enum :kind, %w[fall spring no_matter]
 
   def to_s
     "#{human_kind} #{year}"

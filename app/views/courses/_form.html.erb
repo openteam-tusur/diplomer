@@ -5,7 +5,13 @@
     <%= form.input :credits, :wrapper_html => {:class => 'tight'} %>
     <%= form.input :hours, :wrapper_html => {:class => 'tight'} %>
     <%= form.input :grade if form.object.context.is_a?(Diploma) || @academic_record %>
-    <%= form.input :context_id, :as => :select, :collection => @academic_record.semesters, :wrapper_html => { :class => 'enum medium' } if @academic_record %>
+    <% if @academic_record %>
+      <% if @academic_record.semesters.one? && @academic_record.semesters.first.kind_no_matter? %>
+        <%= form.input :context_id, :as => :hidden, :value => @academic_record.semesters.first.id %>
+      <% else %>
+        <%= form.input :context_id, :as => :select, :collection => @academic_record.semesters, :wrapper_html => { :class => 'enum medium' } %>
+      <% end %>
+    <% end %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>

@@ -9,9 +9,10 @@ class AcademicRecord < ActiveRecord::Base
   has_one :student, :dependent => :destroy, :as => :studentable
 
   accepts_nested_attributes_for :student, :update_only => true
-  accepts_nested_attributes_for :semesters, :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :semesters, :allow_destroy => true
 
   before_create :generate_number
+  after_create  :create_semester, :if => Proc.new { |ar| ar.semesters.empty? }
 
   delegate :surname, :full_info,  :to => :student, :prefix => true
   delegate :abbr, :title,         :to => :faculty, :prefix => true
@@ -53,6 +54,10 @@ class AcademicRecord < ActiveRecord::Base
   end
 
   private
+
+  def create_semester
+    semesters.create(:kind => :no_matter)
+  end
 
   def set_context_type(course)
     course.context_type = 'Semester'
