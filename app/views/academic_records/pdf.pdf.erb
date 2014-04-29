@@ -9,15 +9,10 @@
     <div class='wrapper'>
 
       <div class='header'>
-        <h1 class='uppercase center'>Transcript of academic records</h1>
-          <div class='left_info'>
+          <div class='right_info'>
             <ul>
               <li><%= @academic_record.faculty.eng_title %></li>
               <li><span class='strong'><%= @academic_record.student %></span></li>
-            </ul>
-          </div>
-          <div class='right_info'>
-            <ul>
               <li>Registration №: <%= @academic_record.number %></li>
               <li>Date of Birth: <%= @academic_record.student.birthday.strftime('%B %d, %Y') %></li>
               <li>Date of Admission: <%= @academic_record.admission_date.strftime('%B %d, %Y') %></li>

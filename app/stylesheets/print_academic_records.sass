@@ -14,7 +14,7 @@
 
 body, div
   font-family: Verdana, Arial, sans-serif
-  font-size: 14px
+  font-size: 12px
   font-style: normal
   font-weight: 100
   color: #343434
@@ -22,19 +22,28 @@ body, div
   padding: 0
 
   .wrapper
-    margin: 0 35px 0 35px
+    margin: 120px 35px 0 35px
+
     .header
-      margin: 0 0 35px 0
+      margin: 20px 0 35px 0
       float: left
       width: 100%
 
-    .left_info, .left_sign
+      ul
+        li
+          line-height: 30px
+          margin: 0
+
+    .left_sign
       float: left
+
     .right_info, .right_sign
       float: right
       text-align: right
-    .left_info, .right_info
+
+    .right_info
       width: 50%
+
     .left_sign, .right_sign
       border-top: 1px solid #ccc
       padding: 15px 0 0 0
@@ -59,48 +68,47 @@ body, div
               padding: 10px 0px
               text-align: center
               width: 90px
-            th.course_title, th.hours, th.credits, th.grades
+
+            .course_title, .hours, .credits, .grades
               border-bottom: 2px solid #e6e6e6
-            th.course_title
+
+            .course_title
               width: 200px
-            th.hours
+
+            .hours, .credits
               width: 60px
-            th.credits
-              width: 60px
-            th.grades
+
+            .grades
               width: 100px
+
         tbody
           tr
             td
               border: none
-              line-height: 36px
-              padding: 5px 0
+              line-height: 30px
 
-            td.semester
+            .semester
               font-weight: bold
               vertical-align: top
 
-            td.hours
+            .hours, .credits
               width: 60px
 
-            td.credits
-              width: 60px
-
-            td.grades
+            .grades
               width: 100px
 
-            td.hours, td.credits, td.grades
+            .hours, .credits, .grades
               text-align: center
 
-            td.total_title
+            .total_title
               text-align: right
               font-weight: bold
 
-            td.total_hours, td.total_credits
+            .total_hours, .total_credits
               text-align: center
               font-weight: bold
 
-            td.course_title, td.hours, td.credits, td.grades
+            .course_title, .hours, .credits, .grades
               border-bottom: 1px solid #e6e6e6
 
       .sign
@@ -123,9 +131,12 @@ ul li
 
 .right
   float: right
+
 .center
   text-align: center
+
 .strong
   font-weight: bold
+
 .uppercase
   text-transform: uppercase
