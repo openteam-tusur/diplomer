@@ -19,7 +19,7 @@ class Diploma < ActiveRecord::Base
   after_create :create_final_qualification_project
   after_create :create_program_items
 
-  before_create :generate_number
+  before_save :generate_number
 
   has_autosuggest_for :speciality
 
