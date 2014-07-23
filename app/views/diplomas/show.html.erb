@@ -5,7 +5,7 @@
 
 <%= show_for resource do |item| %>
   <%= item.association :student, :using => :full_info %>
-  <%= item.attributes :number, :eng_number, :chair, :speciality, :access_requirements, :admission_date, :graduation_date, :study_form, :total_hours, :contact_hours %>
+  <%= item.attributes :number, :eng_number, :chair, :speciality, :access_requirements, :admission_date, :graduation_date, :study_form, :total_hours %>
 <% end %>
 
 <ul class='tabs_menu'>

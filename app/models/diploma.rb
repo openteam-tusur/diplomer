@@ -11,7 +11,7 @@ class Diploma < ActiveRecord::Base
   has_one :student,                     :dependent => :destroy, :as => :studentable
 
   validates_presence_of :speciality, :admission_date, :graduation_date,
-                        :study_form, :total_hours, :contact_hours, :chair,
+                        :study_form, :total_hours, :chair,
                         :access_requirements
 
   accepts_nested_attributes_for :student, :update_only => true
@@ -124,7 +124,6 @@ end
 #  study_form          :string(255)
 #  study_duration      :string(255)
 #  total_hours         :integer
-#  contact_hours       :integer
 #  created_at          :datetime
 #  updated_at          :datetime
 #  chair_id            :integer
