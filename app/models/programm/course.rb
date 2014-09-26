@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Course < ProgrammItem
-  validates_presence_of :credits, :hours, :discipline, :discipline_term
+  validates_presence_of :credits, :discipline, :discipline_term
   validates_presence_of :grade, :if => Proc.new { |c| c.context.is_a?(Diploma) }
   validates_presence_of :context
 

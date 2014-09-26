@@ -3,7 +3,7 @@
   <span class='title'><%= course.title %></span>
   <span class='eng_title'><%= course.eng_title.present? ? course.eng_title : 'не указано' %></span>
   <span class='credits'><%= course.credits %></span>
-  <span class='hours'><%= course.hours %></span>
+  <span class='hours'><%= course.hours? ? course.hours : '-' %></span>
   <%= content_tag(:span, course.grade? ? course.human_grade : 'не указано', :class => 'human_grade') if course.context.is_a?(Diploma) || course.context.is_a?(Semester) %>
   <span class='actions'>
     <% array = course.context.is_a?(Semester) ? [course.context.academic_record, course] : [course.context, course] %>
