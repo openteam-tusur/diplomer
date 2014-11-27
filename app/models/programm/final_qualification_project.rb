@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class FinalQualificationProject < ProgrammItem
-  validates_presence_of :title, :grade, :credits, :weeks, :on => :update
+  validates_presence_of :title, :grade, :credits, :on => :update
 
   has_translate
 
