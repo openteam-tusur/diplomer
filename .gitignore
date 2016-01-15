@@ -18,3 +18,4 @@ public/stylesheets/*.css
 solr/data/
 solr/pids/
 tmp/
+config/settings.yml
