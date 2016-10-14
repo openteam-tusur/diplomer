@@ -41,7 +41,7 @@
                 <% end %>
                 <td class='course_title'><%= course.eng_title %></td>
                 <td class='credits'><%= course.credits %></td>
-                <td class='hours'><%= course.hours %></td>
+                <td class='hours'><%= course.hours > 0 ? course.hours : '-' %></td>
                 <td class='grades'><%= course.human_grade_eng %></td>
               </tr>
               <% end %>
