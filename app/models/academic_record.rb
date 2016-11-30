@@ -50,7 +50,7 @@ class AcademicRecord < ActiveRecord::Base
   end
 
   def total_hours
-    courses.map(&:hours).sum
+    courses.map(&:hours).compact.sum
   end
 
   private
