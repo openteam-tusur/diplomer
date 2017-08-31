@@ -17,7 +17,7 @@ group :default do
   gem 'nested_form'
   gem 'princely',                   :git => 'git://github.com/timriley/princely', :branch => 'disposition'
   gem 'protected_parent'
-  gem 'rails',                '3.0.20'
+  gem 'rails',                '~> 3.0.20'
   gem 'rake'
   gem 'render_inheritable'
   gem 'russian',                    :git => 'git://github.com/tacid/russian'
