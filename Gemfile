@@ -24,6 +24,7 @@ group :default do
   gem 'show_for'
   gem 'simple-navigation'
   gem 'sunspot_rails',        '~> 1.3.3'
+  gem 'nokogiri',             '~> 1.6.0'
   gem 'will_paginate',        '>= 3.0.pre2'
   gem 'progress_bar'
 end
