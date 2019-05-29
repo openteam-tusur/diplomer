@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/koppen/hassle
+  remote: https://github.com/koppen/hassle
   revision: bb49cd8b37f5369d08398897caf1b687eaa80458
   specs:
     hassle (0.0.1)
@@ -7,7 +7,7 @@ GIT
       rack
 
 GIT
-  remote: git://github.com/openteam/inherited_resources
+  remote: https://github.com/openteam/inherited_resources
   revision: ee9dbcc6f4673da11b03733fa50a275003833d10
   specs:
     inherited_resources (1.2.2)
@@ -15,20 +15,20 @@ GIT
       responders (~> 0.6.0)
 
 GIT
-  remote: git://github.com/sgruhier/capistrano-db-tasks
+  remote: https://github.com/sgruhier/capistrano-db-tasks
   revision: 396cbbfe0aa4bfe48c8edf2718f2af6163af42bf
   ref: 396cbbf
   specs:
     capistrano-db-tasks (0.2)
 
 GIT
-  remote: git://github.com/tacid/russian
+  remote: https://github.com/tacid/russian
   revision: 544a5e931a9044d941ff6f6746b10722f2fdb326
   specs:
     russian (0.2.8.pre)
 
 GIT
-  remote: git://github.com/timriley/princely
+  remote: https://github.com/timriley/princely
   revision: f83a23406f4a5d1ee55eee3d9eca322a77fb041b
   branch: disposition
   specs:
@@ -150,7 +150,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mini_portile2 (2.1.0)
-    multi_json (1.6.1)
+    multi_json (1.13.1)
     nested_form (0.3.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -201,7 +201,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.4)
     raindrops (0.10.0)
-    rake (12.0.0)
+    rake (12.2.1)
     rdoc (3.12.2)
       json (~> 1.4)
     render_inheritable (1.0.0)
@@ -250,7 +250,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.53)
+    tzinfo (0.3.55)
     unicorn (4.6.2)
       kgio (~> 2.6)
       rack
@@ -312,4 +312,4 @@ DEPENDENCIES
   will_paginate (>= 3.0.pre2)
 
 BUNDLED WITH
-   1.16.4
+   1.16.6
