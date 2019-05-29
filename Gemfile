@@ -12,15 +12,15 @@ group :default do
   gem 'formtastic'
   gem 'has_enum'
   gem 'has_searcher'
-  gem 'inherited_resources', git: 'https://github.com/openteam/inherited_resources'
+  gem 'inherited_resources', git: 'https://github.com/openteam/inherited_resources.git'
   gem 'jquery-rails', require: false
   gem 'nested_form'
-  gem 'princely', git: 'https://github.com/timriley/princely', branch: 'disposition'
+  gem 'princely', git: 'https://github.com/mbleigh/princely.git'
   gem 'protected_parent'
   gem 'rails', '~> 3.0.20'
   gem 'rake'
   gem 'render_inheritable'
-  gem 'russian', git: 'https://github.com/tacid/russian'
+  gem 'russian', git: 'https://github.com/tacid/russian.git'
   gem 'show_for'
   gem 'simple-navigation'
   gem 'sunspot_rails',        '~> 1.3.3'
@@ -32,7 +32,7 @@ end
 group :development do
   gem 'annotate', require: false
   gem 'brakeman'
-  gem 'capistrano-db-tasks', git: 'https://github.com/sgruhier/capistrano-db-tasks', ref: '396cbbf', require: false
+  gem 'capistrano-db-tasks', git: 'https://github.com/sgruhier/capistrano-db-tasks.git', ref: '396cbbf', require: false
   gem 'capistrano-unicorn', '= 0.1.7', require: false
   gem 'hirb', require: false
   gem 'itslog'
@@ -44,7 +44,7 @@ end
 group :production do
   gem 'configatron'
   gem 'hoptoad_notifier'
-  gem 'hassle', git: 'https://github.com/koppen/hassle'
+  gem 'hassle', git: 'https://github.com/koppen/hassle.git'
   gem 'pg'
   gem 'unicorn'
 end

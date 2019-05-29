@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/koppen/hassle
+  remote: https://github.com/koppen/hassle.git
   revision: bb49cd8b37f5369d08398897caf1b687eaa80458
   specs:
     hassle (0.0.1)
@@ -7,7 +7,13 @@ GIT
       rack
 
 GIT
-  remote: https://github.com/openteam/inherited_resources
+  remote: https://github.com/mbleigh/princely.git
+  revision: f83a23406f4a5d1ee55eee3d9eca322a77fb041b
+  specs:
+    princely (1.2.6)
+
+GIT
+  remote: https://github.com/openteam/inherited_resources.git
   revision: ee9dbcc6f4673da11b03733fa50a275003833d10
   specs:
     inherited_resources (1.2.2)
@@ -15,24 +21,17 @@ GIT
       responders (~> 0.6.0)
 
 GIT
-  remote: https://github.com/sgruhier/capistrano-db-tasks
+  remote: https://github.com/sgruhier/capistrano-db-tasks.git
   revision: 396cbbfe0aa4bfe48c8edf2718f2af6163af42bf
   ref: 396cbbf
   specs:
     capistrano-db-tasks (0.2)
 
 GIT
-  remote: https://github.com/tacid/russian
+  remote: https://github.com/tacid/russian.git
   revision: 544a5e931a9044d941ff6f6746b10722f2fdb326
   specs:
     russian (0.2.8.pre)
-
-GIT
-  remote: https://github.com/timriley/princely
-  revision: f83a23406f4a5d1ee55eee3d9eca322a77fb041b
-  branch: disposition
-  specs:
-    princely (1.2.6)
 
 GEM
   remote: http://rubygems.org/
