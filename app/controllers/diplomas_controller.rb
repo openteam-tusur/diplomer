@@ -18,7 +18,8 @@ class DiplomasController < CrudController
       format.html
       format.pdf do
         render :pdf => "#{@diploma}-#{@diploma.student}",
-          :stylesheets => ["print"]
+          :stylesheets => ["print"],
+          :disposition => 'inline'
       end
     end
   end
