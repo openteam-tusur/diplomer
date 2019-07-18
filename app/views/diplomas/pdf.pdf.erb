@@ -113,7 +113,7 @@
             <% end %>
 
             <%# NOTE: так сделато чтобы дисциплины были на нужной странице %>
-            <% if @diploma.courses.count < 47 %>
+            <% if false && @diploma.courses.count < 47 %>
               <% (@diploma.courses.count + 1..47).each do %>
                 <tr>
                   <td style="border: none"></td>
